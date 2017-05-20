@@ -36,11 +36,18 @@
            var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace('/live/ta535s1hq2je/updates/', '');
            var magin2p1 = magin2.substring(0, 8);
-           var magin2p2 = parseInt(magin2p1, 16);
+    var magin2p11 = magin2.substring(9, 13);
+    var magin2p111 = magin2.substring(15, 18);
+    var magin2p1111 = magin2p111 + magin2p11 + magin2p1;
+    
+           var magin2p2 = parseInt(magin2p1111, 16);
            var magin3 = $node.find('.body').parent().next().children().first().attr('href');
            var magin4 = magin3.replace('/live/ta535s1hq2je/updates/', '');
            var magin4p1 = magin4.substring(0, 8);
-           var magin4p2 = parseInt(magin4p1, 16);
+    var magin4p11 = magin4.substring(9, 13);
+     var magin4p111 = magin4.substring(15, 18);
+    var magin4p1111 = magin4p111 + magin4p11 + magin4p1;
+           var magin4p2 = parseInt(magin4p1111, 16);
            var teenviopoemas = magin2p2 - magin4p2;
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
