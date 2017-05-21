@@ -95,6 +95,16 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
       $node.find('.body').prepend("<div id=river></div>");
 document.getElementById("river").innerHTML = demipunoyletra;
         document.getElementById("river").style.backgroundColor = colortest;
+        document.getElementById("river").onmouseover = function() 
+{
+    this.style.backgroundColor = "transparent";
+      this.style.color = "transparent";
+}
+    document.getElementById("river").onmouseleave = function() 
+{
+    this.style.backgroundColor = colortest;
+      this.style.color = "black";
+}
       $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
 
       
