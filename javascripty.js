@@ -52,7 +52,9 @@
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
     var colortest = '#ededed';
-    if (0 <= demipunoyletra && demipunoyletra < 100) {
+    if (0 == demipunoyletra) {
+  var colortest = '#f2ee0e';
+} else if (1 <= demipunoyletra && demipunoyletra < 100) {
   var colortest = '#ef7070';
 } else if (100 <= demipunoyletra && demipunoyletra < 200) {
   var colortest = '#ffaeae';
