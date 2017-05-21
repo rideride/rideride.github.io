@@ -42,6 +42,15 @@
     
            var magin2p2 = parseInt(magin2p1111, 16);
            var magin3 = $node.find('.body').parent().next().children().first().attr('href');
+    if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+       var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+     }
+         if ($node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+       var magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
+     }     
+if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+       var magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
+     }   
            var magin4 = magin3.replace('/live/ta535s1hq2je/updates/', '');
            var magin4p1 = magin4.substring(0, 8);
     var magin4p11 = magin4.substring(9, 13);
