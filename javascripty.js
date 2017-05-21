@@ -60,6 +60,9 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
            var teenviopoemas = magin2p2 - magin4p2;
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
+        if (magin4p1111 == "#") {
+      demipunoyletra = "RSL>NoGhostMessages";
+    }
     var colortest = '#ededed';
     if (demipunoyletra <= 0) {
   var colortest = '#f2ee0e';
