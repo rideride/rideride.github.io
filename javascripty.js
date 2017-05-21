@@ -51,12 +51,37 @@
            var teenviopoemas = magin2p2 - magin4p2;
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
+    var colortest = '#ededed';
+    if (0 <= demipunoyletra && demipunoyletra < 100) {
+  var colortest = '#ef7070';
+} else if (100 <= demipunoyletra && demipunoyletra < 200) {
+  var colortest = '#ffaeae';
+} else if (200 <= demipunoyletra && demipunoyletra < 300) {
+  var colortest = '#ffebba';
+} else if (300 <= demipunoyletra && demipunoyletra < 400) {
+  var colortest = '#cfffba';
+} else if (400 <= demipunoyletra && demipunoyletra < 500) {
+  var colortest = '#a2e8af';
+} else if (500 <= demipunoyletra && demipunoyletra < 600) {
+  var colortest = '#adffed';
+} else if (600 <= demipunoyletra && demipunoyletra < 700) {
+  var colortest = '#add6ff';
+} else if (700 <= demipunoyletra && demipunoyletra < 800) {
+  var colortest = '#bcadff';
+} else if (800 <= demipunoyletra && demipunoyletra < 900) {
+  var colortest = '#e9adff';
+} else if (900 <= demipunoyletra && demipunoyletra < 1000) {
+  var colortest = '#ffadf8';
+} else {
+  var colortest = '#ededed';
+}
       
     
       $node.find('.river').css('position', 'absolute');
       $node.find('.body').prepend("<div id=river></div>");
 document.getElementById("river").innerHTML = demipunoyletra;
-      $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('background-color', '#aeeeff').css('width','120px').css('text-align','right').css('max-width','120px');
+        document.getElementById("river").style.backgroundColor = colortest;
+      $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
 
       
       
