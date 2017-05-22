@@ -74,11 +74,19 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#ffebba';
 } else if (300 <= demipunoyletra && demipunoyletra < 400) {
   var colortest = '#cfffba';
-} else if (400 <= demipunoyletra && demipunoyletra < 500) {
+} else if (400 <= demipunoyletra && demipunoyletra < 420) {
+  var colortest = '#a2e8af';
+} else if (420 == demipunoyletra) {
+  var colortest = '#00ff00';
+} else if (421 <= demipunoyletra && demipunoyletra < 500) {
   var colortest = '#a2e8af';
 } else if (500 <= demipunoyletra && demipunoyletra < 600) {
   var colortest = '#adffed';
-} else if (600 <= demipunoyletra && demipunoyletra < 700) {
+} else if (600 <= demipunoyletra && demipunoyletra < 666) {
+  var colortest = '#add6ff';
+} else if (666 == demipunoyletra) {
+  var colortest = '#ff0000';
+} else if (667 <= demipunoyletra && demipunoyletra < 700) {
   var colortest = '#add6ff';
 } else if (700 <= demipunoyletra && demipunoyletra < 800) {
   var colortest = '#bcadff';
