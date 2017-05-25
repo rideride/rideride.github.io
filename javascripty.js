@@ -32,9 +32,9 @@
       return;
     }    // Color
 
-      
+          var regexy = /\/live\/............\/updates\//
            var magin = $node.find('.body').prev().attr('href');
-           var magin2 = magin.replace('/live/ta535s1hq2je/updates/', '');
+           var magin2 = magin.replace(regexy, '');
            var magin2p1 = magin2.substring(0, 8);
     var magin2p11 = magin2.substring(9, 13);
     var magin2p111 = magin2.substring(15, 18);
@@ -51,7 +51,8 @@
 if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
        var magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
      }   
-           var magin4 = magin3.replace('/live/ta535s1hq2je/updates/', '');
+
+           var magin4 = magin3.replace(regexy, '');
            var magin4p1 = magin4.substring(0, 8);
     var magin4p11 = magin4.substring(9, 13);
      var magin4p111 = magin4.substring(15, 18);
@@ -128,4 +129,3 @@ $('div#river').click(function (e) {
       
   });
 }) ();
-
