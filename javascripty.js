@@ -100,13 +100,12 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#ededed';
 }
     
-    var colortest2 = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
       
     
       $node.find('.river').css('position', 'absolute');
       $node.find('.body').prepend("<div id=river></div>");
 document.getElementById("river").innerHTML = demipunoyletra;
-        document.getElementById("river").style.background = colortest2;
+        document.getElementById("river").style.background = colortest;
         document.getElementById("river").onmouseover = function() 
 {
     this.style.background = "transparent";
