@@ -64,7 +64,9 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
       demipunoyletra = "RSL>NoGhostMessages";
     }
     var colortest = '#ededed';
-    if (demipunoyletra <= 0) {
+    if (demipunoyletra <= -500) {
+  var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
+} else if (-499 <= demipunoyletra && demipunoyletra < 1) {
   var colortest = '#f2ee0e';
 } else if (1 <= demipunoyletra && demipunoyletra < 100) {
   var colortest = '#ef7070';
@@ -97,22 +99,24 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else {
   var colortest = '#ededed';
 }
+    
+    var colortest2 = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
       
     
       $node.find('.river').css('position', 'absolute');
       $node.find('.body').prepend("<div id=river></div>");
 document.getElementById("river").innerHTML = demipunoyletra;
-        document.getElementById("river").style.backgroundColor = colortest;
+        document.getElementById("river").style.background = colortest2;
         document.getElementById("river").onmouseover = function() 
 {
-    this.style.backgroundColor = "transparent";
+    this.style.background = "transparent";
       this.style.color = "transparent";
                this.style.cursor = "pointer";
 
 }
     document.getElementById("river").onmouseleave = function() 
 {
-    this.style.backgroundColor = colortest;
+    this.style.background = colortest;
       this.style.color = "black";
 }
       $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
