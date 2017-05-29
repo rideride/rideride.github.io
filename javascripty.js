@@ -42,6 +42,9 @@
     
            var magin2p2 = parseInt(magin2p1111, 16);
            var magin3 = $node.find('.body').parent().next().children().first().attr('href');
+    if (magin3 == "#") {
+  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+}
     if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
        var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
      }
@@ -61,9 +64,6 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
            var teenviopoemas = magin2p2 - magin4p2;
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
-        if (magin4p1111 == "#") {
-      demipunoyletra = "RSL>NoGhostMessages";
-    }
     var colortest = '#ededed';
     if (demipunoyletra <= -500) {
   var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
