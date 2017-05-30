@@ -65,6 +65,10 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
     var colortest = '#ededed';
+                if (magin == "#") {
+      demipunoyletra = '';
+          colortest = '';
+    }
     if (demipunoyletra <= -500) {
   var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
 } else if (-499 <= demipunoyletra && demipunoyletra < 1) {
