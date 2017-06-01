@@ -14,9 +14,15 @@
 
 (function () {
   'use strict';
+  
+
+
   // Setup variables
   var lc = $('.liveupdate-listing');
  
+         $('.sidebar').prepend("<input type=checkbox id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
+$( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
+$( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
 
   lc.on('DOMNodeInserted', function (e) {
       
@@ -32,6 +38,7 @@
       return;
     }    // Color
 
+ 
           var regexy = /\/live\/............\/updates\//
            var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace(regexy, '');
@@ -70,6 +77,35 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
       demipunoyletra = '';
           colortest = '';
     }
+    if (document.getElementById("mynameisnotrider").checked == true) {
+     if (demipunoyletra <= -500) {
+  var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
+} else if (-499 <= demipunoyletra && demipunoyletra < 1) {
+  var colortest = '#f2ee0e';
+} else if (1 <= demipunoyletra && demipunoyletra < 100) {
+  var colortest = '#ef7070';
+} else if (100 <= demipunoyletra && demipunoyletra < 200) {
+  var colortest = '#ffaeae';
+} else if (200 <= demipunoyletra && demipunoyletra < 300) {
+  var colortest = '#ffebba';
+} else if (300 <= demipunoyletra && demipunoyletra < 400) {
+  var colortest = '#cfffba';
+} else if (400 <= demipunoyletra && demipunoyletra < 500) {
+  var colortest = '#a2e8af';
+} else if (500 <= demipunoyletra && demipunoyletra < 600) {
+  var colortest = '#adffed';
+} else if (600 <= demipunoyletra && demipunoyletra < 700) {
+  var colortest = '#add6ff';
+} else if (700 <= demipunoyletra && demipunoyletra < 800) {
+  var colortest = '#bcadff';
+} else if (800 <= demipunoyletra && demipunoyletra < 900) {
+  var colortest = '#e9adff';
+} else if (900 <= demipunoyletra && demipunoyletra < 1000) {
+  var colortest = '#ffadf8';
+} else {
+  var colortest = '#ededed';
+}
+    } else {
     if (demipunoyletra <= -500) {
   var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
 } else if (-499 <= demipunoyletra && demipunoyletra < 1) {
@@ -147,7 +183,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else {
   var colortest = '#ededed';
 }
-    
+    }
       
     
       $node.find('.river').css('position', 'absolute');
@@ -171,6 +207,7 @@ $('div#river').click(function (e) {
         $('div#river').hide();
         $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
         $('div#river').show();
+ 
 });
       
       
