@@ -19,7 +19,7 @@
 
   // Setup variables
   var lc = $('.liveupdate-listing');
- $('.sidebar').children().first().next().next().css('margin-top', '70px');
+ $('.sidebar').children().first().next().css('margin-top', '70px');
          $('.sidebar').prepend("<input type=checkbox id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
