@@ -19,11 +19,15 @@
 
   // Setup variables
   var lc = $('.liveupdate-listing');
- 
+ $('.sidebar').children().first().next().css('margin-top', '70px');
          $('.sidebar').prepend("<input type=checkbox id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
+$('.sidebar').prepend("<input type=checkbox id=option2> <div id=desc2>COLOR ENTIRE BACKGROUND</div>");
+$( '#option2' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '16px');
+$( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '15px');  
 
+  
   lc.on('DOMNodeInserted', function (e) {
       
     var $node = $(e.target);
@@ -185,8 +189,15 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 }
     }
       
-    
-      $node.find('.river').css('position', 'absolute');
+
+if (document.getElementById("option2").checked == true) {
+  if (magin == "#") {
+    $node.find('.body').parent().css('background', 'initial');
+  } else {
+       $node.find('.body').parent().css('background', colortest);
+  }
+}
+         $node.find('.river').css('position', 'absolute');
       $node.find('.body').prepend("<div id=river></div>");
 document.getElementById("river").innerHTML = demipunoyletra;
         document.getElementById("river").style.background = colortest;
