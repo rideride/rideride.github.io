@@ -95,7 +95,12 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#ff0000';
 } else if (667 <= demipunoyletra && demipunoyletra < 700) {
   var colortest = '#add6ff';
-} else if (700 <= demipunoyletra && demipunoyletra < 800) {
+} else if (700 <= demipunoyletra && demipunoyletra < 777) {
+  var colortest = '#bcadff';
+} else if (777 == demipunoyletra) {
+  var colortest = '#e66b00';
+  demipunoyletra = 'artbn';
+} else if (778 <= demipunoyletra && demipunoyletra < 800) {
   var colortest = '#bcadff';
 } else if (800 <= demipunoyletra && demipunoyletra < 900) {
   var colortest = '#e9adff';
