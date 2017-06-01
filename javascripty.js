@@ -65,6 +65,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
     var colortest = '#ededed';
+    var randomx = '0';
                 if (magin == "#") {
       demipunoyletra = '';
           colortest = '';
@@ -73,13 +74,50 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
 } else if (-499 <= demipunoyletra && demipunoyletra < 1) {
   var colortest = '#f2ee0e';
-} else if (1 <= demipunoyletra && demipunoyletra < 100) {
+} else if (1 <= demipunoyletra && demipunoyletra < 8) {
   var colortest = '#ef7070';
-} else if (100 <= demipunoyletra && demipunoyletra < 200) {
+} else if (8 == demipunoyletra) {
+  var colortest = '#00ff00';
+  demipunoyletra = 'gordonpt(8)';
+} else if (9 <= demipunoyletra && demipunoyletra < 36) {
+  var colortest = '#ef7070';
+} else if (36 == demipunoyletra) {
+  var colortest = '#00BFFF';
+  demipunoyletra = 'Iamspeedy36';
+} else if (37 == demipunoyletra) {
+  var colortest = '#ffff00';
+  demipunoyletra = 'amazingpikachu_37';
+} else if (38 <= demipunoyletra && demipunoyletra < 100) {
+  var colortest = '#ef7070';
+} else if (100 == demipunoyletra) {
+  var colortest = '#2b0090';
+  demipunoyletra = '(100) abplows';
+} else if (101 <= demipunoyletra && demipunoyletra < 123) {
+  var colortest = '#ffaeae';
+} else if (123 == demipunoyletra) {
+      randomx = Math.floor((Math.random() * 2) + 1);
+    if (randomx == 1) {
+  var colortest = '#6495ED';
+  demipunoyletra = 'davidjl123';
+    } else {
+        var colortest = '#0000ff';
+  demipunoyletra = 'dominodan123';
+    }
+} else if (124 <= demipunoyletra && demipunoyletra < 200) {
   var colortest = '#ffaeae';
 } else if (200 <= demipunoyletra && demipunoyletra < 300) {
   var colortest = '#ffebba';
-} else if (300 <= demipunoyletra && demipunoyletra < 400) {
+} else if (300 <= demipunoyletra && demipunoyletra < 301) {
+  var colortest = '#cfffba';
+} else if (301 == demipunoyletra) {
+  var colortest = '#ff0000';
+  demipunoyletra = 'piyushsharma301';
+} else if (302 <= demipunoyletra && demipunoyletra < 369) {
+  var colortest = '#cfffba';
+} else if (369 == demipunoyletra) {
+  var colortest = '#D9009C';
+  demipunoyletra = '(369) Whitney';
+} else if (370 <= demipunoyletra && demipunoyletra < 400) {
   var colortest = '#cfffba';
 } else if (400 <= demipunoyletra && demipunoyletra < 420) {
   var colortest = '#a2e8af';
@@ -99,7 +137,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#bcadff';
 } else if (777 == demipunoyletra) {
   var colortest = '#e66b00';
-  demipunoyletra = 'artbn';
+  demipunoyletra = '(777) artbn';
 } else if (778 <= demipunoyletra && demipunoyletra < 800) {
   var colortest = '#bcadff';
 } else if (800 <= demipunoyletra && demipunoyletra < 900) {
