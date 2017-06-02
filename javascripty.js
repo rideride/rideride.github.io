@@ -74,6 +74,9 @@ $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
     if (magin3 == "#") {
   var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
 }
+    if (magin3 == undefined) {
+  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+}
     if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
        var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
      }
