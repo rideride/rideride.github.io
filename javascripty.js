@@ -214,7 +214,10 @@ document.getElementById("river").innerHTML = demipunoyletra;
       this.style.color = "black";
 }
       $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
-$('div#river').click(function (e) {
+if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('display') == 'none') {
+  $( 'div#river' ).css('margin-left', '-141px');
+}
+    $('div#river').click(function (e) {
         $('div#river').hide();
         $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
         $('div#river').show();
