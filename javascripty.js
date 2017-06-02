@@ -20,16 +20,31 @@
   // Setup variables
   var lc = $('.liveupdate-listing');
  $('.sidebar').children().first().next().css('margin-top', '70px');
-         $('.sidebar').prepend("<input type=checkbox id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
+         $('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
-$('.sidebar').prepend("<input type=checkbox id=option2> <div id=desc2>COLOR ENTIRE BACKGROUND</div>");
+$('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=002 id=option2> <div id=desc2>COLOR ENTIRE BACKGROUND</div>");
 $( '#option2' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '16px');
 $( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '15px');  
-$('.sidebar').prepend("<input type=checkbox id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
+$('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
 $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
 
+  $('.checkbox').change(function(){
+    var chckd = this.checked ? 'true' : 'false';
+    var index = $(this).data('box-id');
+    localStorage.setItem(index, chckd);
+});
+  $(function() {
+    $('.checkbox').each(function(){
+        var index = $(this).data('box-id');
+        if (localStorage.getItem(index) == 'true') {
+            $(this).prop('checked', true);
+        } else {
+            $(this).prop('checked', false);
+        }
+    });    
+});
   
   lc.on('DOMNodeInserted', function (e) {
       
