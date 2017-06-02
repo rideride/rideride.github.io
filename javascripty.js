@@ -233,7 +233,10 @@ document.getElementById("river").innerHTML = demipunoyletra;
       this.style.color = "black";
 }
       $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
-if (document.getElementById("option3").checked == true) {
+if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('display') == 'none') {
+  $( 'div#river' ).css('margin-left', '-141px');
+}
+    if (document.getElementById("option3").checked == true) {
     $('#river').delay(60000).hide(500); 
 }
     $('div#river').click(function (e) {
