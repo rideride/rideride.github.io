@@ -135,7 +135,10 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)';
 } else if (-499 <= demipunoyletra && demipunoyletra < 1) {
   var colortest = '#f2ee0e';
-} else if (1 <= demipunoyletra && demipunoyletra < 8) {
+} else if (1 == demipunoyletra) {
+  var colortest = '#008080';
+  demipunoyletra = '(1) rschaosid';
+} else if (2 <= demipunoyletra && demipunoyletra < 8) {
   var colortest = '#ef7070';
 } else if (8 == demipunoyletra) {
   var colortest = '#00ff00';
@@ -233,7 +236,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (1221 <= demipunoyletra && demipunoyletra < 1234) {
   var colortest = '#ededed';
 } else if (1234 == demipunoyletra) {
-  var colortest = '#oocc99';
+  var colortest = '#00cc99';
   demipunoyletra = 'randomusername(1234)58';
 } else if (1235 <= demipunoyletra && demipunoyletra < 1616) {
   var colortest = '#ededed';
