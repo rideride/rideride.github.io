@@ -139,8 +139,13 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#ef7070';
 } else if (8 == demipunoyletra) {
   var colortest = '#00ff00';
-  demipunoyletra = 'gordonpt(8)';
-} else if (9 <= demipunoyletra && demipunoyletra < 36) {
+  demipunoyletra = 'gordonpt8';
+} else if (9 <= demipunoyletra && demipunoyletra < 18) {
+  var colortest = '#ef7070';
+} else if (18 == demipunoyletra) {
+  var colortest = '#0000ff';
+  demipunoyletra = 'Kris18';
+} else if (19 <= demipunoyletra && demipunoyletra < 36) {
   var colortest = '#ef7070';
 } else if (36 == demipunoyletra) {
   var colortest = '#00BFFF';
@@ -180,11 +185,21 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   demipunoyletra = '(369) Whitney';
 } else if (370 <= demipunoyletra && demipunoyletra < 400) {
   var colortest = '#cfffba';
-} else if (400 <= demipunoyletra && demipunoyletra < 420) {
+} else if (400 <= demipunoyletra && demipunoyletra < 404) {
+  var colortest = '#a2e8af';
+} else if (404 == demipunoyletra) {
+  var colortest = '#ffa500';
+  demipunoyletra = '(404) Tranquilsunrise';
+} else if (405 <= demipunoyletra && demipunoyletra < 420) {
   var colortest = '#a2e8af';
 } else if (420 == demipunoyletra) {
   var colortest = '#00ff00';
-} else if (421 <= demipunoyletra && demipunoyletra < 500) {
+} else if (421 <= demipunoyletra && demipunoyletra < 471) {
+  var colortest = '#a2e8af';
+} else if (471 == demipunoyletra) {
+  var colortest = '#0000ff';
+  demipunoyletra = 'albert471';
+} else if (472 <= demipunoyletra && demipunoyletra < 500) {
   var colortest = '#a2e8af';
 } else if (500 <= demipunoyletra && demipunoyletra < 600) {
   var colortest = '#adffed';
@@ -203,8 +218,28 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#bcadff';
 } else if (800 <= demipunoyletra && demipunoyletra < 900) {
   var colortest = '#e9adff';
-} else if (900 <= demipunoyletra && demipunoyletra < 1000) {
+} else if (900 <= demipunoyletra && demipunoyletra < 998) {
   var colortest = '#ffadf8';
+} else if (998 == demipunoyletra) {
+  var colortest = '#9acd32';
+  demipunoyletra = '(998) qwertylool';
+} else if (999 <= demipunoyletra && demipunoyletra < 1000) {
+  var colortest = '#ffadf8';
+} else if (1000 <= demipunoyletra && demipunoyletra < 1220) {
+  var colortest = '#ededed';
+} else if (1220 == demipunoyletra) {
+  var colortest = '#840d0d';
+  demipunoyletra = '(1220) Smartstocks';
+} else if (1221 <= demipunoyletra && demipunoyletra < 1234) {
+  var colortest = '#ededed';
+} else if (1234 == demipunoyletra) {
+  var colortest = '#oocc99';
+  demipunoyletra = 'randomusername(1234)58';
+} else if (1235 <= demipunoyletra && demipunoyletra < 1616) {
+  var colortest = '#ededed';
+} else if (1616 == demipunoyletra) {
+  var colortest = '#1affa7';
+  demipunoyletra = 'VitaminB1616';
 } else {
   var colortest = '#ededed';
 }
