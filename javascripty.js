@@ -221,19 +221,19 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#bcadff';
 } else if (800 <= demipunoyletra && demipunoyletra < 900) {
   var colortest = '#e9adff';
-} else if (900 <= demipunoyletra && demipunoyletra < 998) {
+} else if (900 <= demipunoyletra && demipunoyletra < 973) {
+  var colortest = '#ffadf8';
+} else if (973 == demipunoyletra) {
+  var colortest = '#840d0d';
+  demipunoyletra = '(973) Smartstocks';
+} else if (974 <= demipunoyletra && demipunoyletra < 998) {
   var colortest = '#ffadf8';
 } else if (998 == demipunoyletra) {
   var colortest = '#9acd32';
   demipunoyletra = '(998) qwertylool';
 } else if (999 <= demipunoyletra && demipunoyletra < 1000) {
   var colortest = '#ffadf8';
-} else if (1000 <= demipunoyletra && demipunoyletra < 1220) {
-  var colortest = '#ededed';
-} else if (1220 == demipunoyletra) {
-  var colortest = '#840d0d';
-  demipunoyletra = '(1220) Smartstocks';
-} else if (1221 <= demipunoyletra && demipunoyletra < 1234) {
+} else if (1000 <= demipunoyletra && demipunoyletra < 1234) {
   var colortest = '#ededed';
 } else if (1234 == demipunoyletra) {
   var colortest = '#00cc99';
