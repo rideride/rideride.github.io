@@ -149,6 +149,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (18 == demipunoyletra) {
   var colortest = '#0000ff';
   demipunoyletra = 'Kris18';
+  var elcolor = '#ffffff';
 } else if (19 <= demipunoyletra && demipunoyletra < 36) {
   var colortest = '#ef7070';
 } else if (36 == demipunoyletra) {
@@ -173,6 +174,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
     } else {
         var colortest = '#0000ff';
   demipunoyletra = 'dominodan123';
+      var elcolor = '#ffffff';
     }
 } else if (124 <= demipunoyletra && demipunoyletra < 200) {
   var colortest = '#ffaeae';
@@ -204,6 +206,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (471 == demipunoyletra) {
   var colortest = '#0000ff';
   demipunoyletra = 'albert471';
+  var elcolor = '#ffffff';
 } else if (472 <= demipunoyletra && demipunoyletra < 500) {
   var colortest = '#a2e8af';
 } else if (500 <= demipunoyletra && demipunoyletra < 600) {
