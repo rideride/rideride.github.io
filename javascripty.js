@@ -10,6 +10,14 @@
 // @exclude      *://*.reddit.com/live/*/contributors*
 // ==/UserScript==
 
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+///                                                                           ///
+///     Hey. If you are here trying to find out what a certain update is,     ///
+///     you are cheating :(                                                   ///
+///                                                                           ///
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
 
 (function () {
@@ -19,7 +27,7 @@
 
   // Setup variables
   var lc = $('.liveupdate-listing');
- $('.sidebar').children().first().next().css('margin-top', '94px');
+ document.getElementById("liveupdate-resources").style.marginTop = '94px';
          $('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
