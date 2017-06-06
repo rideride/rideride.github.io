@@ -19,7 +19,7 @@
 
   // Setup variables
   var lc = $('.liveupdate-listing');
- $('.sidebar').children().first().next().css('margin-top', '70px');
+ $('.sidebar').children().first().next().css('margin-top', '94px');
          $('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
@@ -29,7 +29,11 @@ $( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
 $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
+$('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4>ENABLE PIKA SHADOW</div>");
+$( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
+$( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');  
 
+  
   $('.checkbox').change(function(){
     var chckd = this.checked ? 'true' : 'false';
     var index = $(this).data('box-id');
@@ -62,7 +66,14 @@ $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 
  
           var regexy = /\/live\/............\/updates\//
-           var magin = $node.find('.body').prev().attr('href');
+          var user = '';
+          if (document.getElementById("option4").checked == true) {
+            var user = $node.find('.body').children().first().next().attr('href');
+    if (user == '/user/amazingpikachu_38') {
+      $node.find('.body').children().first().next().css('textShadow', '0 0 5px purple, 0 0 5px purple, 0 0 5px purple, 0 0 5px purple, 0 0 5px purple');
+    }
+          }
+    var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace(regexy, '');
            var magin2p1 = magin2.substring(0, 8);
     var magin2p11 = magin2.substring(9, 13);
@@ -294,6 +305,7 @@ if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('displa
  
 });
       
+
       
   });
 
