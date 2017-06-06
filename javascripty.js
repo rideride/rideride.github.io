@@ -97,6 +97,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
            var demipunoyletra = teenviopoemas / 10000;
            demipunoyletra = ~~demipunoyletra;
     var colortest = '#ededed';
+        var elcolor = '#000000';
     var randomx = '0';
                 if (magin == "#") {
       demipunoyletra = '';
@@ -161,6 +162,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (100 == demipunoyletra) {
   var colortest = '#2b0090';
   demipunoyletra = '(100) abplows';
+    var elcolor = '#ffffff';
 } else if (101 <= demipunoyletra && demipunoyletra < 123) {
   var colortest = '#ffaeae';
 } else if (123 == demipunoyletra) {
@@ -226,6 +228,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (973 == demipunoyletra) {
   var colortest = '#840d0d';
   demipunoyletra = '(973) Smartstocks';
+    var elcolor = '#ffffff';
 } else if (974 <= demipunoyletra && demipunoyletra < 998) {
   var colortest = '#ffadf8';
 } else if (998 == demipunoyletra) {
@@ -261,6 +264,7 @@ if (document.getElementById("option2").checked == true) {
       $node.find('.body').prepend("<div id=river></div>");
 document.getElementById("river").innerHTML = demipunoyletra;
         document.getElementById("river").style.background = colortest;
+    document.getElementById("river").style.color = elcolor;
         document.getElementById("river").onmouseover = function() 
 {
     this.style.background = "transparent";
@@ -271,7 +275,7 @@ document.getElementById("river").innerHTML = demipunoyletra;
     document.getElementById("river").onmouseleave = function() 
 {
     this.style.background = colortest;
-      this.style.color = "black";
+      this.style.color = elcolor;
 }
       $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
 if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('display') == 'none') {
