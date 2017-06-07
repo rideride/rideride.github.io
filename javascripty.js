@@ -27,17 +27,35 @@
 
   // Setup variables
   var lc = $('.liveupdate-listing');
-  document.getElementById("liveupdate-resources").style.marginTop = '94px';
-  $('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
+ 
+  $('.sidebar').prepend("<div id=msbox></div>")
+     $('.sidebar').prepend("<div id=msboxenabler class=enabler>[+] Response Times Options</div><div id=msboxenabler2 class=enabler style='display: none;'>[-] Response Times Options</div>")
+     $( "#msbox" ).hide();
+       $( ".enabler" ).click(function() {
+        $( "#msbox" ).toggle("slow");
+         $( ".enabler" ).toggle();
+       });
+     document.getElementById("msboxenabler").style.position = 'absolute';
+        document.getElementById("msboxenabler").style.marginTop = '-12px';
+  document.getElementById("msboxenabler").style.fontWeight = 'bold';
+  document.getElementById("msboxenabler").style.color = '#369';
+  document.getElementById("msboxenabler2").style.position = 'absolute';
+        document.getElementById("msboxenabler2").style.marginTop = '-12px';
+    document.getElementById("msboxenabler2").style.fontWeight = 'bold';
+  document.getElementById("msboxenabler2").style.color = '#369';
+    document.getElementById("msbox").style.height = '84px';
+   document.getElementById("msbox").style.marginTop = '22px';
+    document.getElementById("liveupdate-resources").style.marginTop = '12px';
+  $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
-$('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=002 id=option2> <div id=desc2>COLOR ENTIRE BACKGROUND</div>");
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=002 id=option2> <div id=desc2>COLOR ENTIRE BACKGROUND</div>");
 $( '#option2' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '16px');
 $( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '15px');  
-$('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
 $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
-$('.sidebar').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4>ENABLE PIKA SHADOW</div>");
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4>ENABLE PIKA SHADOW</div>");
 $( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
 $( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');  
 
@@ -58,6 +76,7 @@ $( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
     });    
 });
   
+
   lc.on('DOMNodeInserted', function (e) {
       
     var $node = $(e.target);
@@ -71,6 +90,8 @@ $( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
     if (index != 0) {
       return;
     }    // Color
+    
+
 
  
           var regexy = /\/live\/............\/updates\//
