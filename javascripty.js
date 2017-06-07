@@ -35,6 +35,10 @@
         $( "#msbox" ).toggle("slow");
          $( ".enabler" ).toggle();
        });
+    $( ".enabler" ).hover(function() {
+         document.getElementById("msboxenabler").style.cursor = 'pointer';
+         document.getElementById("msboxenabler2").style.cursor = 'pointer';
+       });
      document.getElementById("msboxenabler").style.position = 'absolute';
         document.getElementById("msboxenabler").style.marginTop = '-12px';
   document.getElementById("msboxenabler").style.fontWeight = 'bold';
