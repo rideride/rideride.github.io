@@ -70,7 +70,7 @@ $("#shadowadd").click(function(e) {
     e.preventDefault();
 if (shadowcount == 1) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=gray style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=#80808050 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 } else if (shadowcount == 2) {
   shadowcount++;
   $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=105 id=shadow5 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=106 id=shadow6 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
