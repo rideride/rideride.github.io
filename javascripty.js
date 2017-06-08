@@ -35,7 +35,7 @@
         $( "#msbox" ).toggle("slow");
          $( ".enabler" ).toggle();
        });
-    $( ".enabler" ).hover(function() {
+  $( ".enabler" ).hover(function() {
          document.getElementById("msboxenabler").style.cursor = 'pointer';
          document.getElementById("msboxenabler2").style.cursor = 'pointer';
        });
@@ -59,10 +59,56 @@ $( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
 $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
-$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4>ENABLE PIKA SHADOW</div>");
-$( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
-$( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');  
+$('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
+$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('cursor', 'pointer').css('color', '#369');  
+$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
+$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '82px');
+$( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
+$( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
+  var shadowcount = 1;
+$("#shadowadd").click(function(e) {
+    e.preventDefault();
+if (shadowcount == 1) {
+  shadowcount++;
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=gray style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+} else if (shadowcount == 2) {
+  shadowcount++;
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=105 id=shadow5 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=106 id=shadow6 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+}
+  else if (shadowcount == 3) {
+  shadowcount++;
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=107 id=shadow7 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=108 id=shadow8 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+}
+  else if (shadowcount == 4) {
+  shadowcount++;
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=109 id=shadow9 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=110 id=shadow10 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+}
+  
+  });
+ $('#shadowbox').on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); 
+   $(this).parent('div').remove(); 
+   shadowcount--;
+    });
 
+
+  $( "#shadowbox" ).hide();
+       $( ".shadowboxenabler" ).click(function() {
+        $( "#shadowbox" ).toggle();
+         $( ".shadowboxenabler" ).toggle();
+       });
+  
+ $( "#shadowboxenabler" ).click(function() {
+             document.getElementById("msbox").style.height = '178px';
+       });
+  
+  $( "#shadowboxenabler2" ).click(function() {
+                 document.getElementById("msbox").style.height = '108px';
+       });
+
+
+  
+  var shadowinput1 = document.getElementById("shadow1").value
   
   $('.checkbox').change(function(){
     var chckd = this.checked ? 'true' : 'false';
@@ -79,8 +125,9 @@ $( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
         }
     });    
 });
-  
 
+
+  
   lc.on('DOMNodeInserted', function (e) {
       
     var $node = $(e.target);
@@ -102,12 +149,63 @@ $( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
                     var user = $node.find('.body').children().first().next().attr('href');
 
     var user2 = '';
-    if (document.getElementById("option4").checked == true) {
-                if (user == '/user/amazingpikachu_38') {
-                  
-      $node.find('.body').children().first().next().css('textShadow', '0 0 5px purple, 0 0 5px purple, 0 0 5px purple, 0 0 5px purple, 0 0 5px purple');
+    var shadowval1 = document.getElementById("shadow1").value;
+    var shadowval2 = document.getElementById("shadow2").value;
+    var shadowval3 = '';
+    var shadowval4 = '';
+    var shadowval5 = '';
+    var shadowval6 = '';
+    var shadowval7 = '';
+    var shadowval8 = '';
+    var shadowval9 = '';
+    var shadowval10 = '';
+   if ( 2 <= shadowcount) { 
+     var shadowval3 = document.getElementById("shadow3").value;
+    var shadowval4 = document.getElementById("shadow4").value;
+   }
+    if ( 3 <= shadowcount) { 
+      var shadowval5 = document.getElementById("shadow5").value;
+    var shadowval6 = document.getElementById("shadow6").value;
     }
-          }
+    if ( 4 <= shadowcount) { 
+      var shadowval7 = document.getElementById("shadow7").value;
+    var shadowval8 = document.getElementById("shadow8").value;
+    }
+    if ( 5 <= shadowcount) { 
+      var shadowval9 = document.getElementById("shadow9").value;
+    var shadowval10 = document.getElementById("shadow10").value;
+    }
+      var shadowcheck = 'disabled';
+  if ( $('#shadowbox').css('display') == 'none') {
+ shadowcheck = 'disabled';
+} else {
+  shadowcheck = 'enabled';
+}
+    if (shadowval1 != '' && shadowval2 != '' && shadowcheck == 'enabled') {
+      if (user == '/user/' + shadowval1) {
+        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2);
+    }
+    }
+    if (shadowval3 != '' && shadowval4 != '' && shadowcheck == 'enabled') {
+      if (user == '/user/' + shadowval3) {
+        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4);
+    }
+    }
+    if (shadowval5 != '' && shadowval6 != '' && shadowcheck == 'enabled') {
+      if (user == '/user/' + shadowval5) {
+        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6);
+    }
+    }
+    if (shadowval7 != '' && shadowval8 != '' && shadowcheck == 'enabled') {
+      if (user == '/user/' + shadowval7) {
+        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8);
+    }
+    }
+    if (shadowval9 != '' && shadowval10 != '' && shadowcheck == 'enabled') {
+      if (user == '/user/' + shadowval9) {
+        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10);
+    }
+    }
     var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace(regexy, '');
            var magin2p1 = magin2.substring(0, 8);
