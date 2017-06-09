@@ -62,7 +62,7 @@ $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
 $( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('cursor', 'pointer').css('color', '#369');  
 $( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
-$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '82px');
+$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '82px');
 $( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
 $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
   var shadowcount = 1;
@@ -70,18 +70,18 @@ $("#shadowadd").click(function(e) {
     e.preventDefault();
 if (shadowcount == 1) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=#80808050 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=gray style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1041 id=shadow4p1 value=1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 } else if (shadowcount == 2) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=105 id=shadow5 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=106 id=shadow6 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=105 id=shadow5 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=106 id=shadow6 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1061 id=shadow6p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 }
   else if (shadowcount == 3) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=107 id=shadow7 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=108 id=shadow8 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=107 id=shadow7 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=108 id=shadow8 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1081 id=shadow8p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 }
   else if (shadowcount == 4) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=109 id=shadow9 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=110 id=shadow10 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=109 id=shadow9 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=110 id=shadow10 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1091 id=shadow10p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 }
   
   });
@@ -108,7 +108,7 @@ if (shadowcount == 1) {
 
 
   
-  var shadowinput1 = document.getElementById("shadow1").value
+//  var shadowinput1 = document.getElementById("shadow1").value
   
   $('.checkbox').change(function(){
     var chckd = this.checked ? 'true' : 'false';
@@ -151,29 +151,38 @@ if (shadowcount == 1) {
     var user2 = '';
     var shadowval1 = document.getElementById("shadow1").value;
     var shadowval2 = document.getElementById("shadow2").value;
+    var shadowval2p1 = document.getElementById("shadow2p1").value;
     var shadowval3 = '';
     var shadowval4 = '';
+    var shadowval4p1 = '';
     var shadowval5 = '';
     var shadowval6 = '';
+    var shadowval6p1 = '';
     var shadowval7 = '';
     var shadowval8 = '';
+    var shadowval8p1 = '';
     var shadowval9 = '';
     var shadowval10 = '';
+    var shadowval10p1 = '';
    if ( 2 <= shadowcount) { 
      var shadowval3 = document.getElementById("shadow3").value;
     var shadowval4 = document.getElementById("shadow4").value;
+     var shadowval4p1 = document.getElementById("shadow4p1").value;
    }
     if ( 3 <= shadowcount) { 
       var shadowval5 = document.getElementById("shadow5").value;
     var shadowval6 = document.getElementById("shadow6").value;
+      var shadowval6p1 = document.getElementById("shadow6p1").value;
     }
     if ( 4 <= shadowcount) { 
       var shadowval7 = document.getElementById("shadow7").value;
     var shadowval8 = document.getElementById("shadow8").value;
+      var shadowval8p1 = document.getElementById("shadow8p1").value;
     }
     if ( 5 <= shadowcount) { 
       var shadowval9 = document.getElementById("shadow9").value;
     var shadowval10 = document.getElementById("shadow10").value;
+      var shadowval10p1 = document.getElementById("shadow10p1").value;
     }
       var shadowcheck = 'disabled';
   if ( $('#shadowbox').css('display') == 'none') {
@@ -181,31 +190,64 @@ if (shadowcount == 1) {
 } else {
   shadowcheck = 'enabled';
 }
-    if (shadowval1 != '' && shadowval2 != '' && shadowcheck == 'enabled') {
+    if (shadowval1 != '' && shadowval2 != ''  && shadowval2p1 != '' && shadowcheck == 'enabled') {
       if (user == '/user/' + shadowval1) {
-        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2 + ', 0 0 5px ' + shadowval2);
+        var hmm1 = '0 0 5px '  + shadowval2 + ', ';
+        var hmm1p2 = hmm1.repeat(shadowval2p1);
+        hmm1p2 = hmm1p2.substring(0, hmm1p2.length - 2);
+        $node.find('.body').children().first().next().css('textShadow', hmm1p2);
     }
     }
-    if (shadowval3 != '' && shadowval4 != '' && shadowcheck == 'enabled') {
+    if (shadowval3 != '' && shadowval4 != '' && shadowval4p1 != '' && shadowcheck == 'enabled') {
       if (user == '/user/' + shadowval3) {
-        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4 + ', 0 0 5px ' + shadowval4);
+        var hmm3 = '0 0 5px '  + shadowval4 + ', ';
+        var hmm3p2 = hmm3.repeat(shadowval4p1);
+        hmm3p2 = hmm3p2.substring(0, hmm3p2.length - 2);
+        $node.find('.body').children().first().next().css('textShadow', hmm3p2);
     }
     }
-    if (shadowval5 != '' && shadowval6 != '' && shadowcheck == 'enabled') {
+    if (shadowval5 != '' && shadowval6 != '' && shadowval6p1 != '' && shadowcheck == 'enabled') {
       if (user == '/user/' + shadowval5) {
-        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6 + ', 0 0 5px ' + shadowval6);
+        var hmm5 = '0 0 5px '  + shadowval6 + ', ';
+        var hmm5p2 = hmm5.repeat(shadowval6p1);
+        hmm5p2 = hmm5p2.substring(0, hmm5p2.length - 2);
+        $node.find('.body').children().first().next().css('textShadow', hmm5p2);
     }
     }
-    if (shadowval7 != '' && shadowval8 != '' && shadowcheck == 'enabled') {
+    if (shadowval7 != '' && shadowval8 != '' && shadowval8p1 != '' && shadowcheck == 'enabled') {
       if (user == '/user/' + shadowval7) {
-        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8 + ', 0 0 5px ' + shadowval8);
+        var hmm7 = '0 0 5px '  + shadowval8 + ', ';
+        var hmm7p2 = hmm7.repeat(shadowval8p1);
+        hmm7p2 = hmm7p2.substring(0, hmm7p2.length - 2);
+        $node.find('.body').children().first().next().css('textShadow', hmm7p2);
     }
     }
-    if (shadowval9 != '' && shadowval10 != '' && shadowcheck == 'enabled') {
+    if (shadowval9 != '' && shadowval10 != '' && shadowval10p1 != '' && shadowcheck == 'enabled') {
       if (user == '/user/' + shadowval9) {
-        $node.find('.body').children().first().next().css('textShadow', '0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10 + ', 0 0 5px ' + shadowval10);
+        var hmm9 = '0 0 5px '  + shadowval10 + ', ';
+        var hmm9p2 = hmm9.repeat(shadowval10p1);
+        hmm9p2 = hmm9p2.substring(0, hmm9p2.length - 2);
+        $node.find('.body').children().first().next().css('textShadow', hmm9p2);
     }
     }
+//    var count2 = '';var count3 = '';var count4 = '';var count5 = '';var count6 = '';var count7 = '';var count8 = '';var count9 = '';var count10 = '';
+//    var count1 = $('.liveupdate-listing').children().first().children().first().next().children().first().children().first().text(); 
+//    count1 = count1.substring(0, 9);
+//    count1 = count1.replace(/\D/g, '');
+//    count1 = count1.replace(/,/g, '');
+//    count1 = count1.replace(/ /g, '');
+//    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
+//    var count2 = $('.liveupdate-listing').children().first().next().next().next().children().first().next().children().first().next().children().first().text(); 
+//    } else {
+//      var count2 = $('.liveupdate-listing').children().first().next().children().first().next().children().first().next().children().first().text(); 
+//    }
+//    count2 = count2.substring(0, 9);
+//    count2 = count2.replace(/\D/g, '');
+//    count2 = count2.replace(/,/g, '');
+//    count2 = count2.replace(/ /g, '');
+//    if (count2++ != count1) {
+//      var count3 = 'hi';
+//    }
     var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace(regexy, '');
            var magin2p1 = magin2.substring(0, 8);
