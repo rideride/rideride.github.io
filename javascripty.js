@@ -47,7 +47,7 @@
         document.getElementById("msboxenabler2").style.marginTop = '-12px';
     document.getElementById("msboxenabler2").style.fontWeight = 'bold';
   document.getElementById("msboxenabler2").style.color = '#369';
-    document.getElementById("msbox").style.height = '84px';
+    document.getElementById("msbox").style.height = '108px';
    document.getElementById("msbox").style.marginTop = '22px';
     document.getElementById("liveupdate-resources").style.marginTop = '12px';
   $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
@@ -59,10 +59,13 @@ $( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
 $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4>IGNORE NON-VALID COUNTS (EXPERIMENTAL)</div>");
+$( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
+$( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');  
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
-$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('cursor', 'pointer').css('color', '#369');  
-$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
-$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '82px');
+$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '87px').css('cursor', 'pointer').css('color', '#369');  
+$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '87px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
+$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '106px');
 $( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
 $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
   var shadowcount = 1;
@@ -99,7 +102,7 @@ if (shadowcount == 1) {
        });
   
  $( "#shadowboxenabler" ).click(function() {
-             document.getElementById("msbox").style.height = '178px';
+             document.getElementById("msbox").style.height = '202px';
        });
   
   $( "#shadowboxenabler2" ).click(function() {
@@ -230,24 +233,157 @@ if (shadowcount == 1) {
         $node.find('.body').children().first().next().css('textShadow', hmm9p2);
     }
     }
-//    var count2 = '';var count3 = '';var count4 = '';var count5 = '';var count6 = '';var count7 = '';var count8 = '';var count9 = '';var count10 = '';
-//    var count1 = $('.liveupdate-listing').children().first().children().first().next().children().first().children().first().text(); 
-//    count1 = count1.substring(0, 9);
-//    count1 = count1.replace(/\D/g, '');
-//    count1 = count1.replace(/,/g, '');
-//    count1 = count1.replace(/ /g, '');
-//    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
-//    var count2 = $('.liveupdate-listing').children().first().next().next().next().children().first().next().children().first().next().children().first().text(); 
-//    } else {
-//      var count2 = $('.liveupdate-listing').children().first().next().children().first().next().children().first().next().children().first().text(); 
-//    }
-//    count2 = count2.substring(0, 9);
-//    count2 = count2.replace(/\D/g, '');
-//    count2 = count2.replace(/,/g, '');
-//    count2 = count2.replace(/ /g, '');
-//    if (count2++ != count1) {
-//      var count3 = 'hi';
-//    }
+    
+        if (document.getElementById("option4").checked == true) {
+      var count3 = $('.liveupdate-listing').children().first().next().next().children().first().next().children().first().next().children().first().text();
+var count4 = $('.liveupdate-listing').children().first().next().next().next().children().first().next().children().first().next().children().first().text();
+            var count5 = $('.liveupdate-listing').children().first().next().next().next().next().children().first().next().children().first().next().children().first().text();
+            var count6 = $('.liveupdate-listing').children().first().next().next().next().next().next().children().first().next().children().first().next().children().first().text();
+            var count7 = $('.liveupdate-listing').children().first().next().next().next().next().next().next().children().first().next().children().first().next().children().first().text();
+            var count8 = $('.liveupdate-listing').children().first().next().next().next().next().next().next().next().children().first().next().children().first().next().children().first().text();
+            var count9 = $('.liveupdate-listing').children().first().next().next().next().next().next().next().next().next().children().first().next().children().first().next().children().first().text();
+            var count10 = $('.liveupdate-listing').children().first().next().next().next().next().next().next().next().next().next().children().first().next().children().first().next().children().first().text();
+
+    var count1 = $('.liveupdate-listing').children().first().children().first().next().children().first().children().first().text(); 
+    var count2 = $('.liveupdate-listing').children().first().next().children().first().next().children().first().next().children().first().text();
+    count1 = count1.substring(0, 9);
+    count1 = count1.replace(/\D/g, '');
+    count1 = count1.replace(/,/g, '');
+    count1 = count1.replace(/ /g, '');
+    count2 = count2.substring(0, 9);
+    count2 = count2.replace(/\D/g, '');
+    count2 = count2.replace(/,/g, '');
+    count2 = count2.replace(/ /g, '');
+    var count2b = parseInt(count2, 10);
+    count2 = parseInt(count2, 10) + 1;
+    var magin3 = '';
+
+
+    if (count2 != count1) {
+     magin3 = '';
+    count3 = count3.substring(0, 9);
+    count3 = count3.replace(/\D/g, '');
+    count3 = count3.replace(/,/g, '');
+    count3 = count3.replace(/ /g, '');
+//            var count3b = parseInt(count3, 10);
+    count3 = parseInt(count3, 10) + 1;
+          if (count3 == count1) {
+      magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+    }
+    if (count3 != count1 && count2 != count1) {
+count4 = count4.substring(0, 9);
+    count4 = count4.replace(/\D/g, '');
+    count4 = count4.replace(/,/g, '');
+    count4 = count4.replace(/ /g, '');
+    count4 = parseInt(count4, 10) + 1;
+      var count4b = parseInt(count4, 10);
+      if (count4 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
+    }
+    if (count4 != count1 && count3 != count1 && count2 != count1) {
+count5 = count5.substring(0, 9);
+    count5 = count5.replace(/\D/g, '');
+    count5 = count5.replace(/,/g, '');
+    count5 = count5.replace(/ /g, '');
+    count5 = parseInt(count5, 10) + 1;
+      var count5b = parseInt(count5, 10);
+            if (count5 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
+    }
+    if (count5 != count1 && count4 != count1 && count3 != count1 && count2 != count1) {
+count6 = count6.substring(0, 9);
+    count6 = count6.replace(/\D/g, '');
+    count6 = count6.replace(/,/g, '');
+    count6 = count6.replace(/ /g, '');
+    count6 = parseInt(count6, 10) + 1;
+      var count6b = parseInt(count6, 10);
+                  if (count6 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().next().next().children().first().attr('href');
+    }
+    if (count6 != count1 && count5 != count1 && count4 != count1 && count3 != count1 && count2 != count1) {
+count7 = count7.substring(0, 9);
+    count7 = count7.replace(/\D/g, '');
+    count7 = count7.replace(/,/g, '');
+    count7 = count7.replace(/ /g, '');
+    count7 = parseInt(count7, 10) + 1;
+      var count7b = parseInt(count7, 10);
+                        if (count7 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().next().next().next().children().first().attr('href');
+    }
+    if (count7 != count1 && count6 != count1 && count5 != count1 && count4 != count1 && count3 != count1 && count2 != count1) {
+count8 = count8.substring(0, 9);
+    count8 = count8.replace(/\D/g, '');
+    count8 = count8.replace(/,/g, '');
+    count8 = count8.replace(/ /g, '');
+    count8 = parseInt(count8, 10) + 1;
+      var count8b = parseInt(count8, 10);
+                              if (count8 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().next().next().next().next().children().first().attr('href');
+    }
+    if (count8 != count1 && count7 != count1 && count6 != count1 && count5 != count1 && count4 != count1 && count3 != count1 && count2 != count1) {
+count9 = count9.substring(0, 9);
+    count9 = count9.replace(/\D/g, '');
+    count9 = count9.replace(/,/g, '');
+    count9 = count9.replace(/ /g, '');
+    count9 = parseInt(count9, 10) + 1;
+      var count9b = parseInt(count9, 10);
+                                    if (count9 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().next().next().next().next().next().children().first().attr('href');
+    }
+    if (count9 != count1 && count8 != count1 && count7 != count1 && count6 != count1 && count5 != count1 && count4 != count1 && count3 != count1 && count2 != count1) {
+count10 = count10.substring(0, 10);
+    count10 = count10.replace(/\D/g, '');
+    count10 = count10.replace(/,/g, '');
+    count10 = count10.replace(/ /g, '');
+    count10 = parseInt(count10, 10) + 1; 
+      var count10b = parseInt(count10, 10);
+                                          if (count10 == count1) {
+      magin3 = $node.find('.body').parent().next().next().next().next().next().next().next().next().next().children().first().attr('href');
+    }
+    }}}}}}}}
+
+    if (count2 == count1 && count2b == count3) {
+      magin3 = '';
+    }
+    if (count2 == count1 && count2b != count3) {
+        magin3 = $node.find('.body').parent().next().children().first().attr('href');
+
+    }
+
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+//        if (count2 == count1 && count2b == count3) {
+//        magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//        }
+    if (count2b == count1) {
+      magin3 = '';
+    }} else {
+      magin3 = $node.find('.body').parent().next().children().first().attr('href');
+
+    }
+    var riverline = 'none';
+    var riveropacity = '1';
+    if (magin3 == '') {
+      riverline = 'line-through';
+      riveropacity = '0.5';
+      magin3 = $node.find('.body').parent().next().children().first().attr('href');
+    }
     var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace(regexy, '');
            var magin2p1 = magin2.substring(0, 8);
@@ -256,22 +392,22 @@ if (shadowcount == 1) {
     var magin2p1111 = magin2p111 + magin2p11 + magin2p1;
     
            var magin2p2 = parseInt(magin2p1111, 16);
-           var magin3 = $node.find('.body').parent().next().children().first().attr('href');
-    if (magin3 == "#") {
-  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-}
-    if (magin3 == undefined) {
-  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-}
-    if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
-       var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-     }
-         if ($node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
-       var magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
-     }     
-if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
-       var magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
-     }   
+//           var magin3 = $node.find('.body').parent().next().children().first().attr('href');
+//    if (magin3 == "#") {
+//  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//}
+//    if (magin3 == undefined) {
+//  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//}
+//    if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+//       var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+//     }
+//         if ($node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+//       var magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
+//     }     
+//if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+//       var magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
+//     }   
 
            var magin4 = magin3.replace(regexy, '');
            var magin4p1 = magin4.substring(0, 8);
@@ -473,6 +609,8 @@ if (document.getElementById("option2").checked == true) {
 document.getElementById("river").innerHTML = demipunoyletra;
         document.getElementById("river").style.background = colortest;
     document.getElementById("river").style.color = elcolor;
+    document.getElementById("river").style.opacity = riveropacity;
+    document.getElementById("river").style.textDecoration = riverline;
         document.getElementById("river").onmouseover = function() 
 {
     this.style.background = "transparent";
