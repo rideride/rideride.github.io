@@ -267,9 +267,10 @@ if (matches != null) {
 //    restp1 = restofbody1.replace(/,/g, '');
 //    restp1 = restofbody1.replace(/ /g, '');
     restofbody1 = restofbody1.replace(count1, '');
-    restofbody1 = restofbody1.replace('p', 'span');
+     count1testlol = count1testlol + ' ';
+     //    restofbody1 = restofbody1.replace('p', 'span');
     //    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
-          $node.find('.body .md').after("<span id=messagems></div>");
+          $node.find('.body .md').after("<span id=messagems style='display: inherit;'></div>");
     $node.find('.body .md').append("<span id=countms></div>");
      document.getElementById("messagems").innerHTML = restofbody1;
     document.getElementById("countms").innerHTML = count1testlol;
@@ -430,10 +431,18 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (400 <= demipunoyletra && demipunoyletra < 404) {
   var colortest = '#a2e8af';
 } else if (404 == demipunoyletra) {
-  var colortest = '#ffa500';
+  randomx = Math.floor((Math.random() * 2) + 1);
+    if (randomx == 1) {
+      var colortest = '#ffa500';
   demipunoyletra = '(404) Tranquilsunrise';
   if (user == '/user/Tranquilsunrise') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
-} else if (405 <= demipunoyletra && demipunoyletra < 420) {
+    } else {
+            var colortest = '#191970';
+      var elcolor = '#ffffff';
+  demipunoyletra = '(404) KingCaspianX';
+  if (user == '/user/KingCaspianX') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+    }
+    } else if (405 <= demipunoyletra && demipunoyletra < 420) {
   var colortest = '#a2e8af';
 } else if (420 == demipunoyletra) {
   var colortest = '#00ff00';
@@ -448,7 +457,14 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#a2e8af';
 } else if (500 <= demipunoyletra && demipunoyletra < 600) {
   var colortest = '#adffed';
-} else if (600 <= demipunoyletra && demipunoyletra < 666) {
+} else if (600 <= demipunoyletra && demipunoyletra < 615) {
+  var colortest = '#add6ff';
+} else if (615 == demipunoyletra) {
+  var colortest = '#71589f';
+  demipunoyletra = '(615) parket_cube';
+  var elcolor = '#ffffff';
+  if (user == '/user/parker_cube') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+} else if (616 <= demipunoyletra && demipunoyletra < 666) {
   var colortest = '#add6ff';
 } else if (666 == demipunoyletra) {
   var colortest = '#ff0000';
