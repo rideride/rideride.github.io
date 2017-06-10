@@ -47,7 +47,7 @@
         document.getElementById("msboxenabler2").style.marginTop = '-12px';
     document.getElementById("msboxenabler2").style.fontWeight = 'bold';
   document.getElementById("msboxenabler2").style.color = '#369';
-    document.getElementById("msbox").style.height = '84px';
+    document.getElementById("msbox").style.height = '108px';
    document.getElementById("msbox").style.marginTop = '22px';
     document.getElementById("liveupdate-resources").style.marginTop = '12px';
   $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2>DISABLE SPECIAL COLORS</div>");
@@ -59,10 +59,13 @@ $( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
 $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4>UNSTRIKE TEXT (NO GHOST MESSAGES)</div>");
+$( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
+$( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');  
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
-$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('cursor', 'pointer').css('color', '#369');  
-$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '63px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
-$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '82px');
+$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '87px').css('cursor', 'pointer').css('color', '#369');  
+$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '87px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
+$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '106px');
 $( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
 $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
   var shadowcount = 1;
@@ -99,7 +102,7 @@ if (shadowcount == 1) {
        });
   
  $( "#shadowboxenabler" ).click(function() {
-             document.getElementById("msbox").style.height = '178px';
+             document.getElementById("msbox").style.height = '202px';
        });
   
   $( "#shadowboxenabler2" ).click(function() {
@@ -126,9 +129,10 @@ if (shadowcount == 1) {
     });    
 });
 
-
   
   lc.on('DOMNodeInserted', function (e) {
+    
+
       
     var $node = $(e.target);
     // Must be a .liveupdate element
@@ -231,12 +235,45 @@ if (shadowcount == 1) {
     }
     }
 //    var count2 = '';var count3 = '';var count4 = '';var count5 = '';var count6 = '';var count7 = '';var count8 = '';var count9 = '';var count10 = '';
-//    var count1 = $('.liveupdate-listing').children().first().children().first().next().children().first().children().first().text(); 
-//    count1 = count1.substring(0, 9);
-//    count1 = count1.replace(/\D/g, '');
-//    count1 = count1.replace(/,/g, '');
-//    count1 = count1.replace(/ /g, '');
-//    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
+   if (document.getElementById("option4").checked == true) {
+     $('.liveupdate.preview').css('display','none');
+    var count1 = $('.liveupdate-listing').children().first().children().first().next().children().first().children().first().text(); 
+
+    count1 = count1.substring(0, 9);
+    count1 = count1.replace(/\D/g, '');
+    var count1testlol = $('.liveupdate-listing').children().first().children().first().next().children().first().children().first().text(); 
+
+    count1testlol = count1testlol.substring(0, 9);
+    count1testlol = count1testlol.replace(/[A-Za-z]/g, '');
+    count1 = count1.replace(/,/g, '');
+    count1 = count1.replace(/ /g, '');
+var restofbody1 = $('.liveupdate-listing').children().first().children().first().next().children().first().html(); 
+    var restp1 = restofbody1.substring(0, 9);
+//    var matches = restp1.match(/\d+/g);
+    var matches = restp1.match(/[0-9],[0-9]/g);
+    var matches2 = restp1.match(/[0-9] [0-9]/g);
+if (matches != null) {
+//        if (restp1.includes(",")) {
+        restofbody1 = restofbody1.replace(',','');
+    restofbody1 = restofbody1.replace(',','');
+        }
+//        if (restp1.includes(" ")) {
+    if (matches2 != null) {
+        restofbody1 = restofbody1.replace(' ','');
+    restofbody1 = restofbody1.replace(' ','');
+        }
+//    }
+//    restp1 = restp1.replace(/\D/g, '');
+//    restp1 = restofbody1.replace(/,/g, '');
+//    restp1 = restofbody1.replace(/ /g, '');
+    restofbody1 = restofbody1.replace(count1, '');
+    restofbody1 = restofbody1.replace('p', 'span');
+    //    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
+          $node.find('.body .md').after("<span id=messagems></div>");
+    $node.find('.body .md').append("<span id=countms></div>");
+     document.getElementById("messagems").innerHTML = restofbody1;
+    document.getElementById("countms").innerHTML = count1testlol;
+         $node.find('.body .md p').css('display', 'none');
 //    var count2 = $('.liveupdate-listing').children().first().next().next().next().children().first().next().children().first().next().children().first().text(); 
 //    } else {
 //      var count2 = $('.liveupdate-listing').children().first().next().children().first().next().children().first().next().children().first().text(); 
@@ -248,6 +285,7 @@ if (shadowcount == 1) {
 //    if (count2++ != count1) {
 //      var count3 = 'hi';
 //    }
+   }
     var magin = $node.find('.body').prev().attr('href');
            var magin2 = magin.replace(regexy, '');
            var magin2p1 = magin2.substring(0, 8);
@@ -265,7 +303,7 @@ if (shadowcount == 1) {
 }
     if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
        var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-     }
+    }
          if ($node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
        var magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
      }     
@@ -470,6 +508,8 @@ if (document.getElementById("option2").checked == true) {
 }
          $node.find('.river').css('position', 'absolute');
       $node.find('.body').prepend("<div id=river></div>");
+
+
 document.getElementById("river").innerHTML = demipunoyletra;
         document.getElementById("river").style.background = colortest;
     document.getElementById("river").style.color = elcolor;
