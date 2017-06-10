@@ -252,6 +252,7 @@ var restofbody1 = $('.liveupdate-listing').children().first().children().first()
 //    var matches = restp1.match(/\d+/g);
     var matches = restp1.match(/[0-9],[0-9]/g);
     var matches2 = restp1.match(/[0-9] [0-9]/g);
+     var matches3 = restp1.match(/[0-9][0-9][0-9]/g);
 if (matches != null) {
 //        if (restp1.includes(",")) {
         restofbody1 = restofbody1.replace(',','');
@@ -268,13 +269,15 @@ if (matches != null) {
 //    restp1 = restofbody1.replace(/ /g, '');
     restofbody1 = restofbody1.replace(count1, '');
      count1testlol = count1testlol + ' ';
-     //    restofbody1 = restofbody1.replace('p', 'span');
+         restofbody1 = restofbody1.replace('p', 'span');
     //    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
-          $node.find('.body .md').after("<span id=messagems style='display: inherit;'></div>");
+     if (matches3 != null) {    
+     $node.find('.body .md').after("<span id=messagems style='display: initial;'></div>");
     $node.find('.body .md').append("<span id=countms></div>");
      document.getElementById("messagems").innerHTML = restofbody1;
     document.getElementById("countms").innerHTML = count1testlol;
          $node.find('.body .md p').css('display', 'none');
+     }
 //    var count2 = $('.liveupdate-listing').children().first().next().next().next().children().first().next().children().first().next().children().first().text(); 
 //    } else {
 //      var count2 = $('.liveupdate-listing').children().first().next().children().first().next().children().first().next().children().first().text(); 
