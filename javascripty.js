@@ -278,7 +278,7 @@ if (matches != null) {
 //     restofbody1 = restofbody1.replace('span\>\<', 'span\>\<br\>\</br\>\<');
      //    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
      if (matches3 != null) {    
-     $node.find('.body .md').after("<span id=messagems style='display: initial; font-size:inherit;'></div>");
+     $node.find('.body .md').after("<span id=messagems style='display: initial; font-size:14px;'></div>");
     $node.find('.body .md').append("<span id=countms></div>");
      document.getElementById("messagems").innerHTML = restofbody1;
     document.getElementById("countms").innerHTML = count1testlol;
