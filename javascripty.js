@@ -269,14 +269,21 @@ if (matches != null) {
 //    restp1 = restofbody1.replace(/ /g, '');
     restofbody1 = restofbody1.replace(count1, '');
      count1testlol = count1testlol + ' ';
-         restofbody1 = restofbody1.replace('p', 'span');
-    //    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
+     restofbody1 = restofbody1.replace(/\A/g, '\<br\>\<\/br\>');
+         restofbody1 = restofbody1.replace(/p>/g, 'span>');
+         restofbody1 = restofbody1.replace(/\/span\>/g, '/span><ul style=\"visibility:hidden;height:9px;\"></ul>');
+//     restofbody1 = restofbody1.replace(/\/span\>/g, '/span><br><br>');
+//     restofbody1 = restofbody1.replace(/\<br\>\<\/span\>/g, '</span>');
+//     restofbody1 = restofbody1.replace('<p></p><p', '<p></p><span');
+//     restofbody1 = restofbody1.replace('span\>\<', 'span\>\<br\>\</br\>\<');
+     //    if ($('.liveupdate-listing').children().first().hasClass( "preview" ) == true) {
      if (matches3 != null) {    
-     $node.find('.body .md').after("<span id=messagems style='display: initial;'></div>");
+     $node.find('.body .md').after("<span id=messagems style='display: initial; font-size:inherit;'></div>");
     $node.find('.body .md').append("<span id=countms></div>");
      document.getElementById("messagems").innerHTML = restofbody1;
     document.getElementById("countms").innerHTML = count1testlol;
          $node.find('.body .md p').css('display', 'none');
+       $('#messagems').children().last().remove();
      }
 //    var count2 = $('.liveupdate-listing').children().first().next().next().next().children().first().next().children().first().next().children().first().text(); 
 //    } else {
