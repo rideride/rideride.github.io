@@ -269,7 +269,7 @@ if (matches != null) {
 //    restp1 = restofbody1.replace(/ /g, '');
     restofbody1 = restofbody1.replace(count1, '');
      count1testlol = count1testlol + ' ';
-     restofbody1 = restofbody1.replace(/\A/g, '\<br\>\<\/br\>');
+     restofbody1 = restofbody1.replace(/\r\n/g, '\<br\>\<\/br\>');
          restofbody1 = restofbody1.replace(/p>/g, 'span>');
          restofbody1 = restofbody1.replace(/\/span\>/g, '/span><ul style=\"visibility:hidden;height:9px;\"></ul>');
 //     restofbody1 = restofbody1.replace(/\/span\>/g, '/span><br><br>');
@@ -374,6 +374,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
 } else if (1 == demipunoyletra) {
   var colortest = '#008080';
   demipunoyletra = '(1) rschaosid';
+  var elcolor = '#ffffff';
   if (user == '/user/rschaosid') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
 } else if (2 <= demipunoyletra && demipunoyletra < 8) {
   var colortest = '#ef7070';
