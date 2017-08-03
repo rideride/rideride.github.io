@@ -463,12 +463,24 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   demipunoyletra = '(615) parker_cube';
   var elcolor = '#ffffff';
   if (user == '/user/parker_cube') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
-} else if (616 <= demipunoyletra && demipunoyletra < 666) {
+} else if (616 == demipunoyletra) {
+  var colortest = '#890003';
+  demipunoyletra = '(616) DemonBurritoCat';
+  var elcolor = '#ffffff';
+  if (user == '/user/DemonBurritoCat') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+} else if (617 <= demipunoyletra && demipunoyletra < 666) {
   var colortest = '#add6ff';
 } else if (666 == demipunoyletra) {
   var colortest = '#ff0000';
   if (user == '/user/rideride') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
-} else if (667 <= demipunoyletra && demipunoyletra < 700) {
+} else if (667 <= demipunoyletra && demipunoyletra < 689) {
+  var colortest = '#add6ff';
+} else if (689 == demipunoyletra) {
+  var colortest = '#060647';
+  demipunoyletra = 'smarvin6(689)';
+  var elcolor = '#ffffff';
+  if (user == '/user/smarvin6689') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+} else if (690 <= demipunoyletra && demipunoyletra < 700) {
   var colortest = '#add6ff';
 } else if (700 <= demipunoyletra && demipunoyletra < 777) {
   var colortest = '#bcadff';
@@ -501,12 +513,25 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#00cc99';
   demipunoyletra = 'randomusername(1234)58';
   if (user == '/user/randomusername123458') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
-} else if (1235 <= demipunoyletra && demipunoyletra < 1616) {
+} else if (1235 <= demipunoyletra && demipunoyletra < 1521) {
+  var colortest = '#ededed';
+} else if (1521 == demipunoyletra) {
+  var colortest = '#ffaf47';
+  demipunoyletra = 'darthvader1521';
+  if (user == '/user/darthvader1521') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+} else if (1522 <= demipunoyletra && demipunoyletra < 1616) {
   var colortest = '#ededed';
 } else if (1616 == demipunoyletra) {
   var colortest = '#1affa7';
   demipunoyletra = 'VitaminB1616';
   if (user == '/user/VitaminB16') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+} else if (1617 <= demipunoyletra && demipunoyletra < 69420) {
+  var colortest = '#ededed';
+} else if (69420 == demipunoyletra) {
+  var colortest = '#bb00ff';
+  demipunoyletra = 'lol';
+  var elcolor = '#ffff00';
+  if (user == '/user/countmeister') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
 } else {
   var colortest = '#ededed';
 }
