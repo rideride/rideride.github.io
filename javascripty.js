@@ -467,7 +467,13 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   if (user == '/user/albert471') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
 } else if (472 <= demipunoyletra && demipunoyletra < 500) {
   var colortest = '#a2e8af';
-} else if (500 <= demipunoyletra && demipunoyletra < 600) {
+} else if (500 <= demipunoyletra && demipunoyletra < 515) {
+  var colortest = '#adffed';
+} else if (515 == demipunoyletra) {
+  var colortest = '#66CDAA';
+  demipunoyletra = '(515) Flat_Mars_Society';
+  if (user == '/user/Flat_Mars_Society') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.fontSize = '13px'; document.getElementById("fakeauthor").style.color = 'transparent'; document.getElementById("fakeauthor").style.background = 'linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)'; document.getElementById("fakeauthor").style.webkitBackgroundClip = 'text'; }
+} else if (516 <= demipunoyletra && demipunoyletra < 600) {
   var colortest = '#adffed';
 } else if (600 <= demipunoyletra && demipunoyletra < 615) {
   var colortest = '#add6ff';
