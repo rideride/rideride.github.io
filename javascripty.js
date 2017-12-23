@@ -15,7 +15,21 @@
 
   // Setup variables
   var lc = $('.liveupdate-listing');
- 
+ // this next feature only works if you REMOVE the "@exclude      *://*.reddit.com/live/*/updates/*
+// because i cannot change that. it has to be done manually.
+// :(
+if(window.location.href.indexOf("updates") > -1) {
+var contex = window.location.href;
+contex = contex.replace('updates\/', '?after=LiveUpdate_');
+       $('.liveupdate-listing').prepend("<a id=contexter>context</a>");
+$("#contexter").attr("href", contex);
+document.getElementById("contexter").style.textAlign = "center";
+document.getElementById("contexter").style.marginBottom = "15px";
+document.getElementById("contexter").style.color = "#369";
+    document.getElementById("contexter").style.background = "#eee";
+    document.getElementById("contexter").style.display = "block";
+
+    }
   $('.sidebar').prepend("<div id=msbox></div>")
      $('.sidebar').prepend("<div id=msboxenabler class=enabler>[+] Response Times Options</div><div id=msboxenabler2 class=enabler style='display: none;'>[-] Response Times Options</div>")
      $( "#msbox" ).hide();
