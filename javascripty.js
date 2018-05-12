@@ -500,7 +500,14 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   if (user == '/user/albert471') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (472 <= demipunoyletra && demipunoyletra < 500) {
   var colortest = '#a2e8af';
-} else if (500 <= demipunoyletra && demipunoyletra < 515) {
+} else if (500 <= demipunoyletra && demipunoyletra < 501) {
+  var colortest = '#adffed';
+} else if (501 == demipunoyletra) {
+  var colortest = '#520063';
+  demipunoyletra = '(501) LeinadSpoon';
+  var elcolor = '#ffffff';
+  if (user == '/user/LeinadSpoon') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (502 <= demipunoyletra && demipunoyletra < 515) {
   var colortest = '#adffed';
 } else if (515 == demipunoyletra) {
   var colortest = '#66CDAA';
