@@ -152,6 +152,9 @@ if (shadowcount == 1) {
 
  
           var regexy = /\/live\/............\/updates\//
+          if(window.location.href.indexOf("10itx") > -1) {
+var regexy = /\/live\/.............\/updates\//
+}
                     var user = $node.find('.body').children().first().next().attr('href');
 
     var user2 = '';
