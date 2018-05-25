@@ -611,6 +611,24 @@ if (document.getElementById("option2").checked == true) {
 
 
 document.getElementById("river").innerHTML = demipunoyletra;
+     if(window.location.href.indexOf("10itx") > -1) {
+var barregexy = /\/live\/.............\/updates\//
+    var barmagin = $node.find('.body').prev().attr('href');
+           var barmagin2 = barmagin.replace(barregexy, '');
+           var barmagin2p1 = barmagin2.substring(0, 8);
+    var barmagin2p11 = barmagin2.substring(9, 13);
+    var barmagin2p111 = barmagin2.substring(15, 18);
+    var barmagin2p1111 = barmagin2p111 + barmagin2p11 + barmagin2p1;
+
+           var barmagin2p2 = parseInt(barmagin2p1111, 16);
+var mago = barmagin2p2.toString();
+mago = mago.substring(0, 14);
+mago = parseInt(mago);
+var dateTime = new Date( mago );
+var dateTime2 = dateTime.toISOString();
+var dateTime3 = dateTime2.substring(11, 23);
+       document.getElementById("river").innerHTML = dateTime3;
+    }
         document.getElementById("river").style.background = colortest;
     document.getElementById("river").style.color = elcolor;
         document.getElementById("river").onmouseover = function() 
