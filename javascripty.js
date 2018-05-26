@@ -30,9 +30,22 @@ document.getElementById("contexter").style.color = "#369";
     document.getElementById("contexter").style.display = "block";
 
     }
-  $( "#liveupdate-statusbar p.state" ).click(function() {
-         document.getElementById("liveupdate-statusbar").innerHTML = "<p class=state title=updating in real time>dead</p><p class=viewer-count>69 viewers</p>";
-       });
+var pranky = 0;
+$( "#liveupdate-statusbar p.state" ).click(function() {
+pranky++;
+
+if (pranky == 1) {
+document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan class=state title='updating in real time'>dead</p><p class=viewer-count>69 viewers</p>";
+$( "#pyan" ).click(function() {
+$('head').append('<style>.state:before{display:none !important;}</style>');
+document.getElementById("liveupdate-statusbar").style.backgroundColor = '#eee';
+document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan2 class=state>no further updates</p>";
+document.getElementById("pyan2").style.cursor = 'text';
+})
+}
+
+})
+
   $('.sidebar').prepend("<div id=msbox></div>")
      $('.sidebar').prepend("<div id=msboxenabler class=enabler>[+] Response Times Options</div><div id=msboxenabler2 class=enabler style='display: none;'>[-] Response Times Options</div>")
      $( "#msbox" ).hide();
