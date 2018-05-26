@@ -30,6 +30,9 @@ document.getElementById("contexter").style.color = "#369";
     document.getElementById("contexter").style.display = "block";
 
     }
+  $( "#liveupdate-statusbar p.state" ).click(function() {
+         document.getElementById("liveupdate-statusbar").innerHTML = "<p class=state title=updating in real time>dead</p><p class=viewer-count>69 viewers</p>";
+       });
   $('.sidebar').prepend("<div id=msbox></div>")
      $('.sidebar').prepend("<div id=msboxenabler class=enabler>[+] Response Times Options</div><div id=msboxenabler2 class=enabler style='display: none;'>[-] Response Times Options</div>")
      $( "#msbox" ).hide();
