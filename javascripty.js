@@ -40,6 +40,7 @@ $( "#pyan" ).click(function() {
 $('head').append('<style>.state:before{display:none !important;}</style>');
 document.getElementById("liveupdate-statusbar").style.backgroundColor = '#eee';
 document.getElementById("liveupdate-statusbar").style.border = '1px solid #ddd';
+document.getElementById("new-update-form").style.display= 'none';
 document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan2 class=state>no further updates</p>";
 document.getElementById("pyan2").style.cursor = 'text';
 })
