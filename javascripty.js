@@ -571,7 +571,14 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   if (user == '/user/artbn') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (778 <= demipunoyletra && demipunoyletra < 800) {
   var colortest = '#bcadff';
-} else if (800 <= demipunoyletra && demipunoyletra < 900) {
+} else if (800 <= demipunoyletra && demipunoyletra < 845) {
+  var colortest = '#e9adff';
+} else if (845 == demipunoyletra) {
+  var colortest = '#0d2d89';
+  demipunoyletra = '(845) noduorg';
+    var elcolor = '#ffffff';
+  if (user == '/user/noduorg') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (846 <= demipunoyletra && demipunoyletra < 900) {
   var colortest = '#e9adff';
 } else if (900 <= demipunoyletra && demipunoyletra < 973) {
   var colortest = '#ffadf8';
