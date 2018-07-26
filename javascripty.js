@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name         testing 2
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @include      *://*.reddit.com/live/*
+// @exclude      *://*.reddit.com/live/create*
+// @exclude      *://*.reddit.com/live/*/edit*
+// @exclude      *://*.reddit.com/live/*/contributors*
+// @grant        none
+// ==/UserScript==
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 ///                                                                           ///
@@ -82,7 +94,7 @@ document.getElementById("liveupdate-statusbar").innerHTML = "<p class=state titl
         document.getElementById("msboxenabler2").style.marginTop = '-12px';
     document.getElementById("msboxenabler2").style.fontWeight = 'bold';
   document.getElementById("msboxenabler2").style.color = '#369';
-    document.getElementById("msbox").style.height = '132px';
+    document.getElementById("msbox").style.height = '226px';
    document.getElementById("msbox").style.marginTop = '22px';
     document.getElementById("liveupdate-resources").style.marginTop = '12px';
 
@@ -110,31 +122,61 @@ $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable 
 $( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '111px').css('cursor', 'pointer').css('color', '#369');
 $( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '111px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');
 $('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '130px');
+$('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=red style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1041 id=shadow4p1 value=1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+$('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=105 id=shadow5 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=106 id=shadow6 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1061 id=shadow6p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+$('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=107 id=shadow7 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=108 id=shadow8 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1081 id=shadow8p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
+$('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=109 id=shadow9 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=110 id=shadow10 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1091 id=shadow10p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 $( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
 $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
-  var shadowcount = 1;
+  var shadowcount = 2;
 document.getElementById('save').onclick = function() {
 localStorage['inverse1'] = document.getElementById('inverse1').value;
+localStorage['shadow1'] = document.getElementById('shadow1').value;
+localStorage['shadow2'] = document.getElementById('shadow2').value;
+localStorage['shadow2p1'] = document.getElementById('shadow2p1').value;
+localStorage['shadow3'] = document.getElementById('shadow3').value;
+localStorage['shadow4'] = document.getElementById('shadow4').value;
+localStorage['shadow4p1'] = document.getElementById('shadow4p1').value;
+localStorage['shadow5'] = document.getElementById('shadow5').value;
+localStorage['shadow6'] = document.getElementById('shadow6').value;
+localStorage['shadow6p1'] = document.getElementById('shadow6p1').value;
+localStorage['shadow7'] = document.getElementById('shadow7').value;
+localStorage['shadow8'] = document.getElementById('shadow8').value;
+localStorage['shadow8p1'] = document.getElementById('shadow8p1').value;
+localStorage['shadow9'] = document.getElementById('shadow9').value;
+localStorage['shadow10'] = document.getElementById('shadow10').value;
+localStorage['shadow10p1'] = document.getElementById('shadow10p1').value;
 alert('You need to refresh to see the changes made in the text boxes for some reason :/');
  };
 document.getElementById('inverse1').value = localStorage['inverse1'] || "";
+document.getElementById('shadow1').value = localStorage['shadow1'] || "";
+document.getElementById('shadow2').value = localStorage['shadow2'] || "";
+document.getElementById('shadow2p1').value = localStorage['shadow2p1'] || "";
+document.getElementById('shadow3').value = localStorage['shadow3'] || "";
+document.getElementById('shadow4').value = localStorage['shadow4'] || "";
+document.getElementById('shadow4p1').value = localStorage['shadow4p1'] || "";
+document.getElementById('shadow5').value = localStorage['shadow5'] || "";
+document.getElementById('shadow6').value = localStorage['shadow6'] || "";
+document.getElementById('shadow6p1').value = localStorage['shadow6p1'] || "";
+document.getElementById('shadow7').value = localStorage['shadow7'] || "";
+document.getElementById('shadow8').value = localStorage['shadow8'] || "";
+document.getElementById('shadow8p1').value = localStorage['shadow8p1'] || "";
+document.getElementById('shadow9').value = localStorage['shadow9'] || "";
+document.getElementById('shadow10').value = localStorage['shadow10'] || "";
+document.getElementById('shadow10p1').value = localStorage['shadow10p1'] || "";
 
 $("#shadowadd").click(function(e) {
     e.preventDefault();
 if (shadowcount == 1) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=103 id=shadow3 value=TOP_20 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=104 id=shadow4 value=red style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1041 id=shadow4p1 value=1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
-} else if (shadowcount == 2) {
+  } else if (shadowcount == 2) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=105 id=shadow5 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=106 id=shadow6 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1061 id=shadow6p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
-}
+  }
   else if (shadowcount == 3) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=107 id=shadow7 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=108 id=shadow8 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1081 id=shadow8p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 }
   else if (shadowcount == 4) {
   shadowcount++;
-  $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=109 id=shadow9 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=110 id=shadow10 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1091 id=shadow10p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 }
 
   });
@@ -146,20 +188,35 @@ if (shadowcount == 1) {
 
 
   $( "#shadowbox" ).hide();
-       $( ".shadowboxenabler" ).click(function() {
-        $( "#shadowbox" ).toggle();
-         $( ".shadowboxenabler" ).toggle();
-       });
+//      $( ".shadowboxenabler" ).click(function() {
+//$('#shadowboxenabler').hide();
+//$('#shadowboxenabler2').show();
+//    $('#shadowbox').show();
+//        $( "#shadowbox" ).toggle();
+//         $( ".shadowboxenabler" ).toggle();
+//       });
 
  $( "#shadowboxenabler" ).click(function() {
              document.getElementById("msbox").style.height = '226px';
+$('#shadowboxenabler').hide();
+$('#shadowboxenabler2').show();
+    $('#shadowbox').show();
+$.cookie('shadowenable', true);
        });
 
   $( "#shadowboxenabler2" ).click(function() {
                  document.getElementById("msbox").style.height = '132px';
+$('#shadowboxenabler').show();
+$('#shadowboxenabler2').hide();
+    $('#shadowbox').hide();
+$.cookie('shadowenable', false);
        });
 
-
+if($.cookie('shadowenable') == 'true'){
+    $('#shadowboxenabler').click();
+} else {
+    $('#shadowboxenabler2').click();
+}
 
 //  var shadowinput1 = document.getElementById("shadow1").value
 
@@ -201,7 +258,6 @@ inversecheck++;
 } 
 }
 
-
       
     var $node = $(e.target);
     // Must be a .liveupdate element
@@ -228,38 +284,19 @@ var regexy = /\/live\/.............\/updates\//
     var shadowval1 = document.getElementById("shadow1").value;
     var shadowval2 = document.getElementById("shadow2").value;
     var shadowval2p1 = document.getElementById("shadow2p1").value;
-    var shadowval3 = '';
-    var shadowval4 = '';
-    var shadowval4p1 = '';
-    var shadowval5 = '';
-    var shadowval6 = '';
-    var shadowval6p1 = '';
-    var shadowval7 = '';
-    var shadowval8 = '';
-    var shadowval8p1 = '';
-    var shadowval9 = '';
-    var shadowval10 = '';
-    var shadowval10p1 = '';
-   if ( 2 <= shadowcount) { 
      var shadowval3 = document.getElementById("shadow3").value;
     var shadowval4 = document.getElementById("shadow4").value;
      var shadowval4p1 = document.getElementById("shadow4p1").value;
-   }
-    if ( 3 <= shadowcount) { 
       var shadowval5 = document.getElementById("shadow5").value;
     var shadowval6 = document.getElementById("shadow6").value;
       var shadowval6p1 = document.getElementById("shadow6p1").value;
-    }
-    if ( 4 <= shadowcount) { 
       var shadowval7 = document.getElementById("shadow7").value;
     var shadowval8 = document.getElementById("shadow8").value;
       var shadowval8p1 = document.getElementById("shadow8p1").value;
-    }
-    if ( 5 <= shadowcount) { 
       var shadowval9 = document.getElementById("shadow9").value;
     var shadowval10 = document.getElementById("shadow10").value;
       var shadowval10p1 = document.getElementById("shadow10p1").value;
-    }
+    
       var shadowcheck = 'disabled';
   if ( $('#shadowbox').css('display') == 'none') {
  shadowcheck = 'disabled';
