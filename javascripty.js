@@ -187,7 +187,7 @@ function injectStyles(rule) {
     html: '&shy;<style>' + rule + '</style>'
   }).appendTo("body");    
 }
-var injecting = '.liveupdate.stricken {background:'  + inverse1.value + ';-webkit-filter: invert(100%);filter: invert(100%);}';
+var injecting = '.liveupdate.stricken {background:'  + inverse1.value + '!important;-webkit-filter: invert(100%);filter: invert(100%);}';
 //injectStyles('.liveupdate.stricken {background:#cccccc;-webkit-filter: invert(100%);filter: invert(100%);}');
 injectStyles(injecting);
 inversecheck++;
