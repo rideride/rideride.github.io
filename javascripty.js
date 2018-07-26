@@ -112,6 +112,7 @@ $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
   var shadowcount = 1;
 document.getElementById('save').onclick = function() {
 localStorage['inverse1'] = document.getElementById('inverse1').value;
+  alert('You need to refresh to see the changes made in the text boxes for some reason :/');
  };
 document.getElementById('inverse1').value = localStorage['inverse1'] || "";
 
