@@ -182,7 +182,7 @@ function injectStyles(rule) {
     html: '&shy;<style>' + rule + '</style>'
   }).appendTo("body");    
 }
-injectStyles('.liveupdate.stricken {background:white;-webkit-filter: invert(100%);}');
+injectStyles('.liveupdate.stricken {background:white;-webkit-filter: invert(100%);filter: invert(100%);}');
 inversecheck++;
 } 
 }
