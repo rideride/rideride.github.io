@@ -86,6 +86,8 @@ document.getElementById("liveupdate-statusbar").innerHTML = "<p class=state titl
    document.getElementById("msbox").style.marginTop = '22px';
     document.getElementById("liveupdate-resources").style.marginTop = '12px';
 
+$('#msbox').prepend("<button id=save>Save Text</button>");
+$( '#save' ).css('position','absolute').css('margin-left','210px');
   $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2 title='Disables special colors and messages, such as the special 666 color, and the usernames.'>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
 $( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');
@@ -98,7 +100,7 @@ $( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4 title='Ok guys this one is kinda inconsistent and a little bad. It definitely works best when ghost messages are disabled. If they are enabled, the feature only works properly if you do not post during a run. If you interrupt a run, it is not gonna work properly. Overall it is the 2nd worst thing I have done probably'>UNSTRIKE TEXT (NO GHOST MESSAGES)</div>");
 $( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
 $( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');
-$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=005 id=option5> <div id=desc5 title='Inverses stricken counts.'>INVERSE STRICKEN</div>");
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=005 id=option5> <div id=desc5 title='Inverses stricken counts.'>INVERSE STRICKEN</div><input type=text class=inversetextbox data-box-id=201 id=inverse1 style='max-width:50px; margin-left: 134px; margin-top: 85px;position: absolute;' placeholder=color>");
 $( '#option5' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '88px');
 $( '#desc5' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '87px');
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
@@ -108,8 +110,10 @@ $('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id
 $( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
 $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
   var shadowcount = 1;
-
- 
+document.getElementById('save').onclick = function() {
+localStorage['inverse1'] = document.getElementById('inverse1').value;
+ };
+document.getElementById('inverse1').value = localStorage['inverse1'] || "";
 
 $("#shadowadd").click(function(e) {
     e.preventDefault();
@@ -182,10 +186,13 @@ function injectStyles(rule) {
     html: '&shy;<style>' + rule + '</style>'
   }).appendTo("body");    
 }
-injectStyles('.liveupdate.stricken {background:#cccccc;-webkit-filter: invert(100%);filter: invert(100%);}');
+var injecting = '.liveupdate.stricken {background:'  + inverse1.value + ';-webkit-filter: invert(100%);filter: invert(100%);}';
+//injectStyles('.liveupdate.stricken {background:#cccccc;-webkit-filter: invert(100%);filter: invert(100%);}');
+injectStyles(injecting);
 inversecheck++;
 } 
 }
+
 
       
     var $node = $(e.target);
