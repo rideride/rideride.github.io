@@ -118,6 +118,8 @@ $( '#desc5' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=006 id=option6> <div id=desc6 title='Inverses stricken counts.'>INVERSE</div>");
 $( '#option6' ).css('position', 'absolute').css('margin-left', '192px').css('margin-top', '88px');
 $( '#desc6' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '209px').css('margin-top', '87px');
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=420 id=option420>");
+$( '#option420' ).css('position', 'fixed').css('margin-left', '1092px').css('margin-top', '110px').css('overflow', 'hidden');
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
 $( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '111px').css('cursor', 'pointer').css('color', '#369');
 $( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '111px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');
@@ -381,6 +383,9 @@ if (matches != null) {
      restofbody1 = restofbody1.replace(/\r\n/g, '\<br\>\<\/br\>');
          restofbody1 = restofbody1.replace(/p>/g, 'span>');
          restofbody1 = restofbody1.replace(/\/span\>/g, '/span><ul style=\"visibility:hidden;height:9px;\"></ul>');
+if (document.getElementById("option420").checked == true) {
+restofbody1 = restofbody1.replace(/b/g, '🅱️');
+}
 //     restofbody1 = restofbody1.replace(/\/span\>/g, '/span><br><br>');
 //     restofbody1 = restofbody1.replace(/\<br\>\<\/span\>/g, '</span>');
 //     restofbody1 = restofbody1.replace('<p></p><p', '<p></p><span');
