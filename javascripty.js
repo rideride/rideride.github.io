@@ -10,14 +10,16 @@
 
 (function () {
   'use strict';
-  
-
-
-  // Setup variables
   var lc = $('.liveupdate-listing');
- // this next feature only works if you REMOVE the "@exclude      *://*.reddit.com/live/*/updates/*
+
+
+
+// this next feature only works if you REMOVE the "@exclude      *://*.reddit.com/live/*/updates/*
 // because i cannot change that. it has to be done manually.
 // :(
+
+
+
 if(window.location.href.indexOf("updates") > -1) {
 var contex = window.location.href;
 contex = contex.replace('updates\/', '?after=LiveUpdate_');
@@ -43,11 +45,24 @@ document.getElementById("liveupdate-statusbar").style.border = '1px solid #ddd';
 document.getElementById("new-update-form").style.display= 'none';
 document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan2 class=state>no further updates</p>";
 document.getElementById("pyan2").style.cursor = 'text';
+$( "#pyan2" ).click(function() {
+document.getElementById("new-update-form").style.display= 'block';
+document.getElementById("liveupdate-statusbar").style.backgroundColor = '#e2ffdb';
+document.getElementById("liveupdate-statusbar").style.border = '1px solid #b1e0a9';
+document.getElementById("liveupdate-statusbar").innerHTML = "<p class=state title='updating in real time'>live</p><p class=viewer-count>9 viewers</p>";
+})
 })
 }
 
 })
 
+
+//$( "#liveupdate-statusbar p.state" ).click(function() {
+//         document.getElementById("liveupdate-statusbar").innerHTML = "<p class=state title=updating in real time>dead</p><p class=viewer-count>69 viewers</p>";
+//       });
+
+
+//$( '.stricken' ).css('position', 'absolute');
   $('.sidebar').prepend("<div id=msbox></div>")
      $('.sidebar').prepend("<div id=msboxenabler class=enabler>[+] Response Times Options</div><div id=msboxenabler2 class=enabler style='display: none;'>[-] Response Times Options</div>")
      $( "#msbox" ).hide();
@@ -67,28 +82,35 @@ document.getElementById("pyan2").style.cursor = 'text';
         document.getElementById("msboxenabler2").style.marginTop = '-12px';
     document.getElementById("msboxenabler2").style.fontWeight = 'bold';
   document.getElementById("msboxenabler2").style.color = '#369';
-    document.getElementById("msbox").style.height = '108px';
+    document.getElementById("msbox").style.height = '132px';
    document.getElementById("msbox").style.marginTop = '22px';
     document.getElementById("liveupdate-resources").style.marginTop = '12px';
+
   $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=001 id=mynameisnotrider> <div id=the2 title='Disables special colors and messages, such as the special 666 color, and the usernames.'>DISABLE SPECIAL COLORS</div>");
 $( '#mynameisnotrider' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '-8px');
-$( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');  
+$( '#the2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '-9px');
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=002 id=option2> <div id=desc2 title='Makes the background color of the post the same as the background of the timestamp.'>COLOR ENTIRE BACKGROUND</div>");
 $( '#option2' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '16px');
-$( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '15px');  
+$( '#desc2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '15px');
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=003 id=option3> <div id=desc3 title='Removes the reply time after one minute.'>AUTOMATICALLY CLEAR TIME</div>");
 $( '#option3' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '40px');
-$( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');  
+$( '#desc3' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '39px');
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=004 id=option4> <div id=desc4 title='Ok guys this one is kinda inconsistent and a little bad. It definitely works best when ghost messages are disabled. If they are enabled, the feature only works properly if you do not post during a run. If you interrupt a run, it is not gonna work properly. Overall it is the 2nd worst thing I have done probably'>UNSTRIKE TEXT (NO GHOST MESSAGES)</div>");
 $( '#option4' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '64px');
-$( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');  
+$( '#desc4' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '63px');
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=005 id=option5> <div id=desc5 title='Inverses stricken counts.'>INVERSE STRICKEN</div>");
+$( '#option5' ).css('position', 'absolute').css('margin-left', '5px').css('margin-top', '88px');
+$( '#desc5' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '21px').css('margin-top', '87px');
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
-$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '87px').css('cursor', 'pointer').css('color', '#369');  
-$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '87px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');  
-$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '106px');
+$( '#shadowboxenabler' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '111px').css('cursor', 'pointer').css('color', '#369');
+$( '#shadowboxenabler2' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '5px').css('margin-top', '111px').css('display', 'none').css('cursor', 'pointer').css('color', '#369');
+$('#shadowbox').prepend("<input type=text class=shadowtextbox data-box-id=101 id=shadow1 value=amazingpikachu_38 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=102 id=shadow2 value=purple style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1021 id=shadow2p1 value=5 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a id=shadowadd>+</a>").css('position', 'absolute').css('margin-left', '5px').css('margin-top', '130px');
 $( '#shadowadd' ).css('cursor', 'pointer').css('color', '#369');
 $( ".remove_field" ).css('cursor', 'pointer').css('color', '#369');
   var shadowcount = 1;
+
+ 
+
 $("#shadowadd").click(function(e) {
     e.preventDefault();
 if (shadowcount == 1) {
@@ -106,11 +128,11 @@ if (shadowcount == 1) {
   shadowcount++;
   $('#shadowbox').append("<div><input type=text class=shadowtextbox data-box-id=109 id=shadow9 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=user><input type=text class=shadowtextbox data-box-id=110 id=shadow10 style='max-width:50px; margin-right: 5px; margin-bottom: 2px;' placeholder=color><input type=text class=shadowtextbox data-box-id=1091 id=shadow10p1 style='max-width:20px; margin-right: 5px; margin-bottom: 2px;' placeholder=#><a class=remove_field style='cursor: pointer; color=#369;'>[x]</a></div>")
 }
-  
+
   });
  $('#shadowbox').on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); 
-   $(this).parent('div').remove(); 
+        e.preventDefault();
+   $(this).parent('div').remove();
    shadowcount--;
     });
 
@@ -120,19 +142,19 @@ if (shadowcount == 1) {
         $( "#shadowbox" ).toggle();
          $( ".shadowboxenabler" ).toggle();
        });
-  
+
  $( "#shadowboxenabler" ).click(function() {
-             document.getElementById("msbox").style.height = '202px';
+             document.getElementById("msbox").style.height = '226px';
        });
-  
+
   $( "#shadowboxenabler2" ).click(function() {
-                 document.getElementById("msbox").style.height = '108px';
+                 document.getElementById("msbox").style.height = '132px';
        });
 
 
-  
+
 //  var shadowinput1 = document.getElementById("shadow1").value
-  
+
   $('.checkbox').change(function(){
     var chckd = this.checked ? 'true' : 'false';
     var index = $(this).data('box-id');
@@ -146,12 +168,24 @@ if (shadowcount == 1) {
         } else {
             $(this).prop('checked', false);
         }
-    });    
+    });
 });
 
-  
+var inversecheck = 0;
   lc.on('DOMNodeInserted', function (e) {
-    
+
+if (document.getElementById("option5").checked == true) {
+
+if (inversecheck == 0) {
+function injectStyles(rule) {
+  var div = $("<div />", {
+    html: '&shy;<style>' + rule + '</style>'
+  }).appendTo("body");    
+}
+injectStyles('.liveupdate.stricken {background:white;-webkit-filter: invert(100%);}');
+inversecheck++;
+} 
+}
 
       
     var $node = $(e.target);
