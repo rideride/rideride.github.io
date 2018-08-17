@@ -49,8 +49,27 @@ $( "#liveupdate-statusbar p.state" ).click(function() {
 pranky++;
 
 if (pranky == 1) {
-document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan class=state title='updating in real time'>dead</p><p class=viewer-count>69 viewers</p>";
-$( "#pyan" ).click(function() {
+document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan class=state title='updating in real time'>dead</p><p class=viewer-count>69 viewers</p><p id=countdown></p>";
+//////new prank lol
+
+//$('#liveupdate-statusbar').append("<p id=countdown></p>");
+var countDownDate = new Date("Aug 17 2018 23:00:00 GMT-0500 (CDT)").getTime();
+var tugOfWarWrongDirection = setInterval(function() {
+    var nowTug = new Date().getTime();
+    var distanceTug = countDownDate - nowTug;
+    var daysTug = Math.floor(distanceTug / (1000 * 60 * 60 * 24));
+    var hoursTug = Math.floor((distanceTug % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutesTug = Math.floor((distanceTug % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsTug = Math.floor((distanceTug % (1000 * 60)) / 1000);
+    document.getElementById("countdown").innerHTML = daysTug + "d " + hoursTug + "h "
+    + minutesTug + "m " + secondsTug + "s";
+    if (distanceTug < 0) {
+        clearInterval(tugOfWarWrongDirection);
+        document.getElementById("countdown").innerHTML = "DESPACITO 2 FOUND ON MARS";
+    }
+}, 1000);
+//////
+  $( "#pyan" ).click(function() {
 $('head').append('<style>.state:before{display:none !important;}</style>');
 document.getElementById("liveupdate-statusbar").style.backgroundColor = '#eee';
 document.getElementById("liveupdate-statusbar").style.border = '1px solid #ddd';
