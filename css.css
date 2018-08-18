@@ -1,17 +1,22 @@
-#ticker{
-  background-color:#FFF;
-  overflow:hidden;
-  height:30px;
-  vertical-align:middle;
-  width:100%;
-  box-sizing:border-box;
-  position:relative;
-  font-family:'Helvetica';
+#ticker {
+    overflow: hidden;
+    height: 21px;
+    vertical-align: middle;
+    width: 937px;
+    box-sizing: border-box;
+    position: fixed;
+    font-family: 'Helvetica';
+    left: 155px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    top: 585px;
+    z-index: 10;
 }
 #ticker ul{
   display:block;
   padding:0px;
-  line-height:30px;
+  line-height:21px;
   vertical-align:middle;
   margin:0px;
   list-style:none;
