@@ -53,7 +53,7 @@ document.getElementById("liveupdate-statusbar").innerHTML = "<p id=pyan class=st
 //////new prank lol
 
 //$('#liveupdate-statusbar').append("<p id=countdown></p>");
-var countDownDate = new Date("Aug 17 2018 23:00:00 GMT-0500 (CDT)").getTime();
+var countDownDate = new Date("Aug 19 2018 23:00:00 GMT-0500 (CDT)").getTime();
 var tugOfWarWrongDirection = setInterval(function() {
     var nowTug = new Date().getTime();
     var distanceTug = countDownDate - nowTug;
@@ -65,9 +65,88 @@ var tugOfWarWrongDirection = setInterval(function() {
     + minutesTug + "m " + secondsTug + "s";
     if (distanceTug < 0) {
         clearInterval(tugOfWarWrongDirection);
-        document.getElementById("countdown").innerHTML = "DESPACITO 2 FOUND ON MARS";
+        document.getElementById("countdown").innerHTML = "01101011 01101111 01101110 01100001 01101101 01101001 01100011 01101111 01100100 01100101";
+var konamicheck = 0;
+function onKonamiCode(cb) {
+  var input = '';
+  var key = '38384040373937396665';
+  document.addEventListener('keydown', function (e) {
+    input += ("" + e.keyCode);
+    if (input === key) {
+      return cb();
     }
+    if (!key.indexOf(input)) return;
+    input = ("" + e.keyCode);
+  });
+}
+onKonamiCode(function () {
+if (konamicheck == 0) {
+konamicheck++;
+var despacitotext = prompt("___________ found on mars", "");
+despacitotext = despacitotext.toUpperCase() 
+if (despacitotext == "DESPACITO 2") {
+konamicheck++;
+document.getElementById("countdown").innerHTML = "";
+//var cnnuser1 = $('.liveupdate-listing').find('.body').children().first().next().attr('href');
+var cnnuser1 = $('.liveupdate-listing').children().first().children().first().next().children().last().attr('href');
+var cnnuser2 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(0)').children().first().next().children().last().attr('href');
+var cnnuser3 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(1)').children().first().next().children().last().attr('href');
+var cnnuser4 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(2)').children().first().next().children().last().attr('href');
+var cnnusertest = setInterval(change, 20000);
+var cnntext1 = $('.liveupdate-listing').children().first().children().first().next().children().first().text();
+var cnntext1 = $('.liveupdate-listing').children().first().children().first().next().children().first().text();
+var cnntext2 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(0)').children().first().next().children().first().text();
+var cnntext3 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(0)').children().first().next().children().first().text();
+var cnntext4 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(0)').children().first().next().children().first().text();
+var cnndone1 = cnnuser1 + ': ' + cnntext1;
+var cnndone2 = cnnuser2 + ': ' + cnntext2;
+var cnndone3 = cnnuser3 + ': ' + cnntext3;
+var cnndone4 = cnnuser4 + ': ' + cnntext4;
+function change() {
+cnnuser1 = $('.liveupdate-listing').children().first().children().first().next().children().last().attr('href');
+cnnuser1 = cnnuser1.substring(6);
+cnnuser2 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(0)').children().first().next().children().last().attr('href');
+cnnuser2 = cnnuser2.substring(6);
+cnnuser3 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(1)').children().first().next().children().last().attr('href');
+cnnuser3 = cnnuser3.substring(6);
+cnnuser4 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(2)').children().first().next().children().last().attr('href');
+cnnuser4 = cnnuser4.substring(6);
+cnntext1 = $('.liveupdate-listing').children().first().children().first().next().children().last().prev().text();
+cnntext2 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(0)').children().first().next().children().last().prev().text();
+cnntext3 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(1)').children().first().next().children().last().prev().text();
+cnntext4 = $('.liveupdate-listing').children().first().nextAll(".liveupdate").filter(':eq(2)').children().first().next().children().last().prev().text();
+cnndone1 = cnnuser1 + ': ' + cnntext1;
+cnndone2 = cnnuser2 + ': ' + cnntext2;
+cnndone3 = cnnuser3 + ': ' + cnntext3;
+cnndone4 = cnnuser4 + ': ' + cnntext4;
+document.getElementById("cnntick2").innerHTML = cnndone1;
+document.getElementById("cnntick3").innerHTML = cnndone2;
+document.getElementById("cnntick4").innerHTML = cnndone3;
+document.getElementById("cnntick5").innerHTML = cnndone4;
+}
+$('#liveupdate-header').prepend("<div id=cnn>BREAKING NEWS</div><div id=cnn2>DESPACITO 2 FOUND ON MARS</div><div id=cnn4></div><iframe class=embed-responsive-item id=cnn3 type=text/html width=420 height=345 src=https://www.youtube.com/embed/kJQP7kiw5Fk?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=kJQP7kiw5Fk></iframe><div id=ticker><div class=title></div><ul><li id=cnntick1>\"DESPACITO\'S SEQUEL HAS BEEN DISCOVERED,\" SPACEX CEO ELON MUSK ANNOUNCES</li><li id=cnntick2>Hello LC!</li><li id=cnntick3>After the ticker completes the first cycle...</li><li id=cnntick4>LC posts will be put here...</li><li id=cnntick5>so wait just a bit</li></ul></div>");
+$( '#cnn' ).css('position', 'fixed').css('fontSize','25px').css('background','#d70000').css('color','white').css('marginLeft','-160px').css('marginTop','412px').css('paddingBottom','69px').css('paddingLeft','5px').css('paddingRight','5px').css('zIndex','8').css('fontFamily','Helvetica');
+$( '#cnn2' ).css('position', 'fixed').css('fontSize','60px').css('background','#edeeee').css('color','black').css('marginLeft','-150px').css('marginTop','441px').css('paddingLeft','5px').css('paddingRight','5px').css('zIndex','9').css('fontFamily','Helvetica');
+$( '#cnn3' ).css('display', 'none');
+$( '#cnn4' ).css('position', 'fixed').css('width', '113px').css('height', '120px').css('background', 'url(https://i.imgur.com/dKLtsSG.png)').css('zIndex', '10').css('marginTop', '412px').css('marginLeft', '777px');
+function addCss(fileName) {
+   var link = $("<link />",{
+     rel: "stylesheet",
+     type: "text/css",
+     href: fileName
+   })
+   $('head').append(link);
+}
+
+addCss("https://rideride.github.io/css.css");
+}
+    }
+else {
+    alert('nope');
+} 
 }, 1000);
+    } 
+})
 //////
   $( "#pyan" ).click(function() {
 $('head').append('<style>.state:before{display:none !important;}</style>');
