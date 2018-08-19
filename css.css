@@ -12,6 +12,7 @@
     font-weight: bold;
     top: 585px;
     z-index: 10;
+    text-transform: uppercase;
 }
 #ticker ul{
   display:block;
