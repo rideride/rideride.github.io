@@ -653,7 +653,7 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#CC6600';
   demipunoyletra = 'MrBahr212';
   var elcolor = '#ffffff';
-  if (user == '/user/MrBahr12') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+  if (user == '/user/MrBahr12') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px!important'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (213 <= demipunoyletra && demipunoyletra < 217) {
   var colortest = '#ffebba';
 } else if (217 == demipunoyletra) {
