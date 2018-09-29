@@ -684,7 +684,9 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   var colortest = '#00FFDD';
   demipunoyletra = '(234) ElliottB1';
   if (user == '/user/ElliottB1') {var user2 = $node.find('.body').children().first().next().text(); $node.find('.body').append("<span id=fakeauthor></div>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body').children().first().next().css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
-} else if (235 <= demipunoyletra && demipunoyletra < 301) {
+} else if (235 <= demipunoyletra && demipunoyletra < 300) {
+  var colortest = '#ffebba';
+} else if (300 <= demipunoyletra && demipunoyletra < 301) {
   var colortest = '#cfffba';
 } else if (301 == demipunoyletra) {
   var colortest = '#ff0000';
