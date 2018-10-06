@@ -510,6 +510,7 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
 //    }
    }
     var magin = $node.find('.body').prev().attr('href');
+    var threadid = magin.substring(magin.lastIndexOf("live/") + 5,magin.lastIndexOf("/updates"));
            var magin2 = magin.substring(magin.indexOf("updates/") + 8);
            var magin2p1 = magin2.substring(0, 8);
     var magin2p11 = magin2.substring(9, 13);
@@ -860,8 +861,10 @@ if (document.getElementById("option2").checked == true) {
        $node.find('.body').parent().css('background', colortest);
   }
 }
+    
+var testhref = "https://old.reddit.com/live/" + threadid + "/updates/" + magin2; 
          $node.find('.river').css('position', 'absolute');
-      $node.find('.body').prepend("<div id=river></div>");
+      $node.find('.body').prepend("<div onclick=window.open('"+testhref+"'); id=river></div>");
 
 
 document.getElementById("river").innerHTML = demipunoyletra;
@@ -904,12 +907,7 @@ if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('displa
     if (document.getElementById("option3").checked == true) {
     $('#river').delay(60000).hide(500); 
 }
-    $('div#river').click(function (e) {
-        $('div#river').hide();
-        $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
-        $('div#river').show();
- 
-});
+
       
 
       
