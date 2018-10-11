@@ -216,6 +216,9 @@ $( '#desc5' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=006 id=option6> <div id=desc6 title='Inverses stricken counts.'>INVERSE</div>");
 $( '#option6' ).css('position', 'absolute').css('margin-left', '192px').css('margin-top', '88px');
 $( '#desc6' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '209px').css('margin-top', '87px');
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=007 id=option7> <div id=desc7 title='Inverses stricken counts.'>SPECIAL</div>");
+$( '#option7' ).css('position', 'absolute').css('margin-left', '192px').css('margin-top', '112px');
+$( '#desc7' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '209px').css('margin-top', '111px');
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=420 id=option420>");
 $( '#option420' ).css('position', 'fixed').css('margin-left', '1092px').css('margin-top', '110px').css('overflow', 'hidden');
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
@@ -337,6 +340,42 @@ if($.cookie('shadowenable') == 'true'){
 });
 
 var inversecheck = 0;
+  ///////////SPECIAL
+if (document.getElementById("option7").checked == true) {
+var validcount1 = '';
+var validcount2 = '';
+var validcount3 = '';
+var fullcount1 = '';
+var author1 = '';
+var author2 = '';
+var authorme = $('#header .user a[href]').html();
+var validcountwrong = 0;
+var validcountnotme = 0;
+$('#liveupdate-header').prepend("<div id=idlecontainer><div id=congrats></div><div id=statsplace><p>EXPERIMENTAL</p><p id=lastcountdesc>Last count:<p id=lastcountcount>"+validcount3+"</p><p>/u/<span id=lastcountuser>"+author2+"</span></p></p></div></div>");
+$('#idlecontainer').css({'position': 'absolute', 'left': '200px', 'top': '75px', 'width': '115px', 'background': 'white', 'height': '70px'});
+$('#congrats').css({
+'position': 'absolute',
+'top': '0px',
+'left': '-46px',
+'border-left': '1px solid black',
+'padding-left': '5px',
+'font-size': '30px',
+'z-index': '999999',
+'background': '#e2ffdb',
+'height': '50px',
+'width': '1140px',
+'display': 'none'
+});
+$('#statsplace').css({
+'position': 'absolute',
+'top': '75px',
+'left': '-46px',
+'border-left': '1px solid black',
+'padding-left': '5px'
+});
+}
+///////////////
+  
   lc.on('DOMNodeInserted', function (e) {
 
 if (document.getElementById("option5").checked == true) {
@@ -372,7 +411,69 @@ inversecheck++;
     }    // Color
     
 
-
+//////////SPECIAL
+if (document.getElementById("option7").checked == true) {
+if ( isNaN(validcount2) == true ) {
+validcount2 = validcount1;
+}
+ fullcount1 = $node.find('.body > .md').text();
+author1 = $node.find('.body > .author').text();
+author1 = author1.trim().replace('/u/', '');
+ validcount1 = fullcount1;
+validcount1 = validcount1.substring(0, 10);
+    validcount1 = validcount1.replace(/[A-Za-z]/g, '');
+    validcount1 = validcount1.replace(/,/g, '');
+validcount1 = validcount1.replace(/ /g, '');
+validcount2 = parseInt(validcount2);
+validcount1 = parseInt(validcount1);
+validcount2++;
+if (validcount2 == validcount1 && author2 != author1 || isNaN(validcount2) == true) {
+//if (author1 != author2) {
+validcount3 = validcount1;
+$("#lastcountcount").text(validcount3.toLocaleString());
+$("#lastcountuser").text(author1);
+if (validcount3 == '10000000') {
+$("#congrats").css('display','initial');
+//$("#congrats").text(author1);
+document.getElementById("congrats").innerHTML = 'CONGRATS TO /u/'+author1+' ON THE TEN MILLION!!!!!';
+}
+validcountwrong = 0;
+if (author1 == authorme) {
+validcountnotme = 0;
+} else {
+validcountnotme = 1;
+}
+//}
+author2 = author1;
+} else {
+validcount2--;
+validcount3 = validcount2;
+validcountwrong++;
+if (validcountwrong == 10) {
+document.getElementById("lastcountdesc").innerHTML = 'Click to reset?';
+document.getElementById("lastcountdesc").style.background = '#ef7070';
+var wrongtimer = setTimeout( function() {
+         document.getElementById("lastcountdesc").innerHTML = 'Last count:';
+document.getElementById("lastcountdesc").style.background = '';
+      },15000);
+}
+}
+$( "#lastcountdesc" ).hover(function() {
+         document.getElementById("lastcountdesc").innerHTML = 'Click to reset';
+document.getElementById("lastcountdesc").style.cursor = 'pointer';
+       }, function() {
+    document.getElementById("lastcountdesc").innerHTML = 'Last count:';
+  });
+$( "#lastcountdesc" ).click(function() {
+validcount1 = '';
+validcount2 = '';
+validcount3 = '';
+fullcount1 = '';
+author1 = '';
+author2 = '';
+});
+}
+//////////
  
           var regexy = /\/live\/............\/updates\//
           if(window.location.href.indexOf("10itx") > -1) {
