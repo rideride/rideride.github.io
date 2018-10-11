@@ -348,7 +348,7 @@ var authorme = $('#header .user a[href]').html();
 var validcountwrong = 0;
 var validcountnotme = 0;
 $('#liveupdate-header').prepend("<div id=idlecontainer><div id=congrats></div><div id=statsplace><p>EXPERIMENTAL</p><p id=lastcountdesc>Last count:<p id=lastcountcount>"+validcount3+"</p><p>/u/<span id=lastcountuser>"+author2+"</span></p></p></div></div>");
-$('#idlecontainer').css({'position': 'absolute', 'left': '200px', 'top': '75px', 'width': '115px', 'background': 'white', 'height': '70px'});
+$('#idlecontainer').css({'position': 'absolute', 'left': '200px', 'top': '75px', 'width': '115px', 'background': 'transparent', 'height': '70px'});
 $('#congrats').css({
 'position': 'absolute',
 'top': '0px',
