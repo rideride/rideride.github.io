@@ -371,7 +371,8 @@ $('#statsplace').css({
 'top': '75px',
 'left': '-46px',
 'border-left': '1px solid black',
-'padding-left': '5px'
+'padding-left': '5px',
+'display': 'none'
 });
 }
 ///////////////
