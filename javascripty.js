@@ -425,6 +425,7 @@ author1 = author1.trim().replace('/u/', '');
  validcount1 = fullcount1;
 validcount1 = validcount1.substring(0, 10);
     validcount1 = validcount1.replace(/[A-Za-z]/g, '');
+    validcount1 = validcount1.replace(/\./g, '');
     validcount1 = validcount1.replace(/,/g, '');
 validcount1 = validcount1.replace(/ /g, '');
 validcount2 = parseInt(validcount2);
