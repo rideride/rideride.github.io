@@ -216,6 +216,9 @@ $( '#desc5' ).css('font-size', '10px').css('position', 'absolute').css('margin-l
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=006 id=option6> <div id=desc6 title='Inverses stricken counts.'>INVERSE</div>");
 $( '#option6' ).css('position', 'absolute').css('margin-left', '192px').css('margin-top', '88px');
 $( '#desc6' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '209px').css('margin-top', '87px');
+$('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=007 id=option7> <div id=desc7 title='Inverses stricken counts.'>LAST COUNT</div>");
+$( '#option7' ).css('position', 'absolute').css('margin-left', '192px').css('margin-top', '112px');
+$( '#desc7' ).css('font-size', '10px').css('position', 'absolute').css('margin-left', '209px').css('margin-top', '111px');
 $('#msbox').prepend("<input type=checkbox class=checkbox data-box-id=420 id=option420>");
 $( '#option420' ).css('position', 'fixed').css('margin-left', '1092px').css('margin-top', '110px').css('overflow', 'hidden');
 $('#msbox').prepend("<div id=shadowboxenabler class=shadowboxenabler>[+] Enable Shadows</div><div class=shadowboxenabler id=shadowboxenabler2>[-] Disable Shadows</div><div id=shadowbox></div>");
@@ -370,6 +373,11 @@ $('#statsplace').css({
 'padding-left': '5px',
 'display': 'none'
 });
+  if (document.getElementById("option7").checked == true) {
+$('#statsplace').css({
+'display': 'initial'
+});
+}
 ///////////////
   
   lc.on('DOMNodeInserted', function (e) {
