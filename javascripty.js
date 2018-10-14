@@ -341,6 +341,8 @@ if($.cookie('shadowenable') == 'true'){
 
 var inversecheck = 0;
   ///////////SPECIAL
+  
+  if (document.getElementById("option7").checked == true) {
 var validcount1 = '';
 var validcount2 = '';
 var validcount3 = '';
@@ -371,10 +373,6 @@ $('#statsplace').css({
 'left': '-46px',
 'border-left': '1px solid black',
 'padding-left': '5px',
-'display': 'none'
-});
-  if (document.getElementById("option7").checked == true) {
-$('#statsplace').css({
 'display': 'initial'
 });
 }
@@ -416,6 +414,8 @@ inversecheck++;
     
 
 //////////SPECIAL
+    
+  if (document.getElementById("option7").checked == true) {
 if ( isNaN(validcount2) == true ) {
 validcount2 = validcount1;
 }
@@ -476,6 +476,7 @@ fullcount1 = '';
 author1 = '';
 author2 = '';
 });
+  }
 //////////
  
           var regexy = /\/live\/............\/updates\//
