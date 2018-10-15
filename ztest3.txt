@@ -1,0 +1,2 @@
+<div id="commacount">80500</div>
+<div id="noncommacount">23634</div>
