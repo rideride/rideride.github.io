@@ -857,6 +857,12 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
   if (user == '/user/LeinadSpoon') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (502 <= demipunoyletra && demipunoyletra < 515) {
   var colortest = '#adffed';
+} else if (505 == demipunoyletra) {
+  var colortest = '#32ff95';
+  demipunoyletra = '(505) ItzTaken';
+  if (user == '/user/ItzTaken') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (506 <= demipunoyletra && demipunoyletra < 515) {
+  var colortest = '#adffed';
 } else if (515 == demipunoyletra) {
   var colortest = '#BC12DD';
   demipunoyletra = '(515) NobodyL0vesMe';
