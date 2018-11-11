@@ -492,7 +492,7 @@ if (validcount2 == validcount1 && author2 != author1 || isNaN(validcount2) == tr
 //if (author1 != author2) {
 validcount3 = validcount1;
 $("#lastcountcount").text(validcount3.toLocaleString());
-//$("#lastcountuser").text(author1);
+$("#lastcountuser").text(author1);
 validtimy = validcount3.toString();
 validtimy = validtimy.substr(validtimy.length - 3);
  if (validtimy == '000') {
