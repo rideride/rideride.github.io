@@ -374,7 +374,7 @@ var author2 = '';
 var authorme = $('#header .user a[href]').html();
 var validcountwrong = 0;
 var validcountnotme = 0;
-$('#liveupdate-header').prepend("<div id=idlecontainer><div id=congrats></div><div id=statsplace><p>EXPERIMENTAL</p><p id=lastcountdesc>Last count:<p id=lastcountcount>"+validcount3+"</p><p>/u/<span id=lastcountuser>"+author2+"</span></p></p></div></div>");
+$('#liveupdate-header').prepend("<div id=idlecontainer><div id=congrats></div><div id=statsplace><p>EXPERIMENTAL</p><p id=lastcountdesc>Last count:<p id=lastcountcount>"+validcount3+"</p><p>/u/<span id=lastcountuser>"+author2+"</span></p></p><p id=splits><p>000s:<span id=split0>"+vc000t+"</span></p><p>100s:<span id=split1>"+vc100t+"</span></p><p>200s:<span id=split2>"+vc200t+"</span></p><p>300s:<span id=split3>"+vc300t+"</span></p><p>400s:<span id=split4>"+vc400t+"</span></p><p>500s:<span id=split5>"+vc500t+"</span></p><p>600s:<span id=split6>"+vc600t+"</span></p><p>700s:<span id=split7>"+vc700t+"</span></p><p>800s:<span id=split8>"+vc800t+"</span></p><p>900s:<span id=split9>"+vc900t+"</span></p></p></div></div>");
 $('#idlecontainer').css({'position': 'absolute', 'left': '200px', 'top': '75px', 'width': '115px', 'background': 'transparent', 'height': '70px'});
 $('#congrats').css({
 'position': 'absolute',
