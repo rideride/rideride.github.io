@@ -346,6 +346,28 @@ var inversecheck = 0;
 var validcount1 = '';
 var validcount2 = '';
 var validcount3 = '';
+var validtimy = '';
+var validtimestamp = '';
+var vc000t = '';
+var vc100t = '';
+var vc200t = '';
+var vc300t = '';
+var vc400t = '';
+var vc500t = '';
+var vc600t = '';
+var vc700t = '';
+var vc800t = '';
+var vc900t = '';
+var vc000s = '';
+var vc100s = '';
+var vc200s = '';
+var vc300s = '';
+var vc400s = '';
+var vc500s = '';
+var vc600s = '';
+var vc700s = '';
+var vc800s = '';
+var vc900s = '';
 var fullcount1 = '';
 var author1 = '';
 var author2 = '';
@@ -412,10 +434,45 @@ inversecheck++;
       return;
     }    // Color
     
-
-//////////SPECIAL
+    var magin = $node.find('.body').prev().attr('href');
+    var threadid = magin.substring(magin.lastIndexOf("live/") + 5,magin.lastIndexOf("/updates"));
+           var magin2 = magin.substring(magin.indexOf("updates/") + 8);
+           var magin2p1 = magin2.substring(0, 8);
+    var magin2p11 = magin2.substring(9, 13);
+    var magin2p111 = magin2.substring(15, 18);
+    var magin2p1111 = magin2p111 + magin2p11 + magin2p1;
     
-  if (document.getElementById("option7").checked == true) {
+           var magin2p2 = parseInt(magin2p1111, 16);
+           var magin3 = $node.find('.body').parent().next().children().first().attr('href');
+    if (magin3 == "#") {
+  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+}
+    if (magin3 == undefined) {
+  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+}
+    if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+       var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
+    }
+         if ($node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+       var magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
+     }     
+if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
+       var magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
+     }   
+
+           var magin4 = magin3.substring(magin.indexOf("updates/") + 8);
+           var magin4p1 = magin4.substring(0, 8);
+    var magin4p11 = magin4.substring(9, 13);
+     var magin4p111 = magin4.substring(15, 18);
+    var magin4p1111 = magin4p111 + magin4p11 + magin4p1;
+           var magin4p2 = parseInt(magin4p1111, 16);
+           var teenviopoemas = magin2p2 - magin4p2;
+           var demipunoyletra = teenviopoemas / 10000;
+           demipunoyletra = ~~demipunoyletra;
+    
+    
+//////////SPECIAL
+if (document.getElementById("option7").checked == true) {
 if ( isNaN(validcount2) == true ) {
 validcount2 = validcount1;
 }
@@ -425,7 +482,7 @@ author1 = author1.trim().replace('/u/', '');
  validcount1 = fullcount1;
 validcount1 = validcount1.substring(0, 10);
     validcount1 = validcount1.replace(/[A-Za-z]/g, '');
-    validcount1 = validcount1.replace(/\./g, '');
+validcount1 = validcount1.replace(/\./g, '');
     validcount1 = validcount1.replace(/,/g, '');
 validcount1 = validcount1.replace(/ /g, '');
 validcount2 = parseInt(validcount2);
@@ -435,7 +492,130 @@ if (validcount2 == validcount1 && author2 != author1 || isNaN(validcount2) == tr
 //if (author1 != author2) {
 validcount3 = validcount1;
 $("#lastcountcount").text(validcount3.toLocaleString());
-$("#lastcountuser").text(author1);
+//$("#lastcountuser").text(author1);
+validtimy = validcount3.toString();
+validtimy = validtimy.substr(validtimy.length - 3);
+ if (validtimy == '000') {
+
+//if (vc900t != '') {
+vc900t = magin2p2;
+if (vc800t != '') {
+           vc900s = vc900t - vc800t;
+           vc900s = vc900s / 1000;
+           vc900s = (Math.round(vc900s / 10) * 10) / 10;
+           $("#split9").text(vc900s);
+}
+//} else {vc900t = magin2p2;}
+
+} else if (validtimy == '900') {
+vc800t = magin2p2;
+if (vc700t != '') {
+           vc800s = vc800t - vc700t;
+           vc800s = vc800s / 1000;
+           vc800s = (Math.round(vc800s / 10) * 10) / 10;
+           $("#split8").text(vc800s);
+}
+
+} else if (validtimy == '800') {
+
+vc700t = magin2p2;
+if (vc600t != '') {
+           vc700s = vc700t - vc600t;
+           vc700s = vc700s / 1000;
+           vc700s = (Math.round(vc700s / 10) * 10) / 10;
+           $("#split7").text(vc700s);
+}
+
+}  else if (validtimy == '700') {
+vc600t = magin2p2;
+if (vc500t != '') {
+           vc600s = vc600t - vc500t;
+           vc600s = vc600s / 1000;
+           vc600s = (Math.round(vc600s / 10) * 10) / 10;
+           $("#split6").text(vc600s);
+}
+
+}  else if (validtimy == '600') {
+
+vc500t = magin2p2;
+if (vc400t != '') {
+           vc500s = vc500t - vc400t;
+           vc500s = vc500s / 1000;
+           vc500s = (Math.round(vc500s / 10) * 10) / 10;
+           $("#split5").text(vc500s);
+}
+
+}  else if (validtimy == '500') {
+
+vc400t = magin2p2;
+if (vc300t != '') {
+           vc400s = vc400t - vc300t;
+           vc400s = vc400s / 1000;
+           vc400s = (Math.round(vc400s / 10) * 10) / 10;
+           $("#split4").text(vc400s);
+}
+
+}  else if (validtimy == '400') {
+
+vc300t = magin2p2;
+if (vc200t != '') {
+           vc300s = vc300t - vc200t;
+           vc300s = vc300s / 1000;
+           vc300s = (Math.round(vc300s / 10) * 10) / 10;
+           $("#split3").text(vc300s);
+}
+
+}  else if (validtimy == '300') {
+
+vc200t = magin2p2;
+if (vc100t != '') {
+           vc200s = vc200t - vc100t;
+           vc200s = vc200s / 1000;
+           vc200s = (Math.round(vc200s / 10) * 10) / 10;
+           $("#split2").text(vc200s);
+}
+
+}  else if (validtimy == '200') {
+
+vc100t = magin2p2;
+if (vc000t != '') {
+           vc100s = vc100t - vc000t;
+           vc100s = vc100s / 1000;
+           vc100s = (Math.round(vc100s / 10) * 10) / 10;
+           $("#split1").text(vc100s);
+}
+
+}  else if (validtimy == '100') {
+
+vc000t = magin2p2;
+if (vc900t != '') {
+           vc000s = vc000t - vc900t;
+           vc000s = vc000s / 1000;
+           vc000s = (Math.round(vc000s / 10) * 10) / 10;
+           $("#split0").text(vc000s);
+}
+//} else {vc000t = magin2p2;}
+
+} 
+
+
+
+
+
+
+
+
+/*else if (validtimy == '551') {
+vc700t = magin2p2;
+           validtimestamp = vc700t - vc600t;
+           validtimestamp = validtimestamp / 10000;
+           validtimestamp = ~~validtimestamp;
+           $("#lastcountuser").text(validtimestamp);
+}*/
+//$("#lastcountuser").text(validtimy);
+//validtimestamp = magin2p2;
+//$("#lastcountuser").text(demipunoyletra);
+//document.getElementById("lastcountuser").innerHTML = validtimestamp;
 if (validcount3 == '10000000') {
 $("#congrats").css('display','initial');
 //$("#congrats").text(author1);
@@ -476,7 +656,7 @@ fullcount1 = '';
 author1 = '';
 author2 = '';
 });
-  }
+}
 //////////
  
           var regexy = /\/live\/............\/updates\//
@@ -614,41 +794,7 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
 //      var count3 = 'hi';
 //    }
    }
-    var magin = $node.find('.body').prev().attr('href');
-    var threadid = magin.substring(magin.lastIndexOf("live/") + 5,magin.lastIndexOf("/updates"));
-           var magin2 = magin.substring(magin.indexOf("updates/") + 8);
-           var magin2p1 = magin2.substring(0, 8);
-    var magin2p11 = magin2.substring(9, 13);
-    var magin2p111 = magin2.substring(15, 18);
-    var magin2p1111 = magin2p111 + magin2p11 + magin2p1;
-    
-           var magin2p2 = parseInt(magin2p1111, 16);
-           var magin3 = $node.find('.body').parent().next().children().first().attr('href');
-    if (magin3 == "#") {
-  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-}
-    if (magin3 == undefined) {
-  var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-}
-    if ($node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
-       var magin3 = $node.find('.body').parent().next().next().children().first().attr('href');
-    }
-         if ($node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
-       var magin3 = $node.find('.body').parent().next().next().next().children().first().attr('href');
-     }     
-if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().next().hasClass( "stricken" ) == true && $node.find('.body').parent().next().hasClass( "stricken" ) == true ) {
-       var magin3 = $node.find('.body').parent().next().next().next().next().children().first().attr('href');
-     }   
 
-           var magin4 = magin3.substring(magin.indexOf("updates/") + 8);
-           var magin4p1 = magin4.substring(0, 8);
-    var magin4p11 = magin4.substring(9, 13);
-     var magin4p111 = magin4.substring(15, 18);
-    var magin4p1111 = magin4p111 + magin4p11 + magin4p1;
-           var magin4p2 = parseInt(magin4p1111, 16);
-           var teenviopoemas = magin2p2 - magin4p2;
-           var demipunoyletra = teenviopoemas / 10000;
-           demipunoyletra = ~~demipunoyletra;
     var colortest = '#ededed';
         var elcolor = '#000000';
     var randomx = '0';
