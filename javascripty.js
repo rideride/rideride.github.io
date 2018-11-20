@@ -1007,13 +1007,7 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
   var colortest = '#32ff95';
   demipunoyletra = '(505) ItzTaken';
   if (user == '/user/ItzTaken') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
-} else if (506 <= demipunoyletra && demipunoyletra < 515) {
-  var colortest = '#adffed';
-} else if (515 == demipunoyletra) {
-  var colortest = '#BC12DD';
-  demipunoyletra = '(515) NobodyL0vesMe';
-  if (user == '/user/NobodyL0vesMe') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
-} else if (516 <= demipunoyletra && demipunoyletra < 555) {
+} else if (506 <= demipunoyletra && demipunoyletra < 555) {
   var colortest = '#adffed';
 } else if (555 == demipunoyletra) {
   var colortest = '#00FFFF';
@@ -1073,7 +1067,13 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
   demipunoyletra = '(845) noduorg';
     var elcolor = '#ffffff';
   if (user == '/user/noduorg') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
-} else if (846 <= demipunoyletra && demipunoyletra < 900) {
+} else if (846 <= demipunoyletra && demipunoyletra < 888) {
+  var colortest = '#e9adff';
+} else if (888 == demipunoyletra) {
+  var colortest = '#BC12DD';
+  demipunoyletra = '(515) NobodyL0vesMe';
+  if (user == '/user/NobodyL0vesMe') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (889 <= demipunoyletra && demipunoyletra < 900) {
   var colortest = '#e9adff';
 } else if (900 <= demipunoyletra && demipunoyletra < 973) {
   var colortest = '#ffadf8';
