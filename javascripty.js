@@ -467,8 +467,11 @@ if ($node.find('.body').parent().next().next().next().hasClass( "stricken" ) == 
     var magin4p1111 = magin4p111 + magin4p11 + magin4p1;
            var magin4p2 = parseInt(magin4p1111, 16);
            var teenviopoemas = magin2p2 - magin4p2;
-           var demipunoyletra = teenviopoemas / 10000;
-           demipunoyletra = ~~demipunoyletra;
+           var demipunoyletra = teenviopoemas / 1000;
+demipunoyletra = Math.round( demipunoyletra * 10 ) / 10;
+           demipunoyletra = demipunoyletra / 10;
+demipunoyletra = Math.round(demipunoyletra);
+
     
     
 //////////SPECIAL
