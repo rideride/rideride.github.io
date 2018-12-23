@@ -1074,7 +1074,7 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
   var colortest = '#e9adff';
 } else if (888 == demipunoyletra) {
   var colortest = '#BC12DD';
-  demipunoyletra = '(515) NobodyL0vesMe';
+  demipunoyletra = '(888) NobodyL0vesMe';
   if (user == '/user/NobodyL0vesMe') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (889 <= demipunoyletra && demipunoyletra < 900) {
   var colortest = '#e9adff';
