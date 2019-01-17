@@ -1150,8 +1150,11 @@ var barregexy = /\/live\/.............\/updates\//
 
            var barmagin2p2 = parseInt(barmagin2p1111, 16);
 var mago = barmagin2p2.toString();
-mago = mago.substring(0, 14);
+mago = mago.substring(0, 15);
 mago = parseInt(mago);
+mago = Math.round( mago * 10 ) / 10;
+           mago = mago / 10;
+mago = Math.round(mago);
 var dateTime = new Date( mago );
 var dateTime2 = dateTime.toISOString();
 var dateTime3 = dateTime2.substring(11, 23);
