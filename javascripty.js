@@ -954,7 +954,20 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
   var elcolor = '#ffffff';
   demipunoyletra = '(333) Majestic_Bear';
   if (user == '/user/Majestic_Bear') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
-} else if (334 <= demipunoyletra && demipunoyletra < 369) {
+} else if (334 <= demipunoyletra && demipunoyletra < 360) {
+  var colortest = '#cfffba';
+} else if (360 == demipunoyletra) {
+  var colortest = '#86D8CA';
+  demipunoyletra = '(360) NikinCZ';
+  if (user == '/user/NikinCZ') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (361 <= demipunoyletra && demipunoyletra < 364) {
+  var colortest = '#cfffba';
+} else if (364 == demipunoyletra) {
+  var colortest = '#373267';
+  var elcolor = '#ffffff';
+  demipunoyletra = '(364) SecretAsianMa';
+  if (user == '/user/SecretAsianMa') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (365 <= demipunoyletra && demipunoyletra < 369) {
   var colortest = '#cfffba';
 } else if (369 == demipunoyletra) {
   var colortest = '#D9009C';
