@@ -1199,6 +1199,9 @@ var dateTime3 = dateTime2.substring(11, 23);
 if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('display') == 'none') {
   $( 'div#river' ).css('margin-left', '-141px');
 }
+    if ( $('#lc-body[data-DisplayMode="Super Minimal"] #liveupdate-statusbar').css('display') == 'none') {
+  $( 'div#river' ).css('display', 'none');
+}
     if (document.getElementById("option3").checked == true) {
     $('#river').delay(60000).hide(500); 
 }
