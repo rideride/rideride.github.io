@@ -1059,7 +1059,7 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
   var elcolor = '#ffffff';
   if (user == '/user/DemonBurritoCat') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (617 <= demipunoyletra && demipunoyletra < 639) {
-  var colortest = '#35e0cf';
+  var colortest = '#add6ff';
 } else if (639 == demipunoyletra) {
   var colortest = '#35e0cf';
   demipunoyletra = '(639) MrUnderdawg';
