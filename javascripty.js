@@ -1120,7 +1120,14 @@ restofbody1 = restofbody1.replace(/b/g, '🅱️');
   if (user == '/user/qwertylool') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
 } else if (999 <= demipunoyletra && demipunoyletra < 1000) {
   var colortest = '#ffadf8';
-} else if (1000 <= demipunoyletra && demipunoyletra < 1234) {
+} else if (1000 <= demipunoyletra && demipunoyletra < 1111) {
+  var colortest = '#ededed';
+} else if (1111 == demipunoyletra) {
+  var colortest = '#2cd626';
+  demipunoyletra = '(1111) andrewtheredditor';
+  var elcolor = '#ffffff';
+  if (user == '/user/andrewtheredditor') {var user2 = $node.find('.body > .author').text(); $node.find('.body').append("<span id=fakeauthor></span>"); document.getElementById("fakeauthor").innerHTML = user2; $node.find('.body > .author').css('fontSize', '0px'); document.getElementById("fakeauthor").style.cssText = 'font-size: 13px; color: transparent; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text!important;';}
+} else if (1112 <= demipunoyletra && demipunoyletra < 1234) {
   var colortest = '#ededed';
 } else if (1234 == demipunoyletra) {
   var colortest = '#00cc99';
