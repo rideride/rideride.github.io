@@ -1295,8 +1295,15 @@ var dateTime3 = dateTime2.substring(11, 23);
     this.style.background = colortest;
       this.style.color = elcolor;
 }
-      $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
-if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('display') == 'none') {
+
+    if (window.innerWidth >= 700) {
+            $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
+        }
+        else {
+            $( 'div#river' ).css('position', 'absolute').css('margin-left', '-10px').css('font-size', '9px').css('margin-top', '-16px').css('width','120px').css('text-align','right').css('max-width','120px');
+        }
+    
+    if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('display') == 'none') {
   $( 'div#river' ).css('margin-left', '-141px');
 }
     if ( $('#lc-body[data-DisplayMode="Super Minimal"] #liveupdate-statusbar').css('display') == 'none') {
@@ -1310,5 +1317,14 @@ if ( $('#lc-body[data-DisplayMode="Minimal"] #liveupdate-statusbar').css('displa
 
       
   });
+  
+  $(window).on('load resize', function () {
+    if (window.innerWidth >= 700) {
+            $( 'div#river' ).css('position', 'absolute').css('margin-left', '-135px').css('font-size', '9px').css('margin-top', '4px').css('width','120px').css('text-align','right').css('max-width','120px');
+        }
+        else {
+            $( 'div#river' ).css('position', 'absolute').css('margin-left', '-10px').css('font-size', '9px').css('margin-top', '-16px').css('width','120px').css('text-align','right').css('max-width','120px');
+        }
+    });
 
 }) ();
