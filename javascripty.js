@@ -32,6 +32,34 @@ document.getElementById("contexter").style.color = "#369";
     document.getElementById("contexter").style.display = "block";
 
     }
+  
+  if(window.location.href.indexOf("yrnkgszr6zdu") > -1) {
+    $("#liveupdate-description").append("<p style='background:#e2ffdb;font-size:16px;' id=countdownslow></p>");
+            document.title = "[live] Slow counting (one count per hour)";
+$( ".save-button button.btn" ).click(function() {
+var countDownDateA = new Date();
+    countDownDateA.setHours( countDownDateA.getHours() + 1 );
+    $("#countdownslow").css('background','#e2ffdb');
+var tugOfWarWrongDirectionA = setInterval(function() {
+    var nowTugA = new Date().getTime();
+    var distanceTugA = countDownDateA - nowTugA;
+    var minutesTugA = Math.floor((distanceTugA % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsTugA = Math.floor((distanceTugA % (1000 * 60)) / 1000);
+    document.getElementById("countdownslow").innerHTML = minutesTugA + "m " + secondsTugA + "s";
+    document.title = "["+minutesTugA+"m] Slow counting (one count per hour)";
+    if (distanceTugA < 0) {
+        clearInterval(tugOfWarWrongDirectionA);
+        document.getElementById("countdownslow").innerHTML = "You can post now!";
+        $("#countdownslow").css('background','#ffaeae');
+        document.title = "[!!] Slow counting (one count per hour)";
+    }
+    }, 1000);
+    });
+}
+  
+  
+  
+  
 var pranky = 0;
 $( "#liveupdate-statusbar p.state" ).click(function() {
 pranky++;
