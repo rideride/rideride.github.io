@@ -12,7 +12,7 @@
   'use strict';
   var lc = $('.liveupdate-listing');
 
-
+  var USER = $('#header .user a[href]').html();
 
 // this next feature only works if you REMOVE the "@exclude      *://*.reddit.com/live/*/updates/*
 // because i cannot change that. it has to be done manually.
@@ -1342,7 +1342,7 @@ var dateTime3 = dateTime2.substring(11, 23);
 }
 
         
-  var USER = $('#header .user a[href]').html();
+
   if (USER == 'TOP_20') {
     $( 'div#river' ).css('font-size', '11px')
   }
