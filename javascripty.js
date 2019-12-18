@@ -1354,5 +1354,10 @@ var dateTime3 = dateTime2.substring(11, 23);
             $( 'div#river' ).css('position', 'absolute').css('margin-left', '-10px').css('font-size', '9px').css('margin-top', '-16px').css('width','120px').css('text-align','right').css('max-width','120px');
         }
     });
+  
+  var USER = $('#header .user a[href]').html();
+  if (USER == 'TOP_20') {
+    $( 'div#river' ).css('font-size', '11px!important')
+  }
 
 }) ();
