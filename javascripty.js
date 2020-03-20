@@ -420,7 +420,17 @@ $('#statsplace').css({
 ///////////////
   
   lc.on('DOMNodeInserted', function (e) {
+    var $node = $(e.target);
+    // Must be a .liveupdate element
+    if (!$node.hasClass('liveupdate')) {
+      return;
+    }    // Check that the new message is at the top
+    // (Not loaded from bottom)
 
+    var index = $node.index();
+    if (index != 0) {
+      return;
+    }    
 if (document.getElementById("option5").checked == true) {
 
 if (inversecheck == 0) {
@@ -441,17 +451,7 @@ inversecheck++;
 }
 
       
-    var $node = $(e.target);
-    // Must be a .liveupdate element
-    if (!$node.hasClass('liveupdate')) {
-      return;
-    }    // Check that the new message is at the top
-    // (Not loaded from bottom)
 
-    var index = $node.index();
-    if (index != 0) {
-      return;
-    }    // Color
     
     var magin = $node.find('.body').prev().attr('href');
     var threadid = magin.substring(magin.lastIndexOf("live/") + 5,magin.lastIndexOf("/updates"));
