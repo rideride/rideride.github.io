@@ -104,6 +104,7 @@ P.S. You're on the right track. Look closely.`, ``);
 despacitotext = despacitotext.toUpperCase() 
 if (despacitotext == "DESPACITO 2") {
 konamicheck++;
+      $('#liveupdate-title').text('PKIEQBCJD BALLEJET KJ QBE QWEJQY-QBCOT KR IAOSB, RKUO YEAOP ADK. SBESG QBEOE.').css('background','#fffb55');
 document.getElementById("countdown").innerHTML = "";
 //var cnnuser1 = $('.liveupdate-listing').find('.body').children().first().next().attr('href');
 var cnnuser1 = $('.liveupdate-listing').children().first().children().first().next().children().last().attr('href');
