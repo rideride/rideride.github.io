@@ -98,10 +98,13 @@ function onKonamiCode(cb) {
 onKonamiCode(function () {
 if (konamicheck == 0) {
 konamicheck++;
-var despacitotext = prompt("___________ found on mars", "");
+var despacitotext = prompt(`___________ found on mars
+
+P.S. You're on the right track. Look closely.`, ``);
 despacitotext = despacitotext.toUpperCase() 
 if (despacitotext == "DESPACITO 2") {
 konamicheck++;
+      $('#liveupdate-title').text('PKIEQBCJD BALLEJET KJ QBE QWEJQY-QBCOT KR IAOSB, RKUO YEAOP ADK. SBESG QBEOE.').css('background','#fffb55');
 document.getElementById("countdown").innerHTML = "";
 //var cnnuser1 = $('.liveupdate-listing').find('.body').children().first().next().attr('href');
 var cnnuser1 = $('.liveupdate-listing').children().first().children().first().next().children().last().attr('href');
@@ -140,7 +143,7 @@ document.getElementById("cnntick3").innerHTML = cnndone2;
 document.getElementById("cnntick4").innerHTML = cnndone3;
 document.getElementById("cnntick5").innerHTML = cnndone4;
 }
-$('#liveupdate-header').prepend("<div id=cnn>BREAKING NEWS</div><div id=cnn2>DESPACITO 2 FOUND ON MARS</div><div id=cnn4></div><iframe class=embed-responsive-item id=cnn3 type=text/html width=420 height=345 src=https://www.youtube.com/embed/kJQP7kiw5Fk?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=kJQP7kiw5Fk></iframe><div id=ticker><div class=title></div><ul><li id=cnntick1>\"DESPACITO\'S SEQUEL HAS BEEN DISCOVERED,\" SPACEX CEO ELON MUSK ANNOUNCES</li><li id=cnntick2>Hello LC!</li><li id=cnntick3>After the ticker completes the first cycle...</li><li id=cnntick4>LC posts will be put here...</li><li id=cnntick5>so wait just a bit</li></ul></div>");
+$('#liveupdate-header').prepend("<div id=cnn>BREAKING NEWS</div><div id=cnn2>DESPACITO 2 FOUND ON MARS</div><div id=cnn4></div><iframe class=embed-responsive-item id=cnn3 type=text/html width=420 height=345 src=https://www.youtube.com/embed/kJQP7kiw5Fk?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=kJQP7kiw5Fk></iframe><div id=ticker><div class=title></div><ul><li id=cnntick1>GO TO #LC-TRIVIA IN THE DISCORD!</li><li id=cnntick2>Hello LC!</li><li id=cnntick3>After the ticker completes the first cycle...</li><li id=cnntick4>LC posts will be put here...</li><li id=cnntick5>so wait just a bit</li></ul></div>");
 $( '#cnn' ).css('position', 'fixed').css('fontSize','25px').css('background','#d70000').css('color','white').css('marginLeft','-160px').css('marginTop','412px').css('paddingBottom','69px').css('paddingLeft','5px').css('paddingRight','5px').css('zIndex','8').css('fontFamily','Helvetica');
 $( '#cnn2' ).css('position', 'fixed').css('fontSize','60px').css('background','#edeeee').css('color','black').css('marginLeft','-150px').css('marginTop','441px').css('paddingLeft','5px').css('paddingRight','5px').css('zIndex','9').css('fontFamily','Helvetica');
 $( '#cnn3' ).css('display', 'none');
@@ -420,7 +423,17 @@ $('#statsplace').css({
 ///////////////
   
   lc.on('DOMNodeInserted', function (e) {
+    var $node = $(e.target);
+    // Must be a .liveupdate element
+    if (!$node.hasClass('liveupdate')) {
+      return;
+    }    // Check that the new message is at the top
+    // (Not loaded from bottom)
 
+    var index = $node.index();
+    if (index != 0) {
+      return;
+    }    
 if (document.getElementById("option5").checked == true) {
 
 if (inversecheck == 0) {
@@ -441,17 +454,7 @@ inversecheck++;
 }
 
       
-    var $node = $(e.target);
-    // Must be a .liveupdate element
-    if (!$node.hasClass('liveupdate')) {
-      return;
-    }    // Check that the new message is at the top
-    // (Not loaded from bottom)
 
-    var index = $node.index();
-    if (index != 0) {
-      return;
-    }    // Color
     
     var magin = $node.find('.body').prev().attr('href');
     var threadid = magin.substring(magin.lastIndexOf("live/") + 5,magin.lastIndexOf("/updates"));
