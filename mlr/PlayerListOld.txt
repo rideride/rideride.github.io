@@ -115,7 +115,7 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 672,Clarinet Clarinet,SDP,BC,EG,H,Left,1B,3B,,/u/theclarinetsoloist,theclarinetsoloist#1352,53
 2251,Luke Skywalker,SDP,MH,,,Right,1B,3B,,/u/Canner2477,Canner234#3934,53
 329,Drew Savage,SDP,BC,,,Right,2B,SS,,/u/Xrt3,Xrt3#6212,53
-525,Cam'ron,SDP,1B,,,Right,2B,SS,,/u/DPZ1156,DPZ1156#7914,32
+525,Cam'ron West,SDP,1B,,,Right,2B,SS,,/u/DPZ1156,DPZ1156#7914,32
 1799,AllStar Lin,SDP,XB,,,Right,2B,1B,,/u/allstarlin,allstarlin#5173,53
 784,Red Fox,SDP,BC,,,Right,SS,2B,,/u/Th3R3dF0x,TheRedFox#6113,53
 158,Sam Smith,SDP,BP,,,Right,3B,LF,2B,/u/sasmith2015,sasmith2015#4461,53
@@ -181,7 +181,7 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 2224,Kenny Pupton,OAK,XB,,,Right,1B,LF,,/u/khaleesi_sarahae,khaleesi_sarahae#3374,53
 206,Gil Metz,OAK,XB,,,Left,2B,SS,3B,/u/Metssuck,metssuck#5464,53
 547,Red Arrow,OAK,BC,BS,H,Right,2B,SS,,/u/RedArrow12c,RedArrow12c#7693,31
-738,Johññy Coppolella,OAK,BC,,,Right,SS,3B,,/u/KillerQueen182,KillerQueen182#1769,53
+738,Johnny Coppolella,OAK,BC,,,Right,SS,3B,,/u/KillerQueen182,KillerQueen182#1769,53
 739,Jeter O'Cola,OAK,BC,,,Right,SS,2B,,/u/drp_17,Stoney#5053,53
 755,Rake Inthelake,OAK,WC,,,Left,3B,2B,,/u/MN_Moosey,Moosey#7461,53
 759,Jrue Pierce,OAK,XB,NH,H,Right,3B,SS,1B,/u/ATLien20,True#9380,53
@@ -479,7 +479,7 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 1962,Declan Decanter,CHC,1B,FP,S,Right,P,,,/u/SamuelDarnold,Declan#0676,53
 377,Isaac Saffron,CHC,1B,WC,S,Left,C,1B,,/u/izsaf,izsaf#9638,53
 516,Blackbean Burrito,CHC,1B,EG,H,Right,C,3B,RF,/u/TheDuckyNinja,busterducks#2217,43
-1801,Doc Dockgoose,CHC,BN,TT,H,Left,C,1B,,/u/Spermicles,Doc McBiggins - C/1B#9426,52
+1801,Doc McBiggins,CHC,BN,TT,H,Left,C,1B,,/u/Spermicles,Doc McBiggins - C/1B#9426,52
 67,Leonard Boyfriend,CHC,1B,NT,H,Left,2B,RF,,/u/iunnolol,iunnolol#0747,53
 68,Erin Pickles,CHC,WC,,,Right,2B,SS,C,/u/erindizmo,erindizmo#9665,53
 155,Nikki Falke,CHC,BC,,,Left,2B,1B,,/u/F117Nighthawk,F117Nighthawk#9799,53
@@ -579,7 +579,7 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 201,Teddy Blisblinne,,BN,NH,S,Left,P,,,/u/TeddyMcShreddie,Teddy#5031,53
 211,G.H. Morello,,BC,BS,H,Right,P,,,/u/ghmorello,,53
 212,Mike Hawk,,BN,BS,B,Right,P,,,/u/Titans55,TexasAMC2022#0880,53
-2247,Logan Anderson,,BC,BF,B,Right,P,,,/u/Aki_213,JeomeFromKFC#3481,53
+236,Logan Anderson,,BC,BF,B,Right,P,,,/u/Aki_213,JeomeFromKFC#3481,53
 237,Levi Pyram,,BC,BB,B,Right,P,,,/u/livingpyramid,,53
 251,Seik Golden,,BC,EG,B,Right,P,,,/u/-seik,golden11535#9194,53
 253,Tommy Foxconn,,SM,NH,S,Right,P,,,/u/Tbird4427,,53
@@ -1406,9 +1406,3 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 779,Ian Sutphin,,,,,,,,,,,
 4,Tim Spooneybarger,,,,,,,,,,,
 4,Pete WheelerS2,,,,,,,,,,,
-1743,Cagney O?verpaid,,,,,,,,,,,
-352,Filib Al'anhar JR.,,,,,,,,,,,
-456,Buttholo Col?n,,,,,,,,,,,
-738,Johnny Coppolella,,,,,,,,,,,
-525,Cam'ron West,,,,,,,,,,,
-1801,Doc McBiggins,,,,,,,,,,,
