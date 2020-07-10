@@ -513,7 +513,7 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 570,Deku Matsui,BAL,BC,BS,H,Right,C,1B,,/u/zman2143,KrazyPolishBoy#6897,53
 762,Legend 27,BAL,1B,,,Right,C,1B,,/u/Bighump1,,53
 1957,Kris Pcock,BAL,SF,,,Left,C,3B,RF,/u/AtrainW911,Atrain#1657,53
-488,Isaac Sux,BAL,SF,TT,H,Left,1B,3B,,/u/Juniped,,53
+488,Juni Panda,BAL,SF,TT,H,Left,1B,3B,,/u/Juniped,,53
 22,Snoop E. Dogg,BAL,XB,NT,B,Right,2B,SS,,/u/xbijin,xbijin#3776,51
 529,Wheeler Walker Jr.,BAL,BC,EG,S,Left,2B,SS,RF,/u/Not_Really_Jon_Snow,DefinitelyWheeler#4417,53
 29,Eric Leeder,BAL,SF,BS,B,Right,SS,2B,,/u/Epipen101,Pizzotes#6041,53
@@ -1412,3 +1412,11 @@ Player ID,Name,Team,Batting Type,Pitching Type,Pitching Bonus,Handedness,Primary
 738,Johnny Coppolella,,,,,,,,,,,
 525,Cam'ron West,,,,,,,,,,,
 1801,Doc McBiggins,,,,,,,,,,,
+488,Isaac Sux,,,,,,,,,,,
+358,Aaron IceCream,,,,,,,,,,,
+2255,Bubkis Fajita,,,,,,,,,,,
+311,Buckeye Logan,,,,,,,,,,,
+402,June Berg,,,,,,,,,,,
+770,Otter Hooligan,,,,,,,,,,,
+233,Yolanda Martinez,,,,,,,,,,,
+347,~~~ AH,,,,,,,,,,,

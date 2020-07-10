@@ -479,7 +479,7 @@ function statsDoer(statsdict, s) {
 	//var hitter_id = players[key];
 	var hitter_id = key;
 	if(s==1) {
-	if(hitter_id in s1stats) {
+	if(hitter_id in s1stats && s1stats[key]["R"].length > 0) {
 		try {
 			statsdict[hitter_id]["R"] = statsdict[hitter_id]["R"] + parseFloat(s1stats[hitter_id]["R"]);
 		}
@@ -710,7 +710,7 @@ for(var key in pstats) {
 	if(outs==0 && pstats[key]['R'] == 0) {
 		pstats[key]['ERA'] = (0).toFixed(2);
 	}
-	if(outs==0 && pstats[key]['K6'] == 0) {
+	if(outs==0 && pstats[key]['K'] == 0) {
 		pstats[key]['K6'] = (0).toFixed(2);
 	}
 }
@@ -722,7 +722,7 @@ for(var key in pstatsdict) {
 	//var pitcher_id = players[key];
 	//console.log(key);
 	if(s==1) {
-	if(key in s1stats) {
+	if(key in s1stats && s1stats[key]["R_P"].length > 0) {
 		//console.log(pids[pitcher_id]);
 		pstatsdict[key]["R"] = pstatsdict[key]["R"] + parseFloat(s1stats[key]["R_P"]);
 	}
@@ -811,7 +811,7 @@ for(var key in pstatsdict) {
 	if(outs==0 && pstatsdict[key]['R'] == 0) {
 		pstatsdict[key]['ERA'] = (0).toFixed(2);
 	}
-	if(outs==0 && pstatsdict[key]['K6'] == 0) {
+	if(outs==0 && pstatsdict[key]['K'] == 0) {
 		pstatsdict[key]['K6'] = (0).toFixed(2);
 	}
 }
@@ -856,9 +856,20 @@ function getKeysWithHighestValueMinPAs(o, n, stat, result_qualifier, min_result,
   var keys = Object.keys(o);
   var keys2 = [];
   
+  var errorcheck = 0;
   keys.sort(function(a,b){
+	  if(isNaN(o[a][stat])) {
+		  console.log(a);
+		  console.log(pids[a][0]);
+		  console.log(stat);
+		  errorcheck = errorcheck + 1;
+	  }
     return o[b][stat] - o[a][stat];
   })
+  if(errorcheck > 0) {
+	  $("h3").text("["+errorcheck+"] An error has occured somewhere... If you see this please ping me pull#0053 and if possible, screenshot your search parameters and the console (Ctrl+Shift+J)");
+	  $("h3").css("background","red");
+  }
   
 //  keys.sort(function(a,b) {return (o[a][stat] > o[b][stat]) ? 1 : ((o[b][stat] > o[a][stat]) ? -1 : 0);} );
   for(var key in keys) {
@@ -900,9 +911,20 @@ function getKeysWithHighestValueMinPAs(o, n, stat, result_qualifier, min_result,
 function getKeysWithLowestValueMinPAs(o, n, stat, result_qualifier, min_result, max_result){
   var keys = Object.keys(o);
   var keys2 = [];
+  var errorcheck = 0;
   keys.sort(function(a,b){
+	  if(isNaN(o[a][stat])) {
+		  console.log(a);
+		  console.log(pids[a][0]);
+		  console.log(stat);
+		  errorcheck = errorcheck + 1;
+	  }
     return o[a][stat] - o[b][stat];
   })
+  if(errorcheck > 0) {
+	  $("h3").text("["+errorcheck+"] An error has occured somewhere... If you see this please ping me pull#0053 and if possible, screenshot your search parameters and the console (Ctrl+Shift+J)");
+	  $("h3").css("background","red");
+  }
   for(var key in keys) {
 	  if(parseFloat(o[keys[key]][result_qualifier]) >= min_result && parseFloat(o[keys[key]][result_qualifier]) <= max_result) {
 		  keys2.push([keys[key]][0]);

@@ -30,7 +30,7 @@
 	<body>
 	
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="index"><img class="logo" src="https://i.imgur.com/V7vsdOE.png" style="height: 50px;margin-right: 5px;"></img>MLR Career Stats</a>
+    <a class="navbar-brand" href="index"><img class="logo" src="https://i.imgur.com/V7vsdOE.png" style="height: 50px;margin-right: 5px;"></img>MLR/MiLR Career Stats</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,6 +48,12 @@
             </li>
 			<li class="nav-item">
                 <a class="nav-link" href="p_leaderboards.html">Pitching Leaderboards</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" href="h_leaderboards_milr.html">MiLR Hitting</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" href="p_leaderboards_milr.html">MiLR Pitching</a>
             </li>
         </ul>
         
@@ -2573,7 +2579,7 @@ If loading takes over ~10 seconds, try refreshing?</h4>
 
 						<div class="table-responsive">
 						<div class="div-batting">
-						                Batting Stats
+						                MLR Batting Stats
                 <table class="table table-batting table-sm table-striped mt-4">
                     <thead>
                         <tr>
@@ -2729,7 +2735,7 @@ If loading takes over ~10 seconds, try refreshing?</h4>
                 </table>
 				</div>
 										<div class="div-pitching">
-						                Pitching Stats
+						                MLR Pitching Stats
 				<table class="table table-pitching table-sm table-striped mt-4">
                     <thead>
                         <tr>
@@ -2877,6 +2883,232 @@ If loading takes over ~10 seconds, try refreshing?</h4>
                     </tbody>
                 </table>
 				</div>
+				
+				<div class="div-batting-milr">
+						                MiLR Batting Stats
+                <table class="table table-batting-milr table-sm table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th></th>
+							<th scope="col">G</th>
+							<th scope="col">PA</th>
+							<th scope="col">AB</th>
+							<th scope="col">H</th>
+                            <th scope="col">1B</th>
+                            <th scope="col">2B</th>
+                            <th scope="col">3B</th>
+                            <th scope="col">HR</th>
+                            <th scope="col">R</th>
+                            <th scope="col">RBI</th>
+                            <th scope="col">K</th>
+                            <th scope="col">Auto K</th>
+                            <th scope="col">BB</th>
+                            <th scope="col">SB</th>
+							<th scope="col">AVG</th>
+							<th scope="col">OBP</th>
+							<th scope="col">SLG</th>
+							<th scope="col">OPS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr id="sm3">
+                            <th scope="row" id="calc-sm3-bt-name">Season 3</th>
+                            <td id="calc-sm3-bt-g">0</td>
+                            <td id="calc-sm3-bt-pa">0</td>
+                            <td id="calc-sm3-bt-ab">0</td>
+                            <td id="calc-sm3-bt-h">0</td>
+                            <td id="calc-sm3-bt-1b">0</td>
+                            <td id="calc-sm3-bt-2b">0</td>
+                            <td id="calc-sm3-bt-3b">0</td>
+                            <td id="calc-sm3-bt-hr">0</td>
+                            <td id="calc-sm3-bt-r">0</td>
+                            <td id="calc-sm3-bt-rbi">0</td>
+							<td id="calc-sm3-bt-k">0</td>
+							<td id="calc-sm3-bt-auto-k">0</td>
+							<td id="calc-sm3-bt-bb">0</td>
+							<td id="calc-sm3-bt-sb">0</td>
+							<td id="calc-sm3-bt-avg">0</td>
+							<td id="calc-sm3-bt-obp">0</td>
+							<td id="calc-sm3-bt-slg">0</td>
+							<td id="calc-sm3-bt-ops">0</td>
+                        </tr>
+						<tr id="sm4">
+                            <th scope="row" id="calc-sm4-bt-name">Season 4</th>
+                            <td id="calc-sm4-bt-g">0</td>
+                            <td id="calc-sm4-bt-pa">0</td>
+                            <td id="calc-sm4-bt-ab">0</td>
+                            <td id="calc-sm4-bt-h">0</td>
+                            <td id="calc-sm4-bt-1b">0</td>
+                            <td id="calc-sm4-bt-2b">0</td>
+                            <td id="calc-sm4-bt-3b">0</td>
+                            <td id="calc-sm4-bt-hr">0</td>
+                            <td id="calc-sm4-bt-r">0</td>
+                            <td id="calc-sm4-bt-rbi">0</td>
+							<td id="calc-sm4-bt-k">0</td>
+							<td id="calc-sm4-bt-auto-k">0</td>
+							<td id="calc-sm4-bt-bb">0</td>
+							<td id="calc-sm4-bt-sb">0</td>
+							<td id="calc-sm4-bt-avg">0</td>
+							<td id="calc-sm4-bt-obp">0</td>
+							<td id="calc-sm4-bt-slg">0</td>
+							<td id="calc-sm4-bt-ops">0</td>
+                        </tr>
+						<tr id="sm5">
+                            <th scope="row" id="calc-sm5-bt-name">Season 5</th>
+                            <td id="calc-sm5-bt-g">0</td>
+                            <td id="calc-sm5-bt-pa">0</td>
+                            <td id="calc-sm5-bt-ab">0</td>
+                            <td id="calc-sm5-bt-h">0</td>
+                            <td id="calc-sm5-bt-1b">0</td>
+                            <td id="calc-sm5-bt-2b">0</td>
+                            <td id="calc-sm5-bt-3b">0</td>
+                            <td id="calc-sm5-bt-hr">0</td>
+                            <td id="calc-sm5-bt-r">0</td>
+                            <td id="calc-sm5-bt-rbi">0</td>
+							<td id="calc-sm5-bt-k">0</td>
+							<td id="calc-sm5-bt-auto-k">0</td>
+							<td id="calc-sm5-bt-bb">0</td>
+							<td id="calc-sm5-bt-sb">0</td>
+							<td id="calc-sm5-bt-avg">0</td>
+							<td id="calc-sm5-bt-obp">0</td>
+							<td id="calc-sm5-bt-slg">0</td>
+							<td id="calc-sm5-bt-ops">0</td>
+                        </tr>
+						<tr id="sm0">
+                            <th scope="row" id="calc-sm0-bt-name">Career Hitting</th>
+                            <td id="calc-sm0-bt-g">0</td>
+                            <td id="calc-sm0-bt-pa">0</td>
+                            <td id="calc-sm0-bt-ab">0</td>
+                            <td id="calc-sm0-bt-h">0</td>
+                            <td id="calc-sm0-bt-1b">0</td>
+                            <td id="calc-sm0-bt-2b">0</td>
+                            <td id="calc-sm0-bt-3b">0</td>
+                            <td id="calc-sm0-bt-hr">0</td>
+                            <td id="calc-sm0-bt-r">0</td>
+                            <td id="calc-sm0-bt-rbi">0</td>
+							<td id="calc-sm0-bt-k">0</td>
+							<td id="calc-sm0-bt-auto-k">0</td>
+							<td id="calc-sm0-bt-bb">0</td>
+							<td id="calc-sm0-bt-sb">0</td>
+							<td id="calc-sm0-bt-avg">0</td>
+							<td id="calc-sm0-bt-obp">0</td>
+							<td id="calc-sm0-bt-slg">0</td>
+							<td id="calc-sm0-bt-ops">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+				</div>
+				
+				<div class="div-pitching-milr">
+						                MiLR Pitching Stats
+				<table class="table table-pitching-milr table-sm table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th></th>
+							<th scope="col">G</th>
+							<th scope="col">IP</th>
+							<th scope="col">BF</th>
+							<th scope="col">AB</th>
+							<th scope="col">H</th>
+                            <th scope="col">1B</th>
+                            <th scope="col">2B</th>
+                            <th scope="col">3B</th>
+                            <th scope="col">HR</th>
+                            <th scope="col">ER</th>
+                            <th scope="col">K</th>
+                            <th scope="col">Auto K</th>
+                            <th scope="col">BB</th>
+                            <th scope="col">SB</th>
+							<th scope="col">ERA</th>
+							<th scope="col">WHIP</th>
+							<th scope="col">K/6</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr id="psm3">
+                            <th scope="row" id="calc-sm3-pt-name">Season 3</th>
+                            <td id="calc-sm3-pt-g">0</td>
+							<td id="calc-sm3-pt-ip">0</td>
+                            <td id="calc-sm3-pt-bf">0</td>
+                            <td id="calc-sm3-pt-ab">0</td>
+                            <td id="calc-sm3-pt-h">0</td>
+                            <td id="calc-sm3-pt-1b">0</td>
+                            <td id="calc-sm3-pt-2b">0</td>
+                            <td id="calc-sm3-pt-3b">0</td>
+                            <td id="calc-sm3-pt-hr">0</td>
+                            <td id="calc-sm3-pt-er">0</td>
+							<td id="calc-sm3-pt-k">0</td>
+							<td id="calc-sm3-pt-auto-k">0</td>
+							<td id="calc-sm3-pt-bb">0</td>
+							<td id="calc-sm3-pt-sb">0</td>
+							<td id="calc-sm3-pt-era">0</td>
+							<td id="calc-sm3-pt-whip">0</td>
+							<td id="calc-sm3-pt-k6">0</td>
+                        </tr>
+						<tr id="psm4">
+                            <th scope="row" id="calc-sm4-pt-name">Season 4</th>
+                            <td id="calc-sm4-pt-g">0</td>
+							<td id="calc-sm4-pt-ip">0</td>
+                            <td id="calc-sm4-pt-bf">0</td>
+                            <td id="calc-sm4-pt-ab">0</td>
+                            <td id="calc-sm4-pt-h">0</td>
+                            <td id="calc-sm4-pt-1b">0</td>
+                            <td id="calc-sm4-pt-2b">0</td>
+                            <td id="calc-sm4-pt-3b">0</td>
+                            <td id="calc-sm4-pt-hr">0</td>
+                            <td id="calc-sm4-pt-er">0</td>
+							<td id="calc-sm4-pt-k">0</td>
+							<td id="calc-sm4-pt-auto-k">0</td>
+							<td id="calc-sm4-pt-bb">0</td>
+							<td id="calc-sm4-pt-sb">0</td>
+							<td id="calc-sm4-pt-era">0</td>
+							<td id="calc-sm4-pt-whip">0</td>
+							<td id="calc-sm4-pt-k6">0</td>
+                        </tr>
+						<tr id="psm5">
+                            <th scope="row" id="calc-sm5-pt-name">Season 5</th>
+                            <td id="calc-sm5-pt-g">0</td>
+							<td id="calc-sm5-pt-ip">0</td>
+                            <td id="calc-sm5-pt-bf">0</td>
+                            <td id="calc-sm5-pt-ab">0</td>
+                            <td id="calc-sm5-pt-h">0</td>
+                            <td id="calc-sm5-pt-1b">0</td>
+                            <td id="calc-sm5-pt-2b">0</td>
+                            <td id="calc-sm5-pt-3b">0</td>
+                            <td id="calc-sm5-pt-hr">0</td>
+                            <td id="calc-sm5-pt-er">0</td>
+							<td id="calc-sm5-pt-k">0</td>
+							<td id="calc-sm5-pt-auto-k">0</td>
+							<td id="calc-sm5-pt-bb">0</td>
+							<td id="calc-sm5-pt-sb">0</td>
+							<td id="calc-sm5-pt-era">0</td>
+							<td id="calc-sm5-pt-whip">0</td>
+							<td id="calc-sm5-pt-k6">0</td>
+                        </tr>
+						<tr id="psm0">
+                            <th scope="row" id="calc-sm0-pt-name">Career Pitching</th>
+                            <td id="calc-sm0-pt-g">0</td>
+							<td id="calc-sm0-pt-ip">0</td>
+                            <td id="calc-sm0-pt-bf">0</td>
+                            <td id="calc-sm0-pt-ab">0</td>
+                            <td id="calc-sm0-pt-h">0</td>
+                            <td id="calc-sm0-pt-1b">0</td>
+                            <td id="calc-sm0-pt-2b">0</td>
+                            <td id="calc-sm0-pt-3b">0</td>
+                            <td id="calc-sm0-pt-hr">0</td>
+                            <td id="calc-sm0-pt-er">0</td>
+							<td id="calc-sm0-pt-k">0</td>
+							<td id="calc-sm0-pt-auto-k">0</td>
+							<td id="calc-sm0-pt-bb">0</td>
+							<td id="calc-sm0-pt-sb">0</td>
+							<td id="calc-sm0-pt-era">0</td>
+							<td id="calc-sm0-pt-whip">0</td>
+							<td id="calc-sm0-pt-k6">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+				</div>
+				
             </div>
                     </div>
                    

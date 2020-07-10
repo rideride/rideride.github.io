@@ -31,6 +31,7 @@ function processData(allText) {
 data2 = '';
 databruh = ''
 datas1 = '';
+var datamilr1 = '';
     $.ajax({
         type: "GET",
         url: "https://rideride.github.io/mlr/PlayerList.txt",
@@ -51,6 +52,13 @@ datas1 = '';
         dataType: "text",
         //success: function(data) {processData(data);}
 		success: function(data) {datas1 = data;}
+     });
+	 $.ajax({
+        type: "GET",
+        url: "https://rideride.github.io/mlr/MiLRSeasons.txt",
+        dataType: "text",
+        //success: function(data) {processData(data);}
+		success: function(data) {datamilr1 = data;}
      });
 //$(document).ready(function() {
 window.onload = function() {
@@ -353,6 +361,263 @@ for(var key in databruh3) {
 	
 
 }
+
+
+var datamilr3 = $.csv.toObjects(datamilr1)
+
+var milrstats = {};
+var milrstats1 = {};
+var milrstats2 = {};
+var milrstats3 = {};
+var milrstats4 = {};
+var milrstats5 = {};
+var pmilrstats = {};
+var pmilrstats1 = {};
+var pmilrstats2 = {};
+var pmilrstats3 = {};
+var pmilrstats4 = {};
+var pmilrstats5 = {};
+
+var milr_bruhbruh = 0;
+var milr_bruhbruh2 = 0;
+
+var h_list_milr = {};
+var p_list_milr = {};
+var line_milr = 0;
+
+for(var key in datamilr3) {
+	line_milr = line_milr + 1;
+	var hitter = datamilr3[key]["Hitter"];
+	var pitcher = datamilr3[key]["Pitcher"];
+	var result = datamilr3[key]["Old Result"];
+	var run = datamilr3[key]["Run"];
+	var season = "MiLR_"+datamilr3[key]["Season"];
+	if(!(hitter in players)) {
+
+			if(!(hitter in h_list_milr)) {
+						//console.log(hitter);
+		//console.log(line_milr);
+		var r = Math.random().toString(10).substring(7);
+		players[hitter] = r;
+		pids[r] = [hitter];
+	}
+			h_list_milr[hitter] = 0;
+	}
+	if(!(pitcher in players)) {
+//console.log(!(pitcher in p_list_milr));
+
+		if(!(pitcher in p_list_milr)) {
+		//console.log(pitcher);
+		//console.log(line_milr);
+		var p = Math.random().toString(10).substring(7);
+		players[pitcher] = p;
+		pids[p] = [pitcher];
+	}
+			p_list_milr[pitcher] = 0;
+	}
+	
+
+
+	//console.log(run);
+	if(run.length < 1) {
+		run = 0;
+		//console.log("yeet");
+	}
+	var rbi = datamilr3[key]["RBI"];
+	if(rbi.length < 1) {
+		rbi = 0;
+		//console.log("yeet2");
+	}
+	var game = datamilr3[key]["Season"] + '_' + datamilr3[key]["Game ID"]
+	try {
+		var hitter_id = players[hitter];
+	} 
+	catch(err) {
+		//console.log(hitter)
+	}
+	try {
+		var pitcher_id = players[pitcher];
+	} 
+	catch(err) {
+		//console.log(pitcher)
+	}
+	if(hitter_id in milrstats) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats[hitter_id][result] = milrstats[hitter_id][result] + 1;
+	milrstats[hitter_id]["RBI"] = milrstats[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats[hitter_id]["R"] = milrstats[hitter_id]["R"] + parseFloat(run);
+	if((milrstats[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats[hitter_id]['Games'].push(game);
+	}
+	
+	//season 1
+	if(season == "MiLR_1") { 
+	if(hitter_id in milrstats1) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats1[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats1[hitter_id][result] = milrstats1[hitter_id][result] + 1;
+	milrstats1[hitter_id]["RBI"] = milrstats1[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats1[hitter_id]["R"] = milrstats1[hitter_id]["R"] + parseFloat(run);
+	if((milrstats1[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats1[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pmilrstats1) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats1[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats1[pitcher_id][result] = pmilrstats1[pitcher_id][result] + 1;
+	pmilrstats1[pitcher_id]["R"] = pmilrstats1[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats1[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats1[pitcher_id]['Games'].push(game);
+	}
+	} //season 1 end
+	
+	//season 2
+	if(season == "MiLR_2") { 
+	if(hitter_id in milrstats2) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats2[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats2[hitter_id][result] = milrstats2[hitter_id][result] + 1;
+	milrstats2[hitter_id]["RBI"] = milrstats2[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats2[hitter_id]["R"] = milrstats2[hitter_id]["R"] + parseFloat(run);
+	if((milrstats2[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats2[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pmilrstats2) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats2[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats2[pitcher_id][result] = pmilrstats2[pitcher_id][result] + 1;
+	pmilrstats2[pitcher_id]["R"] = pmilrstats2[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats2[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats2[pitcher_id]['Games'].push(game);
+	}
+	} //season 2 end
+	
+	//season 3
+	if(season == "MiLR_3") { 
+	if(hitter_id in milrstats3) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats3[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats3[hitter_id][result] = milrstats3[hitter_id][result] + 1;
+	milrstats3[hitter_id]["RBI"] = milrstats3[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats3[hitter_id]["R"] = milrstats3[hitter_id]["R"] + parseFloat(run);
+	if((milrstats3[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats3[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pmilrstats3) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats3[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats3[pitcher_id][result] = pmilrstats3[pitcher_id][result] + 1;
+	pmilrstats3[pitcher_id]["R"] = pmilrstats3[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats3[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats3[pitcher_id]['Games'].push(game);
+	}
+	} //season 3 end
+	
+	//season 4
+	if(season == "MiLR_4") { 
+	if(hitter_id in milrstats4) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats4[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats4[hitter_id][result] = milrstats4[hitter_id][result] + 1;
+	milrstats4[hitter_id]["RBI"] = milrstats4[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats4[hitter_id]["R"] = milrstats4[hitter_id]["R"] + parseFloat(run);
+	if((milrstats4[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats4[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pmilrstats4) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats4[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats4[pitcher_id][result] = pmilrstats4[pitcher_id][result] + 1;
+	pmilrstats4[pitcher_id]["R"] = pmilrstats4[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats4[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats4[pitcher_id]['Games'].push(game);
+	}
+	} //season 4 end
+	
+	//season 5
+	if(season == "MiLR_5") { 
+	if(hitter_id in milrstats5) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats5[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats5[hitter_id][result] = milrstats5[hitter_id][result] + 1;
+	milrstats5[hitter_id]["RBI"] = milrstats5[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats5[hitter_id]["R"] = milrstats5[hitter_id]["R"] + parseFloat(run);
+	if((milrstats5[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats5[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pmilrstats5) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats5[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats5[pitcher_id][result] = pmilrstats5[pitcher_id][result] + 1;
+	pmilrstats5[pitcher_id]["R"] = pmilrstats5[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats5[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats5[pitcher_id]['Games'].push(game);
+	}
+	} //season 5 end
+	
+	if(pitcher_id in pmilrstats) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats[pitcher_id][result] = pmilrstats[pitcher_id][result] + 1;
+	pmilrstats[pitcher_id]["R"] = pmilrstats[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats[pitcher_id]['Games'].push(game);
+	}
+	
+
+}
+
+
+//console.log(milrstats);
 	//console.log(h_list);
 	//console.log(p_list);
 //	console.log(players);
@@ -477,7 +742,7 @@ function statsDoer(statsdict, s) {
 	//var hitter_id = players[key];
 	var hitter_id = key;
 	if(s==1) {
-	if(hitter_id in s1stats) {
+	if(hitter_id in s1stats && s1stats[key]["R"].length > 0) {
 		try {
 			statsdict[hitter_id]["R"] = statsdict[hitter_id]["R"] + parseFloat(s1stats[hitter_id]["R"]);
 		}
@@ -575,6 +840,11 @@ statsDoer(stats3,3);
 statsDoer(stats4,4);
 statsDoer(stats5,5);
 
+
+statsDoer(milrstats3,6);
+statsDoer(milrstats4,7);
+statsDoer(milrstats5,8);
+statsDoer(milrstats,9);
 
 //console.log(stats1);
 //console.log(stats2);
@@ -693,6 +963,12 @@ for(var key in pstats) {
 	pstats[key]['WHIP_2'] = ((hits + pstats[key]['BB'] + pstats[key]['IBB'] + pstats[key]['Auto BB']) / (outs/3)).toFixed(2);
 	pstats[key]['K6'] = ((6*pstats[key]['K']) / (outs/3)).toFixed(3);
 	pstats[key]['ERA'] = ((6*pstats[key]['R']) / (outs/3)).toFixed(2);
+	if(outs==0 && pstats[key]['R'] == 0) {
+		pstats[key]['ERA'] = (0).toFixed(2);
+	}
+	if(outs==0 && pstats[key]['K'] == 0) {
+		pstats[key]['K6'] = (0).toFixed(2);
+	}
 }
 
 
@@ -702,7 +978,7 @@ for(var key in pstatsdict) {
 	//var pitcher_id = players[key];
 	//console.log(key);
 	if(s==1) {
-	if(key in s1stats) {
+	if(key in s1stats && s1stats[key]["R_P"].length > 0) {
 		//console.log(pids[pitcher_id]);
 		pstatsdict[key]["R"] = pstatsdict[key]["R"] + parseFloat(s1stats[key]["R_P"]);
 	}
@@ -788,6 +1064,12 @@ for(var key in pstatsdict) {
 	pstatsdict[key]['WHIP_2'] = ((hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) / (outs/3)).toFixed(2);
 	pstatsdict[key]['K6'] = ((6*pstatsdict[key]['K']) / (outs/3)).toFixed(3);
 	pstatsdict[key]['ERA'] = ((6*pstatsdict[key]['R']) / (outs/3)).toFixed(2);
+	if(outs==0 && pstatsdict[key]['R'] == 0) {
+		pstatsdict[key]['ERA'] = (0).toFixed(2);
+	}
+	if(outs==0 && pstatsdict[key]['K'] == 0) {
+		pstatsdict[key]['K6'] = (0).toFixed(2);
+	}
 }
 } //end pstatsDoer
 
@@ -797,6 +1079,15 @@ pstatsDoer(pstats2,2);
 pstatsDoer(pstats3,3);
 pstatsDoer(pstats4,4);
 pstatsDoer(pstats5,5);
+
+
+pstatsDoer(pmilrstats3,6);
+pstatsDoer(pmilrstats4,7);
+pstatsDoer(pmilrstats5,8);
+pstatsDoer(pmilrstats,9);
+
+console.log(milrstats);
+//console.log(pmilrstats5);
 
 
 
@@ -906,11 +1197,31 @@ $('#calc-submit').click(function() {
 	statsPut(3, stats3, staty);
 	statsPut(4, stats4, staty);
 	statsPut(5, stats5, staty);
+	statsPut("m3", milrstats3, staty);
+	statsPut("m4", milrstats4, staty);
+	statsPut("m5", milrstats5, staty);
+	statsPut("m0", milrstats, staty);
 	pstatsPut(1, pstats1, staty);
 	pstatsPut(2, pstats2, staty);
 	pstatsPut(3, pstats3, staty);
 	pstatsPut(4, pstats4, staty);
 	pstatsPut(5, pstats5, staty);
+	pstatsPut("m3", pmilrstats3, staty);
+	pstatsPut("m4", pmilrstats4, staty);
+	pstatsPut("m5", pmilrstats5, staty);
+	pstatsPut("m0", pmilrstats, staty);
+	
+	
+	if(!(parseFloat(players[staty]) in pmilrstats)) {
+		$(".div-pitching-milr").css("display","none")
+	} else {
+	$(".div-pitching-milr").css("display","block")
+	}
+	if(!(parseFloat(players[staty]) in milrstats)) {
+		$(".div-batting-milr").css("display","none")
+	} else {
+	$(".div-batting-milr").css("display","block")
+	}
 	
 //	console.log(pstats4[parseFloat(players["River Ride"])]["IP"]);
 	
