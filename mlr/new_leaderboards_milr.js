@@ -556,6 +556,18 @@ for(var key in pstatsdict) {
 	if(outs==0 && pstatsdict[key]['K'] == 0) {
 		pstatsdict[key]['K6'] = (0).toFixed(2);
 	}
+	if(outs==0 && (hits + pstatsdict[key]['BB']) == 0) {
+		pstatsdict[key]['WHIP'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB']) > 0) {
+		pstatsdict[key]['WHIP'] = Infinity;
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) == 0) {
+		pstatsdict[key]['WHIP_2'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) > 0) {
+		pstatsdict[key]['WHIP_2'] = Infinity;
+	}
 }
 } //end pstatsDoer
 
@@ -826,8 +838,8 @@ $('#calc-submit').click(function() {
 	var maxresult = document.getElementById("maxresult").value;
 	var result_request = document.getElementById("result").value;
 	$("#statt0").text(stat_request);
-	$("#statt1").text(stat_request);
-	$("#statt2").text(stat_request);
+//	$("#statt1").text(stat_request);
+//	$("#statt2").text(stat_request);
 	$("#statt3").text(stat_request);
 	$("#statt4").text(stat_request);
 	$("#statt5").text(stat_request);

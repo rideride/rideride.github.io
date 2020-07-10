@@ -969,6 +969,18 @@ for(var key in pstats) {
 	if(outs==0 && pstats[key]['K'] == 0) {
 		pstats[key]['K6'] = (0).toFixed(2);
 	}
+	if(outs==0 && (hits + pstats[key]['BB']) == 0) {
+		pstats[key]['WHIP'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstats[key]['BB']) > 0) {
+		pstats[key]['WHIP'] = Infinity;
+	}
+	if(outs==0 && (hits + pstats[key]['BB'] + pstats[key]['IBB'] + pstats[key]['Auto BB']) == 0) {
+		pstats[key]['WHIP_2'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstats[key]['BB'] + pstats[key]['IBB'] + pstats[key]['Auto BB']) > 0) {
+		pstats[key]['WHIP_2'] = Infinity;
+	}
 }
 
 
@@ -1069,6 +1081,18 @@ for(var key in pstatsdict) {
 	}
 	if(outs==0 && pstatsdict[key]['K'] == 0) {
 		pstatsdict[key]['K6'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB']) == 0) {
+		pstatsdict[key]['WHIP'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB']) > 0) {
+		pstatsdict[key]['WHIP'] = Infinity;
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) == 0) {
+		pstatsdict[key]['WHIP_2'] = (0).toFixed(2);
+	}
+	if(outs==0 && (hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) > 0) {
+		pstatsdict[key]['WHIP_2'] = Infinity;
 	}
 }
 } //end pstatsDoer
