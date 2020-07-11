@@ -70,7 +70,7 @@ window.googleDocCallback = function () { return true; };
 	 
 //$(document).ready(function() {
 window.onload = function everything() {
-	var flag = s5data.length;
+	var flag = s5datamilr.length;
 	 if(flag < 1000) {
        window.setTimeout(everything, 100);
     } else {
