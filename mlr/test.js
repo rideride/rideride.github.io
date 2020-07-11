@@ -87,11 +87,17 @@ window.onload = function() {
 
 setTimeout(function(){
 	
-	console.log(databruh);
+	setTimeout(function(){
+		if(s5data.length < 1000) {
+			$("#loading").text("Loading probably failed, try refreshing");
+		}
+	},5000);
+	
+	//console.log(databruh);
 	s5data = s5data.split("\n").slice(1).join("\n");
-	console.log(s5data);
+	//console.log(s5data);
 	databruh = databruh + s5data;
-	console.log(databruh);
+	//console.log(databruh);
 
 //console.log("Ready");
 
@@ -860,13 +866,13 @@ statsDoer(milrstats5,8);
 //console.log(stats4);
 //console.log(stats5);
 
-console.log(s1stats);
-console.log(stats[113]["RBI"]);
+//console.log(s1stats);
+//console.log(stats[113]["RBI"]);
 //console.log(stats1[113]["RBI"]);
-console.log(stats2[113]["RBI"]);
-console.log(stats3[113]["RBI"]);
-console.log(stats4[113]["RBI"]);
-console.log(stats5[113]["RBI"]);
+//console.log(stats2[113]["RBI"]);
+//console.log(stats3[113]["RBI"]);
+//console.log(stats4[113]["RBI"]);
+//console.log(stats5[113]["RBI"]);
 
 //console.log(stats3[342]["AVG"]);
 
