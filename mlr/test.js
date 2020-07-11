@@ -90,7 +90,7 @@ setTimeout(function(){
 	console.log(databruh);
 	s5data = s5data.split("\n").slice(1).join("\n");
 	console.log(s5data);
-	databruh = databruh + "\n" + s5data;
+	databruh = databruh + s5data;
 	console.log(databruh);
 
 //console.log("Ready");
@@ -184,9 +184,14 @@ for(var key in databruh3) {
 
 
 	//console.log(run);
-	if(run.length < 1) {
+	try {
+		if(run.length < 1) {
 		run = 0;
 		//console.log("yeet");
+	}
+	}
+	catch(err) {
+		console.log(line);
 	}
 	var rbi = databruh3[key]["RBI"];
 	if(rbi.length < 1) {
