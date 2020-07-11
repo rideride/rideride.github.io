@@ -83,15 +83,19 @@ window.googleDocCallback = function () { return true; };
 	  
 	 
 //$(document).ready(function() {
-window.onload = function() {
+window.onload = function everything() {
+	var flag = s5data.length;
+	 if(flag < 1000) {
+       window.setTimeout(everything, 100);
+    } else {
 
-setTimeout(function(){
+//setTimeout(function(){
 	
-	setTimeout(function(){
-		if(s5data.length < 1000) {
-			$("#loading").text("Loading probably failed, try refreshing");
-		}
-	},5000);
+//	setTimeout(function(){
+//		if(databruh.length < 1000) {
+//			$("#h3").text("Season 5 loading failed. Try refreshing?");
+//		}
+//	},5000);
 	
 	//console.log(databruh);
 	s5data = s5data.split("\n").slice(1).join("\n");
@@ -1418,9 +1422,10 @@ addRows(s5_h, "s5-hits-lb", stat_request, stats5);
 $("#loading").css('display','none');
 //document.getElementById("bblol").removeAttribute("style");
 
-}, 1000); //setTimeout
+//}, 1000); //setTimeout (unnecessary now???)
+} //Flag check else end
 
-}; //documentReady
+} //everything() end
 
 
 
