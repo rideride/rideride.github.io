@@ -173,19 +173,6 @@ for(var key in databruh3) {
 	}
 			h_list[hitter] = 0;
 	}
-	if(!(pitcher in players)) {
-//console.log(!(pitcher in p_list));
-
-		if(!(pitcher in p_list)) {
-		//console.log(pitcher);
-		//console.log(line);
-		var p = Math.random().toString(10).substring(7);
-		players[pitcher] = p;
-		pids[p] = [pitcher];
-	}
-			p_list[pitcher] = 0;
-	}
-	
 
 
 	//console.log(run);
@@ -209,12 +196,6 @@ for(var key in databruh3) {
 	} 
 	catch(err) {
 		//console.log(hitter)
-	}
-	try {
-		var pitcher_id = players[pitcher];
-	} 
-	catch(err) {
-		//console.log(pitcher)
 	}
 	if(hitter_id in stats) {
 	    bruhbruh = bruhbruh + 1;
