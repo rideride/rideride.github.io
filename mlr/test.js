@@ -101,6 +101,7 @@ window.onload = function everything() {
 	s5data = s5data.split("\n").slice(1).join("\n");
 	//console.log(s5data);
 	databruh = databruh + s5data;
+	s5data = '';
 	//console.log(databruh);
 
 //console.log("Ready");
@@ -139,6 +140,7 @@ for(var key in datas13) {
 //console.log(s1stats);
 
 var databruh3 = $.csv.toObjects(databruh)
+databruh = '';
 
 var stats = {};
 var stats1 = {};
