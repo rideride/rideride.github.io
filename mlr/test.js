@@ -88,7 +88,10 @@ window.onload = function() {
 setTimeout(function(){
 	
 	console.log(databruh);
+	s5data = s5data.split("\n").slice(1).join("\n");
 	console.log(s5data);
+	databruh = databruh + "\n" + s5data;
+	console.log(databruh);
 
 //console.log("Ready");
 
