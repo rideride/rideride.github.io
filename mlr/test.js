@@ -28,10 +28,9 @@ function processData(allText) {
 }
 */
 
-data2 = '';
-databruh = ''
-datas1 = '';
-var datamilr1 = '';
+var data2 = '';
+var databruh = ''
+var datas1 = '';
 var s5data = '';
 window.googleDocCallback = function () { return true; };
     $.ajax({
@@ -54,13 +53,6 @@ window.googleDocCallback = function () { return true; };
         dataType: "text",
         //success: function(data) {processData(data);}
 		success: function(data) {datas1 = data;}
-     });
-	 $.ajax({
-        type: "GET",
-        url: "https://rideride.github.io/mlr/MiLRSeasons.txt",
-        dataType: "text",
-        //success: function(data) {processData(data);}
-		success: function(data) {datamilr1 = data;}
      });
 	 
 	  function loadData() {
