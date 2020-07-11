@@ -112,8 +112,6 @@ for(var key in data3) {
     //console.log(value);
 }
 
-v
-
 var datamilr3 = $.csv.toObjects(databruh)
 
 var milrstats = {};
