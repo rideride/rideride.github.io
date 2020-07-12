@@ -299,7 +299,7 @@ function statsDoer(statsdict, s) {
 	for(var key in statsdict) {
 	//var hitter_id = players[key];
 	var hitter_id = key;
-	if(s==1) {
+	if(s==1 || s==0) {
 	if(hitter_id in s1stats && s1stats[key]["R"].length > 0) {
 		try {
 			statsdict[hitter_id]["R"] = statsdict[hitter_id]["R"] + parseFloat(s1stats[hitter_id]["R"]);

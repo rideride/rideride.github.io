@@ -306,8 +306,8 @@ function pstatsDoer(pstatsdict, s) {
 for(var key in pstatsdict) {
 	//var pitcher_id = players[key];
 	//console.log(key);
-	if(s==1) {
-	if(key in s1stats) {
+	if(s==1 || s==0) {
+	if(key in s1stats && s1stats[key]["R_P"].length > 0) {
 		//console.log(pids[pitcher_id]);
 		pstatsdict[key]["R"] = pstatsdict[key]["R"] + parseFloat(s1stats[key]["R_P"]);
 	}
@@ -414,12 +414,12 @@ for(var key in pstatsdict) {
 }
 } //end pstatsDoer
 
-pstatsDoer(pstats);
-pstatsDoer(pstats1);
-pstatsDoer(pstats2);
-pstatsDoer(pstats3);
-pstatsDoer(pstats4);
-pstatsDoer(pstats5);
+pstatsDoer(pstats,0);
+pstatsDoer(pstats1,1);
+pstatsDoer(pstats2,2);
+pstatsDoer(pstats3,3);
+pstatsDoer(pstats4,4);
+pstatsDoer(pstats5,5);
 
 
 
