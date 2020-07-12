@@ -1339,6 +1339,10 @@ $("#loading").css('display','none');
 
 //}, 1000); //setTimeout
 
+
+console.log(stats[541]);
+console.log(stats5[541]);
+
 	} //else end
 
 } //everything() end
