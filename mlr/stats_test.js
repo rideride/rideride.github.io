@@ -83,7 +83,7 @@ window.googleDocCallback = function () { return true; };
 	  loadDatamilr();
 	  
 	 function getMlr() {
-		 var milrLength = milrLength.length;
+		 var milrLength = s5datamilr.length;
 	 if(milrLength < 1000) {
        window.setTimeout(getMlr, 100);
     } else {
