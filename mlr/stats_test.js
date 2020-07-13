@@ -1337,13 +1337,14 @@ $('#calc-submit').click(function() {
 $("#loading").css('display','none');
 console.log(pmilrstats[1695]);
 console.log(pmilrstats5);
+console.log(databruhmilr);
 //document.getElementById("bblol").removeAttribute("style");
 
 //}, 1000); //setTimeout
 
 
-console.log(stats[541]);
-console.log(stats5[541]);
+//console.log(stats[541]);
+//console.log(stats5[541]);
 
 	} //else end
 
