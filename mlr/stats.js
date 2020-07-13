@@ -120,15 +120,15 @@ window.onload = function everything() {
     } else {
 
 	s5data = s5data.split("\n").slice(1).join("\n");
-	console.log(s5data);
+//	console.log(s5data);
 	databruh = databruh + s5data;
 	s5data = '';
 	s5datamilr = s5datamilr.split("\n").slice(1).join("\n");
 //	console.log(s5datamilr);
 	databruhmilr = databruhmilr + s5datamilr;
 	s5datamilr = '';
-	console.log(databruh);
-	console.log(databruhmilr);
+//	console.log(databruh);
+//	console.log(databruhmilr);
 
 
 //console.log("Ready");
