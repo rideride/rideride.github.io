@@ -134,17 +134,17 @@ for(var key in datas13) {
 var databruh3 = $.csv.toObjects(databruh)
 databruh = '';
 
-var pstats = {};
-var pstats1 = {};
-var pstats2 = {};
-var pstats3 = {};
-var pstats4 = {};
-var pstats5 = {};
+var stats = {};
+var stats1 = {};
+var stats2 = {};
+var stats3 = {};
+var stats4 = {};
+var stats5 = {};
 
 var bruhbruh = 0;
 var bruhbruh2 = 0;
 
-var p_list = {};
+var h_list = {};
 var line = 0;
 
 for(var key in databruh3) {
@@ -154,37 +154,31 @@ for(var key in databruh3) {
 	var result = databruh3[key]["Result"];
 	var run = databruh3[key]["Run"];
 	var season = "MLR_"+databruh3[key]["Season"];
-	if(!(pitcher in players)) {
-//console.log(!(pitcher in p_list));
+	if(!(hitter in players)) {
 
-		if(!(pitcher in p_list)) {
-		//console.log(pitcher);
+			if(!(hitter in h_list)) {
+						//console.log(hitter);
 		//console.log(line);
-		var p = Math.random().toString(10).substring(7);
-		players[pitcher] = p;
-		pids[p] = [pitcher];
+		var r = Math.random().toString(10).substring(7);
+		players[hitter] = r;
+		pids[r] = [hitter];
 	}
-			p_list[pitcher] = 0;
+			h_list[hitter] = 0;
 	}
-	
 
 
 	//console.log(run);
-	if(run.length < 1) {
+	try {
+		if(run.length < 1) {
 		run = 0;
 		//console.log("yeet");
+	}
+	}
+	catch(err) {
+		console.log(line);
 	}
 	var rbi = databruh3[key]["RBI"];
 	if(rbi.length < 1) {
-		rbi = 0;
-		//console.log("yeet2");
-	}
-	if(isNaN(run)) {
-		run = 0;
-		//console.log("yeet");
-	}
-	//var rbi = databruh3[key]["RBI"];
-	if(isNaN(rbi)) {
 		rbi = 0;
 		//console.log("yeet2");
 	}
@@ -193,233 +187,217 @@ for(var key in databruh3) {
 		var hitter_id = players[hitter];
 	} 
 	catch(err) {
-		console.log(hitter)
+		//console.log(hitter)
 	}
-	try {
-		var pitcher_id = players[pitcher];
-	} 
-	catch(err) {
-		console.log(pitcher)
+	if(hitter_id in stats) {
+	    bruhbruh = bruhbruh + 1;
+    } else {
+        stats[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	stats[hitter_id][result] = stats[hitter_id][result] + 1;
+	stats[hitter_id]["RBI"] = stats[hitter_id]["RBI"] + parseFloat(rbi);
+	stats[hitter_id]["R"] = stats[hitter_id]["R"] + parseFloat(run);
+	if((stats[hitter_id]['Games']).includes(game)) {
+		bruhbruh2 = bruhbruh2 + 1;
+	} else {
+		stats[hitter_id]['Games'].push(game);
 	}
 	
 	//season 1
 	if(season == "MLR_1") { 
-	if(pitcher_id in pstats1) {
+	if(hitter_id in stats1) {
 	    bruhbruh = bruhbruh + 1;
     } else {
-        pstats1[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+        stats1[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
     }
-	pstats1[pitcher_id][result] = pstats1[pitcher_id][result] + 1;
-	pstats1[pitcher_id]["R"] = pstats1[pitcher_id]["R"] + parseFloat(run);
-	if((pstats1[pitcher_id]['Games']).includes(game)) {
+	stats1[hitter_id][result] = stats1[hitter_id][result] + 1;
+	stats1[hitter_id]["RBI"] = stats1[hitter_id]["RBI"] + parseFloat(rbi);
+	stats1[hitter_id]["R"] = stats1[hitter_id]["R"] + parseFloat(run);
+	if((stats1[hitter_id]['Games']).includes(game)) {
 		bruhbruh2 = bruhbruh2 + 1;
 	} else {
-		pstats1[pitcher_id]['Games'].push(game);
+		stats1[hitter_id]['Games'].push(game);
 	}
 	} //season 1 end
 	
 	//season 2
 	if(season == "MLR_2") { 
-	if(pitcher_id in pstats2) {
+	if(hitter_id in stats2) {
 	    bruhbruh = bruhbruh + 1;
     } else {
-        pstats2[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+        stats2[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
     }
-	pstats2[pitcher_id][result] = pstats2[pitcher_id][result] + 1;
-	pstats2[pitcher_id]["R"] = pstats2[pitcher_id]["R"] + parseFloat(run);
-	if((pstats2[pitcher_id]['Games']).includes(game)) {
+	stats2[hitter_id][result] = stats2[hitter_id][result] + 1;
+	stats2[hitter_id]["RBI"] = stats2[hitter_id]["RBI"] + parseFloat(rbi);
+	stats2[hitter_id]["R"] = stats2[hitter_id]["R"] + parseFloat(run);
+	if((stats2[hitter_id]['Games']).includes(game)) {
 		bruhbruh2 = bruhbruh2 + 1;
 	} else {
-		pstats2[pitcher_id]['Games'].push(game);
+		stats2[hitter_id]['Games'].push(game);
 	}
 	} //season 2 end
 	
 	//season 3
 	if(season == "MLR_3") { 
-	if(pitcher_id in pstats3) {
+	if(hitter_id in stats3) {
 	    bruhbruh = bruhbruh + 1;
     } else {
-        pstats3[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+        stats3[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
     }
-	pstats3[pitcher_id][result] = pstats3[pitcher_id][result] + 1;
-	pstats3[pitcher_id]["R"] = pstats3[pitcher_id]["R"] + parseFloat(run);
-	if((pstats3[pitcher_id]['Games']).includes(game)) {
+	stats3[hitter_id][result] = stats3[hitter_id][result] + 1;
+	stats3[hitter_id]["RBI"] = stats3[hitter_id]["RBI"] + parseFloat(rbi);
+	stats3[hitter_id]["R"] = stats3[hitter_id]["R"] + parseFloat(run);
+	if((stats3[hitter_id]['Games']).includes(game)) {
 		bruhbruh2 = bruhbruh2 + 1;
 	} else {
-		pstats3[pitcher_id]['Games'].push(game);
+		stats3[hitter_id]['Games'].push(game);
 	}
 	} //season 3 end
 	
 	//season 4
 	if(season == "MLR_4") { 
-	if(pitcher_id in pstats4) {
+	if(hitter_id in stats4) {
 	    bruhbruh = bruhbruh + 1;
     } else {
-        pstats4[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+        stats4[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
     }
-	pstats4[pitcher_id][result] = pstats4[pitcher_id][result] + 1;
-	pstats4[pitcher_id]["R"] = pstats4[pitcher_id]["R"] + parseFloat(run);
-	if((pstats4[pitcher_id]['Games']).includes(game)) {
+	stats4[hitter_id][result] = stats4[hitter_id][result] + 1;
+	stats4[hitter_id]["RBI"] = stats4[hitter_id]["RBI"] + parseFloat(rbi);
+	stats4[hitter_id]["R"] = stats4[hitter_id]["R"] + parseFloat(run);
+	if((stats4[hitter_id]['Games']).includes(game)) {
 		bruhbruh2 = bruhbruh2 + 1;
 	} else {
-		pstats4[pitcher_id]['Games'].push(game);
+		stats4[hitter_id]['Games'].push(game);
 	}
 	} //season 4 end
 	
 	//season 5
 	if(season == "MLR_5") { 
-	if(pitcher_id in pstats5) {
+	if(hitter_id in stats5) {
 	    bruhbruh = bruhbruh + 1;
     } else {
-        pstats5[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+        stats5[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
     }
-	pstats5[pitcher_id][result] = pstats5[pitcher_id][result] + 1;
-	pstats5[pitcher_id]["R"] = pstats5[pitcher_id]["R"] + parseFloat(run);
-	if((pstats5[pitcher_id]['Games']).includes(game)) {
+	stats5[hitter_id][result] = stats5[hitter_id][result] + 1;
+	stats5[hitter_id]["RBI"] = stats5[hitter_id]["RBI"] + parseFloat(rbi);
+	stats5[hitter_id]["R"] = stats5[hitter_id]["R"] + parseFloat(run);
+	if((stats5[hitter_id]['Games']).includes(game)) {
 		bruhbruh2 = bruhbruh2 + 1;
 	} else {
-		pstats5[pitcher_id]['Games'].push(game);
+		stats5[hitter_id]['Games'].push(game);
 	}
 	} //season 5 end
-	
-	if(pitcher_id in pstats) {
-	    bruhbruh = bruhbruh + 1;
-    } else {
-        pstats[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
-    }
-	pstats[pitcher_id][result] = pstats[pitcher_id][result] + 1;
-	pstats[pitcher_id]["R"] = pstats[pitcher_id]["R"] + parseFloat(run);
-	if((pstats[pitcher_id]['Games']).includes(game)) {
-		bruhbruh2 = bruhbruh2 + 1;
-	} else {
-		pstats[pitcher_id]['Games'].push(game);
-	}
-	
 
 }
 
 
 
 
-function pstatsDoer(pstatsdict, s) {
-	
-for(var key in pstatsdict) {
-	//var pitcher_id = players[key];
-	//console.log(key);
+
+function statsDoer(statsdict, s) {
+
+	for(var key in statsdict) {
+	//var hitter_id = players[key];
+	var hitter_id = key;
 	if(s==1 || s==0) {
-	if(key in s1stats && s1stats[key]["R_P"].length > 0) {
-		//console.log(pids[pitcher_id]);
-		pstatsdict[key]["R"] = pstatsdict[key]["R"] + parseFloat(s1stats[key]["R_P"]);
+	if(hitter_id in s1stats && s1stats[key]["R"].length > 0) {
+		try {
+			statsdict[hitter_id]["R"] = statsdict[hitter_id]["R"] + parseFloat(s1stats[hitter_id]["R"]);
+		}
+		catch(err) {
+		//console.log(key)
+		}
+		//statsdict[hitter_id]["RBI"] = statsdict[hitter_id]["RBI"] + parseFloat(s1stats[hitter_id]["RBI"]);
+		statsdict[hitter_id]["RBI"] = parseFloat(s1stats[hitter_id]["RBI"]);
+		if(isNaN(statsdict[hitter_id]["RBI"])) {
+			console.log(pids[key],statsdict[key])
+			console.log(statsdict[hitter_id]["R"],parseFloat(s1stats[hitter_id]["R"]),statsdict[hitter_id]["RBI"],parseFloat(s1stats[hitter_id]["RBI"]));
+			}
 	}
 	}
-	var games = pstatsdict[key]['Games'].length;
-	var hits = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B'];
-	var tb = 4*pstatsdict[key]['HR']+3*pstatsdict[key]['3B']+2*pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B'];
-	var abs = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+pstatsdict[key]['DP']+pstatsdict[key]['Bunt K']+pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO'];
-	var ob = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['BB'];
-    var pas = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+pstatsdict[key]['DP']+pstatsdict[key]['Bunt K']+pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO']+pstatsdict[key]['BB']+pstatsdict[key]['Sac']+pstatsdict[key]['Bunt Sac']+pstatsdict[key]['Bunt'];
-	var bf = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+pstatsdict[key]['DP']+pstatsdict[key]['Bunt K']+pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO']+pstatsdict[key]['BB']+pstatsdict[key]['Sac']+pstatsdict[key]['Bunt Sac']+pstatsdict[key]['Bunt'];
-	var abs_2 = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+pstatsdict[key]['DP']+pstatsdict[key]['Auto K']+pstatsdict[key]['Bunt K']+pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO'];
-	var ob_2 = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['BB']+pstatsdict[key]['IBB']+pstatsdict[key]['Auto BB'];
-    var pas_2 = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+pstatsdict[key]['DP']+pstatsdict[key]['Auto K']+pstatsdict[key]['Bunt K']+pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO']+pstatsdict[key]['BB']+pstatsdict[key]['IBB']+pstatsdict[key]['Auto BB']+pstatsdict[key]['Sac']+pstatsdict[key]['Bunt Sac']+pstatsdict[key]['Bunt'];
-	var bf_2 = pstatsdict[key]['HR']+pstatsdict[key]['3B']+pstatsdict[key]['2B']+pstatsdict[key]['1B']+pstatsdict[key]['Bunt 1B']+pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+pstatsdict[key]['DP']+pstatsdict[key]['Bunt K']+pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO']+pstatsdict[key]['BB']+pstatsdict[key]['Sac']+pstatsdict[key]['Bunt Sac']+pstatsdict[key]['Bunt']+pstatsdict[key]['Auto BB']+pstatsdict[key]['Auto K']+pstatsdict[key]['IBB'];
-	var outs = pstatsdict[key]['FO']+pstatsdict[key]['K']+pstatsdict[key]['PO']+pstatsdict[key]['RGO']+pstatsdict[key]['LGO']+2*pstatsdict[key]['DP']+pstatsdict[key]['Auto K']+pstatsdict[key]['Bunt K']+3*pstatsdict[key]['TP']+pstatsdict[key]['Bunt GO']+pstatsdict[key]['Sac']+pstatsdict[key]['Bunt Sac']+pstatsdict[key]['Bunt']+pstatsdict[key]['CS'];
+	var games = statsdict[key]['Games'].length;
+	var hits = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B'];
+	var tb = 4*statsdict[key]['HR']+3*statsdict[key]['3B']+2*statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B'];
+	var abs = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B']+statsdict[key]['FO']+statsdict[key]['K']+statsdict[key]['PO']+statsdict[key]['RGO']+statsdict[key]['LGO']+statsdict[key]['DP']+statsdict[key]['Bunt K']+statsdict[key]['TP']+statsdict[key]['Bunt GO'];
+	var abs_2 = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B']+statsdict[key]['FO']+statsdict[key]['K']+statsdict[key]['PO']+statsdict[key]['RGO']+statsdict[key]['LGO']+statsdict[key]['DP']+statsdict[key]['Auto K']+statsdict[key]['Bunt K']+statsdict[key]['TP']+statsdict[key]['Bunt GO'];
+	var ob = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B']+statsdict[key]['BB'];
+	var ob_2 = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B']+statsdict[key]['BB']+statsdict[key]['IBB']+statsdict[key]['Auto BB'];
+    var pas = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B']+statsdict[key]['FO']+statsdict[key]['K']+statsdict[key]['PO']+statsdict[key]['RGO']+statsdict[key]['LGO']+statsdict[key]['DP']+statsdict[key]['Bunt K']+statsdict[key]['TP']+statsdict[key]['Bunt GO']+statsdict[key]['BB']+statsdict[key]['Sac']+statsdict[key]['Bunt Sac']+statsdict[key]['Bunt'];
+	var pas_2 = statsdict[key]['HR']+statsdict[key]['3B']+statsdict[key]['2B']+statsdict[key]['1B']+statsdict[key]['Bunt 1B']+statsdict[key]['FO']+statsdict[key]['K']+statsdict[key]['PO']+statsdict[key]['RGO']+statsdict[key]['LGO']+statsdict[key]['DP']+statsdict[key]['Auto K']+statsdict[key]['Bunt K']+statsdict[key]['TP']+statsdict[key]['Bunt GO']+statsdict[key]['BB']+statsdict[key]['IBB']+statsdict[key]['Auto BB']+statsdict[key]['Sac']+statsdict[key]['Bunt Sac']+statsdict[key]['Bunt'];
 	try {
-		pstatsdict[key]['AVG'] = parseFloat((hits / abs).toFixed(3));
-		if(isNaN(pstatsdict[key]['AVG'])) {pstatsdict[key]['AVG'] = 0;}
+		statsdict[key]['AVG'] = parseFloat((hits / abs).toFixed(3));
+		if(isNaN(statsdict[key]['AVG'])) {statsdict[key]['AVG'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['AVG'] = 0;
+		console.log("Aight here's a problem with avg!!!");
+		console.log(key);
+		statsdict[key]['AVG'] = 0;
 	}
 	try {
-		pstatsdict[key]['OBP'] = parseFloat((ob / pas).toFixed(3));
-		if(isNaN(pstatsdict[key]['OBP'])) {pstatsdict[key]['OBP'] = 0;}
+		statsdict[key]['OBP'] = parseFloat((ob / pas).toFixed(3));
+		if(isNaN(statsdict[key]['OBP'])) {statsdict[key]['OBP'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['OBP'] = 0;
+		statsdict[key]['OBP'] = 0;
 	}
 	try {
-		pstatsdict[key]['SLG'] = parseFloat((tb / abs).toFixed(3));
-		if(isNaN(pstatsdict[key]['SLG'])) {pstatsdict[key]['SLG'] = 0;}
+		statsdict[key]['SLG'] = parseFloat((tb / abs).toFixed(3));
+		if(isNaN(statsdict[key]['SLG'])) {statsdict[key]['SLG'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['SLG'] = 0;
+		statsdict[key]['SLG'] = 0;
 	}
 	try {
-		pstatsdict[key]['OPS'] = parseFloat((pstatsdict[key]['OBP'] + pstatsdict[key]['SLG']).toFixed(3));
-		if(isNaN(pstatsdict[key]['OPS'])) {pstatsdict[key]['OPS'] = 0;}
+		statsdict[key]['OPS'] = parseFloat((statsdict[key]['OBP'] + statsdict[key]['SLG']).toFixed(3));
+		if(isNaN(statsdict[key]['OPS'])) {statsdict[key]['OPS'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['OPS'] = 0;
+		statsdict[key]['OPS'] = 0;
 	}
 	try {
-		pstatsdict[key]['AVG_2'] = parseFloat((hits / abs_2).toFixed(3));
-		if(isNaN(pstatsdict[key]['AVG_2'])) {pstatsdict[key]['AVG_2'] = 0;}
+		statsdict[key]['AVG_2'] = parseFloat((hits / abs_2).toFixed(3));
+		if(isNaN(statsdict[key]['AVG_2'])) {statsdict[key]['AVG_2'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['AVG_2'] = 0;
+		statsdict[key]['AVG_2'] = 0;
 	}
 	try {
-		pstatsdict[key]['OBP_2'] = parseFloat((ob_2 / pas_2).toFixed(3));
-		if(isNaN(pstatsdict[key]['OBP_2'])) {pstatsdict[key]['OBP_2'] = 0;}
+		statsdict[key]['OBP_2'] = parseFloat((ob_2 / pas_2).toFixed(3));
+		if(isNaN(statsdict[key]['OBP_2'])) {statsdict[key]['OBP_2'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['OBP_2'] = 0;
+		statsdict[key]['OBP_2'] = 0;
 	}
 	try {
-		pstatsdict[key]['SLG_2'] = parseFloat((tb / abs_2).toFixed(3));
-		if(isNaN(pstatsdict[key]['SLG_2'])) {pstatsdict[key]['SLG_2'] = 0;}
+		statsdict[key]['SLG_2'] = parseFloat((tb / abs_2).toFixed(3));
+		if(isNaN(statsdict[key]['SLG_2'])) {statsdict[key]['SLG_2'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['SLG_2'] = 0;
+		statsdict[key]['SLG_2'] = 0;
 	}
 	try {
-		pstatsdict[key]['OPS_2'] = parseFloat((pstatsdict[key]['OBP_2'] + pstatsdict[key]['SLG_2']).toFixed(3));
-		if(isNaN(pstatsdict[key]['OPS_2'])) {pstatsdict[key]['OPS_2'] = 0;}
+		statsdict[key]['OPS_2'] = parseFloat((statsdict[key]['OBP_2'] + statsdict[key]['SLG_2']).toFixed(3));
+		if(isNaN(statsdict[key]['OPS_2'])) {statsdict[key]['OPS_2'] = 0;}
 	}
 	catch(err) {
-		pstatsdict[key]['OPS_2'] = 0;
+		statsdict[key]['OPS_2'] = 0;
 	}
-	pstatsdict[key]['PA'] = pas;
-	pstatsdict[key]['AB'] = abs;
-	pstatsdict[key]['PA_2'] = pas_2;
-	pstatsdict[key]['AB_2'] = abs_2;
-	pstatsdict[key]['H'] = hits;
-	pstatsdict[key]['G'] = games;
-	pstatsdict[key]['BF'] = bf;
-	pstatsdict[key]['BF_2'] = bf_2;
-	pstatsdict[key]['IP'] = (outs/3).toFixed(3);
-	pstatsdict[key]['WHIP'] = ((hits + pstatsdict[key]['BB']) / (outs/3)).toFixed(2);
-	pstatsdict[key]['WHIP_2'] = ((hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) / (outs/3)).toFixed(2);
-	pstatsdict[key]['K6'] = ((6*pstatsdict[key]['K']) / (outs/3)).toFixed(3);
-	pstatsdict[key]['ERA'] = ((6*pstatsdict[key]['R']) / (outs/3)).toFixed(2);
-	if(outs==0 && pstatsdict[key]['R'] == 0) {
-		pstatsdict[key]['ERA'] = (0).toFixed(2);
-	}
-	if(outs==0 && pstatsdict[key]['K'] == 0) {
-		pstatsdict[key]['K6'] = (0).toFixed(2);
-	}
-	if(outs==0 && (hits + pstatsdict[key]['BB']) == 0) {
-		pstatsdict[key]['WHIP'] = (0).toFixed(2);
-	}
-	if(outs==0 && (hits + pstatsdict[key]['BB']) > 0) {
-		pstatsdict[key]['WHIP'] = Infinity;
-	}
-	if(outs==0 && (hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) == 0) {
-		pstatsdict[key]['WHIP_2'] = (0).toFixed(2);
-	}
-	if(outs==0 && (hits + pstatsdict[key]['BB'] + pstatsdict[key]['IBB'] + pstatsdict[key]['Auto BB']) > 0) {
-		pstatsdict[key]['WHIP_2'] = Infinity;
-	}
+	statsdict[key]['PA'] = pas;
+	statsdict[key]['AB'] = abs;
+	statsdict[key]['PA_2'] = pas_2;
+	statsdict[key]['AB_2'] = abs_2;
+	statsdict[key]['H'] = hits;
+	statsdict[key]['G'] = games;
 }
-} //end pstatsDoer
 
-pstatsDoer(pstats,0);
-pstatsDoer(pstats1,1);
-pstatsDoer(pstats2,2);
-pstatsDoer(pstats3,3);
-pstatsDoer(pstats4,4);
-pstatsDoer(pstats5,5);
+} //statsDoer end
+
+statsDoer(stats1,1);
+statsDoer(stats2,2);
+statsDoer(stats3,3);
+statsDoer(stats4,4);
+statsDoer(stats5,5);
+statsDoer(stats,0);
 
 
 
@@ -668,33 +646,33 @@ $('#calc-submit').click(function() {
 	}
 	//console.log(highlow,stat_request,minresult,maxresult,result_request);
 	if(highlow == "highest") {
-s0_h = getKeysWithHighestValueMinPAs(pstats, 10, stat_request, result_request, minresult, maxresult);
-s1_h = getKeysWithHighestValueMinPAs(pstats1, 10, stat_request, result_request, minresult, maxresult);
-s2_h = getKeysWithHighestValueMinPAs(pstats2, 10, stat_request, result_request, minresult, maxresult);
-s3_h = getKeysWithHighestValueMinPAs(pstats3, 10, stat_request, result_request, minresult, maxresult);
-s4_h = getKeysWithHighestValueMinPAs(pstats4, 10, stat_request, result_request, minresult, maxresult);
-s5_h = getKeysWithHighestValueMinPAs(pstats5, 10, stat_request, result_request, minresult, maxresult);
-addRows(s0_h, "s0-hits-lb", stat_request, pstats);
-addRows(s1_h, "s1-hits-lb", stat_request, pstats1);
-addRows(s2_h, "s2-hits-lb", stat_request, pstats2);
-addRows(s3_h, "s3-hits-lb", stat_request, pstats3);
-addRows(s4_h, "s4-hits-lb", stat_request, pstats4);
-addRows(s5_h, "s5-hits-lb", stat_request, pstats5);	
+s0_h = getKeysWithHighestValueMinPAs(stats, 10, stat_request, result_request, minresult, maxresult);
+s1_h = getKeysWithHighestValueMinPAs(stats1, 10, stat_request, result_request, minresult, maxresult);
+s2_h = getKeysWithHighestValueMinPAs(stats2, 10, stat_request, result_request, minresult, maxresult);
+s3_h = getKeysWithHighestValueMinPAs(stats3, 10, stat_request, result_request, minresult, maxresult);
+s4_h = getKeysWithHighestValueMinPAs(stats4, 10, stat_request, result_request, minresult, maxresult);
+s5_h = getKeysWithHighestValueMinPAs(stats5, 10, stat_request, result_request, minresult, maxresult);
+addRows(s0_h, "s0-hits-lb", stat_request, stats);
+addRows(s1_h, "s1-hits-lb", stat_request, stats1);
+addRows(s2_h, "s2-hits-lb", stat_request, stats2);
+addRows(s3_h, "s3-hits-lb", stat_request, stats3);
+addRows(s4_h, "s4-hits-lb", stat_request, stats4);
+addRows(s5_h, "s5-hits-lb", stat_request, stats5);	
 	}
 		if(highlow == "lowest") {
-s0_h = getKeysWithLowestValueMinPAs(pstats, 10, stat_request, result_request, minresult, maxresult);
-s1_h = getKeysWithLowestValueMinPAs(pstats1, 10, stat_request, result_request, minresult, maxresult);
-s2_h = getKeysWithLowestValueMinPAs(pstats2, 10, stat_request, result_request, minresult, maxresult);
-s3_h = getKeysWithLowestValueMinPAs(pstats3, 10, stat_request, result_request, minresult, maxresult);
-s4_h = getKeysWithLowestValueMinPAs(pstats4, 10, stat_request, result_request, minresult, maxresult);
-s5_h = getKeysWithLowestValueMinPAs(pstats5, 10, stat_request, result_request, minresult, maxresult);
+s0_h = getKeysWithLowestValueMinPAs(stats, 10, stat_request, result_request, minresult, maxresult);
+s1_h = getKeysWithLowestValueMinPAs(stats1, 10, stat_request, result_request, minresult, maxresult);
+s2_h = getKeysWithLowestValueMinPAs(stats2, 10, stat_request, result_request, minresult, maxresult);
+s3_h = getKeysWithLowestValueMinPAs(stats3, 10, stat_request, result_request, minresult, maxresult);
+s4_h = getKeysWithLowestValueMinPAs(stats4, 10, stat_request, result_request, minresult, maxresult);
+s5_h = getKeysWithLowestValueMinPAs(stats5, 10, stat_request, result_request, minresult, maxresult);
 //console.log(s3_h);
-addRows(s0_h, "s0-hits-lb", stat_request, pstats);
-addRows(s1_h, "s1-hits-lb", stat_request, pstats1);
-addRows(s2_h, "s2-hits-lb", stat_request, pstats2);
-addRows(s3_h, "s3-hits-lb", stat_request, pstats3);
-addRows(s4_h, "s4-hits-lb", stat_request, pstats4);
-addRows(s5_h, "s5-hits-lb", stat_request, pstats5);	
+addRows(s0_h, "s0-hits-lb", stat_request, stats);
+addRows(s1_h, "s1-hits-lb", stat_request, stats1);
+addRows(s2_h, "s2-hits-lb", stat_request, stats2);
+addRows(s3_h, "s3-hits-lb", stat_request, stats3);
+addRows(s4_h, "s4-hits-lb", stat_request, stats4);
+addRows(s5_h, "s5-hits-lb", stat_request, stats5);	
 	}
 	
 });

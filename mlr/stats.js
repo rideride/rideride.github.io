@@ -28,10 +28,13 @@ function processData(allText) {
 }
 */
 
-data2 = '';
-databruh = ''
-datas1 = '';
-var datamilr1 = '';
+var data2 = '';
+var databruh = '';
+var databruhmilr = '';
+var datas1 = '';
+var s5data = '';
+var s5datamilr = '';
+window.googleDocCallback = function () { return true; };
     $.ajax({
         type: "GET",
         url: "https://rideride.github.io/mlr/PlayerList.txt",
@@ -41,7 +44,7 @@ var datamilr1 = '';
      });
 	$.ajax({
         type: "GET",
-        url: "https://rideride.github.io/mlr/AllSeasonsNS4WoPChipOtleFix.txt",
+        url: "https://rideride.github.io/mlr/AllSeasonsExceptS5.txt",
         dataType: "text",
         //success: function(data) {processData(data);}
 		success: function(data) {databruh = data;}
@@ -53,17 +56,80 @@ var datamilr1 = '';
         //success: function(data) {processData(data);}
 		success: function(data) {datas1 = data;}
      });
-	 $.ajax({
+	 	$.ajax({
         type: "GET",
-        url: "https://rideride.github.io/mlr/MiLRSeasons.txt",
+        url: "https://rideride.github.io/mlr/MiLRSeasonsNoS5.txt",
         dataType: "text",
         //success: function(data) {processData(data);}
-		success: function(data) {datamilr1 = data;}
+		success: function(data) {databruhmilr = data;}
      });
-//$(document).ready(function() {
-window.onload = function() {
+	 
+	  function loadDatamilr() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=13NuaXN-a4dz9RliO6c0QeYzYgkeq1dDmrDHCkOOuqS8&output=csv&callback=googleDocCallback";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+			  console.log(xmlhttp.readyState);
+              if (xmlhttp.readyState == 4) {
+                  //document.getElementById("display").innerHTML = xmlhttp.responseText;
+                  s5datamilr = xmlhttp.responseText;
+                  //document.getElementById("display").innerHTML = s5data;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+          
+      }
+	  loadDatamilr();
+	  
+	 function getMlr() {
+		 var milrLength = s5datamilr.length;
+	 if(milrLength < 1000) {
+       window.setTimeout(getMlr, 100);
+    } else {
+	  function loadData() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk&output=csv&callback=googleDocCallback";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+			  console.log(xmlhttp.readyState);
+              if (xmlhttp.readyState == 4) {
+                  //document.getElementById("display").innerHTML = xmlhttp.responseText;
+                  s5data = xmlhttp.responseText;
+                  //document.getElementById("display").innerHTML = s5data;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+          
+      }
+	  loadData();
+	 }
+	 }
+	 
+	 getMlr();
 
-setTimeout(function(){
+
+
+//$(document).ready(function() {
+window.onload = function everything() {
+	var flag = s5data.length;
+	var flag2 = s5datamilr.length;
+	 if(!(flag > 1000 && flag2 > 1000)) {
+       window.setTimeout(everything, 100);
+    } else {
+
+	s5data = s5data.split("\n").slice(1).join("\n");
+	console.log(s5data);
+	databruh = databruh + s5data;
+	s5data = '';
+	s5datamilr = s5datamilr.split("\n").slice(1).join("\n");
+//	console.log(s5datamilr);
+	databruhmilr = databruhmilr + s5datamilr;
+	s5datamilr = '';
+	console.log(databruh);
+	console.log(databruhmilr);
+
 
 //console.log("Ready");
 
@@ -363,7 +429,7 @@ for(var key in databruh3) {
 }
 
 
-var datamilr3 = $.csv.toObjects(datamilr1)
+var datamilr3 = $.csv.toObjects(databruhmilr);
 
 var milrstats = {};
 var milrstats1 = {};
@@ -1281,11 +1347,20 @@ $('#calc-submit').click(function() {
 //console.log(bruhbruh2);
 
 $("#loading").css('display','none');
+console.log(pmilrstats[1695]);
+console.log(pmilrstats5);
+console.log(databruhmilr);
 //document.getElementById("bblol").removeAttribute("style");
 
-}, 1000); //setTimeout
+//}, 1000); //setTimeout
 
-}; //documentReady
+
+//console.log(stats[541]);
+//console.log(stats5[541]);
+
+	} //else end
+
+} //everything() end
 
 
 
