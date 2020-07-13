@@ -115,7 +115,7 @@ window.googleDocCallback = function () { return true; };
 window.onload = function everything() {
 	var flag = s5data.length;
 	var flag2 = s5datamilr.length;
-	 if(flag < 1000 && flag2 < 1000) {
+	 if(!(flag > 1000 && flag2 > 1000)) {
        window.setTimeout(everything, 100);
     } else {
 
