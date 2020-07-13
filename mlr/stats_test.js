@@ -1335,6 +1335,8 @@ $('#calc-submit').click(function() {
 //console.log(bruhbruh2);
 
 $("#loading").css('display','none');
+console.log(pmilrstats[1695]);
+console.log(pmilrstats5);
 //document.getElementById("bblol").removeAttribute("style");
 
 //}, 1000); //setTimeout
