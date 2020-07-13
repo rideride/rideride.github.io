@@ -82,7 +82,11 @@ window.googleDocCallback = function () { return true; };
       }
 	  loadDatamilr();
 	  
-	 
+	 function getMlr() {
+		 var milrLength = milrLength.length;
+	 if(milrLength < 1000) {
+       window.setTimeout(getMlr, 100);
+    } else {
 	  function loadData() {
           var url = "https://docs.google.com/spreadsheet/pub?key=1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk&output=csv&callback=googleDocCallback";
           xmlhttp = new XMLHttpRequest();
@@ -100,6 +104,10 @@ window.googleDocCallback = function () { return true; };
           
       }
 	  loadData();
+	 }
+	 }
+	 
+	 getMlr();
 
 
 
