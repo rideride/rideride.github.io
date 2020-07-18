@@ -102,8 +102,8 @@ pids = {}
 
 for(var key in data3) {
     var value = data3[key];
-	var player_name = data3[key]["Name"];
-	var player_id = data3[key]["Player ID"];
+	var player_name = data3[key]["MLN Name"];
+	var player_id = data3[key]["MLR ID"];
 	players[player_name] = player_id;
 	if(pids[player_id] && pids[player_id].length > 0) {
 	    pids[player_id].push(player_name);
@@ -137,7 +137,7 @@ for(var key in databruh3) {
 	var hitter = databruh3[key]["Hitter"];
 	var pitcher = databruh3[key]["Pitcher"];
 	var result = databruh3[key]["Result"];
-	var run = databruh3[key]["Run"];
+	var run = databruh3[key]["Run Scored"];
 	var season = "MLR_"+databruh3[key]["Season"];
 	if(!(hitter in players)) {
 
@@ -162,12 +162,12 @@ for(var key in databruh3) {
 	catch(err) {
 		console.log(line);
 	}
-	var rbi = databruh3[key]["RBI"];
+	var rbi = databruh3[key]["RBIs"];
 	if(rbi.length < 1) {
 		rbi = 0;
 		//console.log("yeet2");
 	}
-	var game = databruh3[key]["Season"] + '_' + databruh3[key]["Game ID"]
+	var game = databruh3[key]["Season"] + '_' + databruh3[key]["Game #"]
 	try {
 		var hitter_id = players[hitter];
 	} 
