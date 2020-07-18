@@ -1,8 +1,4 @@
-Play #,Inning,Outs,BRC,Play Type,Pitcher,Pitch #,Hitter,Swing #,Catcher,Throw #,Runner,Steal #,Result,"Run
-Scored","Ghost
-Scored",RBIs,"Stolen
-Base",Diff,"Runs Scored
-on Play",Off Team,Def Team,Game #,Session #,Inning,Pitcher ID,Hitter ID,Catcher Id,Runner ID,Season,bruh
+Play #,Inning,Outs,BRC,Play Type,Pitcher,Pitch #,Hitter,Swing #,Catcher,Throw #,Runner,Steal #,Result,Run Scored,Ghost Scored,RBIs,Stolen Base,Diff,Runs Scored on Play,Off Team,Def Team,Game #,Session #,Inning,Pitcher ID,Hitter ID,Catcher Id,Runner ID,Season,bruh
 1101,T1,0,0,Swing,Ronald Eagle V,922,Reggie Cooke,327,,,,,K,,,,,405,,OAK,CIN,11,1,1100,1111,1127,,,1,
 1102,T1,1,0,Swing,Ronald Eagle V,922,Clipper Charge,429,,,,,K,,,,,493,,OAK,CIN,11,1,1100,1111,1126,,,1,
 1103,T1,2,0,Swing,Ronald Eagle V,,Blue Moon Barthelemy,,,,,,AutoK,,,,,,,OAK,CIN,11,1,1100,1111,1103,,,1,
