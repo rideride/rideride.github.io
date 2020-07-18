@@ -117,7 +117,7 @@ for(var key in data3) {
 //console.log(s1stats);
 
 var databruh3 = $.csv.toObjects(databruh)
-databruh = '';
+//databruh = '';
 
 var stats = {};
 var stats1 = {};
