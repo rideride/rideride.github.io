@@ -132,11 +132,33 @@ var bruhbruh2 = 0;
 var h_list = {};
 var line = 0;
 
+var resultlist = [];
+var mlr_results = {"AutoK":"Auto K","DPRun":"DP","DPH1":"DP","DP32":"DP","DP31":"DP","DP21":"DP","GORA":"GO","AutoBB":"Auto BB","SacF":"Sac","DSacF":"Sac","IF1B":"1B","SacB":"Bunt Sac","FCH":"FC","FC3rd":"FC","FCLead":"FC","DFO":"FO","1BWH":"1B","2BWH":"2B"};
+var mlrresultlist = [];
+
+var all_stuff = ['K', 'AutoK', 'GO', 'HR', '2B', 'PO', '1B', 'FO', 'GORA', '3B', 'AutoBB', 'BB', 'FC', 'DP', 'IF1B', 'SacF', 'DPRun', 'IBB', 'SB', 'SacB', 'TP', 'FCH', '1BWH', 'DP32', 'FC3rd', 'DFO', 'DPH1', '2BWH', 'DP31', 'DP21', 'DSacF', 'FCLead'];
+var pa_stuff = ['K', 'GO', 'HR', '2B', 'PO', '1B', 'FO', 'GORA', '3B', 'BB', 'FC', 'DP', 'IF1B', 'SacF', 'DPRun', 'SacB', 'TP', 'FCH', '1BWH', 'DP32', 'FC3rd', 'DFO', 'DPH1', '2BWH', 'DP31', 'DP21', 'DSacF', 'FCLead'];
+var ab_stuff = ['K', 'GO', 'HR', '2B', 'PO', '1B', 'FO', 'GORA', '3B', 'FC', 'DP', 'IF1B', 'DPRun', 'TP', 'FCH', '1BWH', 'DP32', 'FC3rd', 'DFO', 'DPH1', '2BWH', 'DP31', 'DP21', 'FCLead'];
+var pa_stuff2 = ['K', 'AutoK', 'GO', 'HR', '2B', 'PO', '1B', 'FO', 'GORA', '3B', 'AutoBB', 'BB', 'FC', 'DP', 'IF1B', 'SacF', 'DPRun', 'IBB', 'SacB', 'TP', 'FCH', '1BWH', 'DP32', 'FC3rd', 'DFO', 'DPH1', '2BWH', 'DP31', 'DP21', 'DSacF', 'FCLead'];
+var ab_stuff2 = ['K', 'AutoK', 'GO', 'HR', '2B', 'PO', '1B', 'FO', 'GORA', '3B', 'FC', 'DP', 'IF1B', 'DPRun', 'TP', 'FCH', '1BWH', 'DP32', 'FC3rd', 'DFO', 'DPH1', '2BWH', 'DP31', 'DP21', 'FCLead'];
+var steal_stuff = ['CS','SB'];
+var avg_stuff = ['HR', '2B', '1B', '3B', 'IF1B', '1BWH', '2BWH'];
+var obp_stuff = ['HR', '2B', '1B', '3B',  'BB', 'IF1B', '1BWH', '2BWH'];
+var obp_stuff2 = ['HR', '2B', '1B', '3B', 'AutoBB', 'BB', 'IF1B', 'IBB', '1BWH', '2BWH'];
+var out_stuff = ['K', 'GO', 'PO', 'FO', 'GORA', 'FC', 'DP', 'SacF', 'DPRun', 'SacB', 'TP', 'FCH', 'DP32', 'FC3rd', 'DFO', 'DPH1', 'DP31', 'DP21', 'DSacF', 'FCLead', 'CS'];
+var out_stuff2 = ['K', 'AutoK', 'GO', 'PO', 'FO', 'GORA', 'FC', 'DP', 'SacF', 'DPRun', 'SacB', 'TP', 'FCH', 'DP32', 'FC3rd', 'DFO', 'DPH1', 'DP31', 'DP21', 'DSacF', 'FCLead', 'CS'];
+
+
+
+
 for(var key in databruh3) {
 	line = line + 1;
 	var hitter = databruh3[key]["Hitter"];
 	var pitcher = databruh3[key]["Pitcher"];
 	var result = databruh3[key]["Result"];
+	if(result in mlr_results) {
+		result = mlr_results[result];
+	}
 	var run = databruh3[key]["Run Scored"];
 	var season = "MLR_"+databruh3[key]["Season"];
 	if(!(hitter in players)) {
