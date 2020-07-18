@@ -84,6 +84,8 @@ window.onload = function everything() {
 	
 	//console.log(databruh);
 	s5data = s5data.split("\n").slice(1).join("\n");
+	s5data = s5data.replace(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,","");
+	s5data = s5data.replace(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,","");
 	//console.log(s5data);
 	databruh = databruh + s5data;
 	s5data = '';
