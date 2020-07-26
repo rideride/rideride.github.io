@@ -83,12 +83,15 @@ window.onload = function everything() {
 //		}
 //	},5000);
 	
-	//console.log(databruh);
-	s5datamilr = s5datamilr.split("\n").slice(1).join("\n");
-	//console.log(s5data);
-	databruh = databruh + s5datamilr;
+
+	s5datamilr = s5datamilr.split("\n").slice(1);
+	for(line in s5datamilr) {
+		s5datamilr[line] = s5datamilr[line] + ',5,';
+	}
+	s5datamilr = s5datamilr.join("\n");
+	databruh = databruh + "\n" + s5data;
+	databruhmilr = databruhmilr + s5datamilr;
 	s5datamilr = '';
-	//console.log(databruh);
 
 //console.log("Ready");
 

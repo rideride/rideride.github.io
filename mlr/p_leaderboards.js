@@ -89,12 +89,14 @@ window.onload = function everything() {
 //		}
 //	},5000);
 	
-	//console.log(databruh);
-	s5data = s5data.split("\n").slice(1).join("\n");
-	//console.log(s5data);
-	databruh = databruh + s5data;
+s5data = s5data.split("\n").slice(1);
+	for(line in s5data) {
+		s5data[line] = s5data[line] + ',5,';
+	}
+	s5data = s5data.join("\n");
+	databruh = databruh + "\n" + s5data;
 	s5data = '';
-	//console.log(databruh);
+
 
 //console.log("Ready");
 

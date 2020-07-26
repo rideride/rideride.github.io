@@ -119,12 +119,19 @@ window.onload = function everything() {
        window.setTimeout(everything, 100);
     } else {
 
-	s5data = s5data.split("\n").slice(1).join("\n");
-//	console.log(s5data);
-	databruh = databruh + s5data;
+	s5data = s5data.split("\n").slice(1);
+	for(line in s5data) {
+		s5data[line] = s5data[line] + ',5,';
+	}
+	s5data = s5data.join("\n");
+	databruh = databruh + "\n" + s5data;
 	s5data = '';
-	s5datamilr = s5datamilr.split("\n").slice(1).join("\n");
-//	console.log(s5datamilr);
+	s5datamilr = s5datamilr.split("\n").slice(1);
+	for(line in s5datamilr) {
+		s5datamilr[line] = s5datamilr[line] + ',5,';
+	}
+	s5datamilr = s5datamilr.join("\n");
+	databruh = databruh + "\n" + s5data;
 	databruhmilr = databruhmilr + s5datamilr;
 	s5datamilr = '';
 //	console.log(databruh);
