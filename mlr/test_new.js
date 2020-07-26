@@ -98,7 +98,7 @@ window.onload = function everything() {
 	//s5data = s5data.replace(/\n/gm, ",5,\n");
 	//s5data = s5data + ",5,";
 	//console.log(s5data);
-	databruh = databruh + s5data;
+	databruh = databruh + "\n" + s5data;
 	s5data = '';
 	//console.log(databruh);
 
