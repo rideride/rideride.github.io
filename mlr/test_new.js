@@ -90,9 +90,13 @@ window.onload = function everything() {
 //	},5000);
 	
 	//console.log(databruh);
-	s5data = s5data.split("\n").slice(1).join("\n");
-	s5data = s5data.replace(/\n/gm, ",5,\n");
-	s5data = s5data + ",5,";
+	s5data = s5data.split("\n").slice(1);
+	for(line in s5data) {
+		line = line + ',5,';
+	}
+	s5data = s5data.join("\n");
+	//s5data = s5data.replace(/\n/gm, ",5,\n");
+	//s5data = s5data + ",5,";
 	//console.log(s5data);
 	databruh = databruh + s5data;
 	s5data = '';
