@@ -131,7 +131,6 @@ window.onload = function everything() {
 		s5datamilr[line] = s5datamilr[line] + ',5,';
 	}
 	s5datamilr = s5datamilr.join("\n");
-	databruh = databruh + "\n" + s5data;
 	databruhmilr = databruhmilr + s5datamilr;
 	s5datamilr = '';
 //	console.log(databruh);
