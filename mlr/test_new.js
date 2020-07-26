@@ -92,7 +92,7 @@ window.onload = function everything() {
 	//console.log(databruh);
 	s5data = s5data.split("\n").slice(1);
 	for(line in s5data) {
-		line = line + ',5,';
+		s5data[line] = s5data[line] + ',5,';
 	}
 	s5data = s5data.join("\n");
 	//s5data = s5data.replace(/\n/gm, ",5,\n");
