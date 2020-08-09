@@ -194,6 +194,12 @@ for(var key in s5playercsv) {
     //console.log(value);
 }
 
+for (var playa in pids){
+    var opt = document.createElement('option');
+    opt.value = pids[playa][0];
+    opt.innerHTML = pids[playa][0];
+    document.getElementById('playas').appendChild(opt);
+}
 
 
 var datas13 = $.csv.toObjects(datas1)
