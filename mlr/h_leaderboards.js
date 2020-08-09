@@ -150,7 +150,7 @@ for(var key in s5playercsv) {
 	}
 	if(pids[player_id] && pids[player_id].length > 0) {
 	    if(pids[player_id] != player_name) {
-			pids[player_id].push(player_name);
+			pids[player_id].unshift(player_name);
 		}
     } else {
         pids[player_id] = [player_name];
