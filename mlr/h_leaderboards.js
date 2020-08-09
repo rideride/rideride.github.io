@@ -56,7 +56,7 @@ window.googleDocCallback = function () { return true; };
      });
 	 
 	  function loadData() {
-          var url = "https://docs.google.com/spreadsheet/pub?key=1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk&output=csv&callback=googleDocCallback";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/export?format=csv";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
