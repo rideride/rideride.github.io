@@ -75,18 +75,18 @@ window.googleDocCallback = function () { return true; };
 	  loadData();
 	  function loadS5Players() {
           var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet2";
-          xmlhttp = new XMLHttpRequest();
-          xmlhttp.onreadystatechange = function () {
-			  console.log(xmlhttp.readyState);
-              if (xmlhttp.readyState == 4) {
+          xmlhttp2 = new XMLHttpRequest();
+          xmlhttp2.onreadystatechange = function () {
+			  console.log(xmlhttp2.readyState);
+              if (xmlhttp2.readyState == 4) {
                   //document.getElementById("display").innerHTML = xmlhttp.responseText;
-                  s5players = xmlhttp.responseText;
+                  s5players = xmlhttp2.responseText;
                   //document.getElementById("display").innerHTML = s5data;
                   //alert(xmlhttp.responseText);
               }
           };
-          xmlhttp.open("GET", url, true);
-          xmlhttp.send(null);
+          xmlhttp2.open("GET", url, true);
+          xmlhttp2.send(null);
           
       }
 	  loadS5Players();
