@@ -32,6 +32,7 @@ var data2 = '';
 var databruh = ''
 var datas1 = '';
 var s5data = '';
+var s5players = '';
 window.googleDocCallback = function () { return true; };
     $.ajax({
         type: "GET",
@@ -72,12 +73,30 @@ window.googleDocCallback = function () { return true; };
           
       }
 	  loadData();
+	  function loadS5Players() {
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet2";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+			  console.log(xmlhttp.readyState);
+              if (xmlhttp.readyState == 4) {
+                  //document.getElementById("display").innerHTML = xmlhttp.responseText;
+                  s5players = xmlhttp.responseText;
+                  //document.getElementById("display").innerHTML = s5data;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+          
+      }
+	  loadS5Players();
 	  
 	 
 //$(document).ready(function() {
 window.onload = function everything() {
 	var flag = s5data.length;
-	 if(flag < 1000) {
+	var flag2 = s5players.length;
+	 if(!(flag > 1000 && flag2 > 1000)) {
        window.setTimeout(everything, 100);
     } else {
 
@@ -119,6 +138,26 @@ for(var key in data3) {
     }
     //console.log(value);
 }
+
+
+var s5playercsv = $.csv.toObjects(s5players);
+for(var key in s5playercsv) {
+    var value = s5playercsv[key];
+	var player_name = s5playercsv[key]["Name"];
+	var player_id = s5playercsv[key]["Player ID"];
+	if(!(player_name in players)) {
+		players[player_name] = player_id;
+	}
+	if(pids[player_id] && pids[player_id].length > 0) {
+	    if(pids[player_id] != player_name) {
+			pids[player_id].push(player_name);
+		}
+    } else {
+        pids[player_id] = [player_name];
+    }
+    //console.log(value);
+}
+
 
 var datas13 = $.csv.toObjects(datas1)
 
