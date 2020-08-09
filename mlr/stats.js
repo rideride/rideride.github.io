@@ -65,7 +65,7 @@ window.googleDocCallback = function () { return true; };
      });
 	 
 	  function loadDatamilr() {
-          var url = "https://docs.google.com/spreadsheet/pub?key=13NuaXN-a4dz9RliO6c0QeYzYgkeq1dDmrDHCkOOuqS8&output=csv&callback=googleDocCallback";
+          var url = "https://docs.google.com/spreadsheets/d/13NuaXN-a4dz9RliO6c0QeYzYgkeq1dDmrDHCkOOuqS8/gviz/tq?tqx=out:csv&sheet=Sheet1";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
@@ -88,7 +88,7 @@ window.googleDocCallback = function () { return true; };
        window.setTimeout(getMlr, 100);
     } else {
 	  function loadData() {
-          var url = "https://docs.google.com/spreadsheet/pub?key=1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk&output=csv&callback=googleDocCallback";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet1";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
