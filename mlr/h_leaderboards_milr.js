@@ -66,6 +66,23 @@ window.googleDocCallback = function () { return true; };
           
       }
 	  loadDatamilr();
+	  function loadS5Players() {
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet2";
+          xmlhttp2 = new XMLHttpRequest();
+          xmlhttp2.onreadystatechange = function () {
+			  console.log(xmlhttp2.readyState);
+              if (xmlhttp2.readyState == 4) {
+                  //document.getElementById("display").innerHTML = xmlhttp.responseText;
+                  s5players = xmlhttp2.responseText;
+                  //document.getElementById("display").innerHTML = s5data;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp2.open("GET", url, true);
+          xmlhttp2.send(null);
+          
+      }
+	  loadS5Players();
 	  
 	 
 //$(document).ready(function() {
@@ -113,6 +130,25 @@ for(var key in data3) {
     }
     //console.log(value);
 }
+
+var s5playercsv = $.csv.toObjects(s5players);
+for(var key in s5playercsv) {
+    var value = s5playercsv[key];
+	var player_name = s5playercsv[key]["Name"];
+	var player_id = s5playercsv[key]["Player ID"];
+	if(!(player_name in players)) {
+		players[player_name] = player_id;
+	}
+	if(pids[player_id] && pids[player_id].length > 0) {
+	    if(pids[player_id] != player_name) {
+			pids[player_id].unshift(player_name);
+		}
+    } else {
+        pids[player_id] = [player_name];
+    }
+    //console.log(value);
+}
+
 
 var datamilr3 = $.csv.toObjects(databruh)
 
