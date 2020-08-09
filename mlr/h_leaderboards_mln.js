@@ -49,7 +49,7 @@ window.googleDocCallback = function () { return true; };
      });
 	 
 	  function loadData() {
-          var url = "https://docs.google.com/spreadsheet/pub?key=1GakU_5L_bQYpRl4GZrcASXDxwgWtAWl_ibxCgQ9Pg68&output=csv&callback=googleDocCallback";
+          var url = "https://docs.google.com/spreadsheets/d/1GakU_5L_bQYpRl4GZrcASXDxwgWtAWl_ibxCgQ9Pg68/gviz/tq?tqx=out:csv&sheet=MLN S4 All PAs";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
