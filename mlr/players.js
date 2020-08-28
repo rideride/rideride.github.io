@@ -34,6 +34,7 @@ var databruhmilr = '';
 var datas1 = '';
 var s5data = '';
 var s5datamilr = '';
+var s5players = '';
 window.googleDocCallback = function () { return true; };
     $.ajax({
         type: "GET",
