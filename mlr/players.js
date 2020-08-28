@@ -110,10 +110,12 @@ for(var key in s5playercsv) {
 }
 
 for (var playa in pids){
+	for (var i in playa) {
     var opt = document.createElement('option');
-    opt.value = pids[playa][0];
-    opt.innerHTML = pids[playa][0];
+    opt.value = pids[playa][i];
+    opt.innerHTML = pids[playa][i];
     document.getElementById('playas').appendChild(opt);
+	}
 }
 
 
