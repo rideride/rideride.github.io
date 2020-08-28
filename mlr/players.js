@@ -130,6 +130,19 @@ $('#calc-submit').click(function() {
 	
 });
 
+$('#calc-submit-2').click(function() {
+	staty = document.getElementById('calc-id').value;
+	$("#pid").text(staty);
+	if (pids[staty].length < 1) {
+		$("#names").text("Unknown ID.");
+	$("#namenew").text("Unknown ID.");
+	} else {
+	$("#names").text(pids[staty]);
+	$("#namenew").text(pids[staty][0]);
+	}
+	
+});
+
 
 $("#loading").css('display','none');
 
