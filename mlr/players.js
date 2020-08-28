@@ -112,6 +112,12 @@ for(var key in s5playercsv) {
 
 for (var playa in pids){
 	for (var i in playa) {
+		if(playa==4) {
+			console.log(pids[playa][i])
+		}
+		if(playa==571) {
+			console.log(pids[playa][i])
+		}
     var opt = document.createElement('option');
     opt.value = pids[playa][i];
     opt.innerHTML = pids[playa][i];
