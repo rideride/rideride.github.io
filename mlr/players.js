@@ -111,7 +111,7 @@ for(var key in s5playercsv) {
 }
 
 for (var playa in pids){
-	for (var i in playa) {
+	for (var i in pids[playa]) {
 		if(playa==4) {
 			console.log(pids[playa][i])
 		}
@@ -125,15 +125,6 @@ for (var playa in pids){
 	}
 }
 
-function wait(ms)
-{
-    var d = new Date();
-    var d2 = null;
-    do { d2 = new Date(); }
-    while(d2-d < ms);
-}
-
-wait(2000);
 
 
 $('#calc-submit').click(function() {
