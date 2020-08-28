@@ -124,8 +124,8 @@ for (var playa in pids){
 
 $('#calc-submit').click(function() {
 	staty = document.getElementById('calc-pitcher').value;
-	$("#calc-pitcher-info").text("Player ID: "+players[staty]);
-	$("#stats-name").text("Stats for "+staty);
+	$("#pid").text(players[staty]);
+	$("#names").text(pids[players[staty]]);
 	
 });
 
