@@ -133,13 +133,14 @@ $('#calc-submit').click(function() {
 $('#calc-submit-2').click(function() {
 	staty = document.getElementById('calc-id').value;
 	$("#pid").text(staty);
-	if (pids[staty].length < 1) {
-		$("#names").text("Unknown ID.");
-	$("#namenew").text("Unknown ID.");
-	} else {
+	try(pids[staty].length > 0) {
 	$("#names").text(pids[staty]);
 	$("#namenew").text(pids[staty][0]);
-	}
+	} 
+	catch(err) {
+		$("#names").text("Unknown ID.");
+	$("#namenew").text("Unknown ID.");
+	} 
 	
 });
 
