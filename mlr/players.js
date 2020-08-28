@@ -124,9 +124,17 @@ for (var playa in pids){
 
 $('#calc-submit').click(function() {
 	staty = document.getElementById('calc-pitcher').value;
+	try {
+		var hlfkmlkmflkweflfwkeml = players[staty].length;
 	$("#pid").text(players[staty]);
 	$("#names").text(pids[players[staty]]);
 	$("#namenew").text(pids[players[staty]][0]);
+	} 
+	catch(err) {
+		$("#pid").text("Unknown name.");
+	$("#names").text("Unknown name.");
+	$("#namenew").text("Unknown name.");
+	}
 	
 });
 
