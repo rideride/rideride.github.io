@@ -101,7 +101,7 @@ for(var key in s5playercsv) {
 		players[player_name] = player_id;
 	}
 	if(pids[player_id] && pids[player_id].length > 0) {
-	    if(pids[player_id] != player_name) {
+	    if(pids[player_id][0] != player_name) {
 			pids[player_id].unshift(player_name);
 		}
     } else {
@@ -126,6 +126,7 @@ $('#calc-submit').click(function() {
 	staty = document.getElementById('calc-pitcher').value;
 	$("#pid").text(players[staty]);
 	$("#names").text(pids[players[staty]]);
+	$("#namenew").text(pids[players[staty]][0]);
 	
 });
 
