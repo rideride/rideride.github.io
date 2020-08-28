@@ -133,7 +133,8 @@ $('#calc-submit').click(function() {
 $('#calc-submit-2').click(function() {
 	staty = document.getElementById('calc-id').value;
 	$("#pid").text(staty);
-	try(pids[staty].length > 0) {
+	try{
+		var hlfkmlkmflkweflfwkeml = pids[staty].length;
 	$("#names").text(pids[staty]);
 	$("#namenew").text(pids[staty][0]);
 	} 
