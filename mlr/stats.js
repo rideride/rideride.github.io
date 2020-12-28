@@ -132,20 +132,20 @@ window.googleDocCallback = function () { return true; };
 window.onload = function everything() {
 	var flag = s5data.length;
 	var flag2 = s5datamilr.length;
-	 if(!(flag > 1000 && flag2 > 1000)) {
+	 if(!(flag > 300 && flag2 > 300)) {
        window.setTimeout(everything, 100);
     } else {
 
 	s5data = s5data.split("\n").slice(1);
 	for(line in s5data) {
-		s5data[line] = s5data[line] + ',5,';
+		s5data[line] = s5data[line] + ',6,';
 	}
 	s5data = s5data.join("\n");
 	databruh = databruh + "\n" + s5data;
 	s5data = '';
 	s5datamilr = s5datamilr.split("\n").slice(1);
 	for(line in s5datamilr) {
-		s5datamilr[line] = s5datamilr[line] + ',5,';
+		s5datamilr[line] = s5datamilr[line] + ',6,';
 	}
 	s5datamilr = s5datamilr.join("\n");
 	databruhmilr = databruhmilr + s5datamilr;
