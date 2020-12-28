@@ -84,7 +84,7 @@ window.googleDocCallback = function () { return true; };
 	  
 	 function getMlr() {
 		 var milrLength = s5datamilr.length;
-	 if(milrLength < 1000) {
+	 if(milrLength < 300) {
        window.setTimeout(getMlr, 100);
     } else {
 	  function loadData() {
