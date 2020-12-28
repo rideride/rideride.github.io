@@ -517,12 +517,14 @@ var milrstats2 = {};
 var milrstats3 = {};
 var milrstats4 = {};
 var milrstats5 = {};
+var milrstats6 = {};
 var pmilrstats = {};
 var pmilrstats1 = {};
 var pmilrstats2 = {};
 var pmilrstats3 = {};
 var pmilrstats4 = {};
 var pmilrstats5 = {};
+var pmilrstats6 = {};
 
 var milr_bruhbruh = 0;
 var milr_bruhbruh2 = 0;
