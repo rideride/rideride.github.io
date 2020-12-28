@@ -56,7 +56,7 @@ window.googleDocCallback = function () { return true; };
      });
 	 
 	  function loadData() {
-          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet1";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet4";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
@@ -73,7 +73,7 @@ window.googleDocCallback = function () { return true; };
       }
 	  loadData();
 	  function loadS5Players() {
-          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet2";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet3";
           xmlhttp2 = new XMLHttpRequest();
           xmlhttp2.onreadystatechange = function () {
 			  console.log(xmlhttp2.readyState);
@@ -94,7 +94,7 @@ window.googleDocCallback = function () { return true; };
 //$(document).ready(function() {
 window.onload = function everything() {
 	var flag = s5data.length;
-	 if(flag < 1000) {
+	 if(flag < 200) {
        window.setTimeout(everything, 100);
     } else {
 
@@ -108,7 +108,7 @@ window.onload = function everything() {
 	
 s5data = s5data.split("\n").slice(1);
 	for(line in s5data) {
-		s5data[line] = s5data[line] + ',5,';
+		s5data[line] = s5data[line] + ',6,';
 	}
 	s5data = s5data.join("\n");
 	databruh = databruh + "\n" + s5data;
@@ -178,6 +178,7 @@ var pstats2 = {};
 var pstats3 = {};
 var pstats4 = {};
 var pstats5 = {};
+var pstats6 = {};
 
 var bruhbruh = 0;
 var bruhbruh2 = 0;
@@ -320,6 +321,22 @@ for(var key in databruh3) {
 	}
 	} //season 5 end
 	
+	//season 6
+	if(season == "MLR_6") { 
+	if(pitcher_id in pstats6) {
+	    bruhbruh = bruhbruh + 1;
+    } else {
+        pstats6[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pstats6[pitcher_id][result] = pstats6[pitcher_id][result] + 1;
+	pstats6[pitcher_id]["R"] = pstats6[pitcher_id]["R"] + parseFloat(run);
+	if((pstats6[pitcher_id]['Games']).includes(game)) {
+		bruhbruh2 = bruhbruh2 + 1;
+	} else {
+		pstats6[pitcher_id]['Games'].push(game);
+	}
+	} //season 6 end
+	
 	if(pitcher_id in pstats) {
 	    bruhbruh = bruhbruh + 1;
     } else {
@@ -458,6 +475,7 @@ pstatsDoer(pstats2,2);
 pstatsDoer(pstats3,3);
 pstatsDoer(pstats4,4);
 pstatsDoer(pstats5,5);
+pstatsDoer(pstats6,6);
 
 
 
@@ -698,6 +716,7 @@ $('#calc-submit').click(function() {
 	$("#statt3").text(stat_request);
 	$("#statt4").text(stat_request);
 	$("#statt5").text(stat_request);
+	$("#statt6").text(stat_request);
 	if(isNaN(parseFloat(minresult))) {
 		minresult = 0;
 	}
@@ -712,12 +731,14 @@ s2_h = getKeysWithHighestValueMinPAs(pstats2, 10, stat_request, result_request, 
 s3_h = getKeysWithHighestValueMinPAs(pstats3, 10, stat_request, result_request, minresult, maxresult);
 s4_h = getKeysWithHighestValueMinPAs(pstats4, 10, stat_request, result_request, minresult, maxresult);
 s5_h = getKeysWithHighestValueMinPAs(pstats5, 10, stat_request, result_request, minresult, maxresult);
+s6_h = getKeysWithHighestValueMinPAs(pstats6, 10, stat_request, result_request, minresult, maxresult);
 addRows(s0_h, "s0-hits-lb", stat_request, pstats);
 addRows(s1_h, "s1-hits-lb", stat_request, pstats1);
 addRows(s2_h, "s2-hits-lb", stat_request, pstats2);
 addRows(s3_h, "s3-hits-lb", stat_request, pstats3);
 addRows(s4_h, "s4-hits-lb", stat_request, pstats4);
 addRows(s5_h, "s5-hits-lb", stat_request, pstats5);	
+addRows(s6_h, "s6-hits-lb", stat_request, pstats6);	
 	}
 		if(highlow == "lowest") {
 s0_h = getKeysWithLowestValueMinPAs(pstats, 10, stat_request, result_request, minresult, maxresult);
@@ -726,6 +747,7 @@ s2_h = getKeysWithLowestValueMinPAs(pstats2, 10, stat_request, result_request, m
 s3_h = getKeysWithLowestValueMinPAs(pstats3, 10, stat_request, result_request, minresult, maxresult);
 s4_h = getKeysWithLowestValueMinPAs(pstats4, 10, stat_request, result_request, minresult, maxresult);
 s5_h = getKeysWithLowestValueMinPAs(pstats5, 10, stat_request, result_request, minresult, maxresult);
+s6_h = getKeysWithLowestValueMinPAs(pstats6, 10, stat_request, result_request, minresult, maxresult);
 //console.log(s3_h);
 addRows(s0_h, "s0-hits-lb", stat_request, pstats);
 addRows(s1_h, "s1-hits-lb", stat_request, pstats1);
@@ -733,6 +755,7 @@ addRows(s2_h, "s2-hits-lb", stat_request, pstats2);
 addRows(s3_h, "s3-hits-lb", stat_request, pstats3);
 addRows(s4_h, "s4-hits-lb", stat_request, pstats4);
 addRows(s5_h, "s5-hits-lb", stat_request, pstats5);	
+addRows(s6_h, "s6-hits-lb", stat_request, pstats6);	
 	}
 	
 });
