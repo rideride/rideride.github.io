@@ -84,7 +84,7 @@ window.googleDocCallback = function () { return true; };
 	  
 	 function getMlr() {
 		 var milrLength = s5datamilr.length;
-	 if(milrLength < 300) {
+	 if(milrLength < 200) {
        window.setTimeout(getMlr, 100);
     } else {
 	  function loadData() {
@@ -132,7 +132,7 @@ window.googleDocCallback = function () { return true; };
 window.onload = function everything() {
 	var flag = s5data.length;
 	var flag2 = s5datamilr.length;
-	 if(!(flag > 300 && flag2 > 300)) {
+	 if(!(flag > 200 && flag2 > 200)) {
        window.setTimeout(everything, 100);
     } else {
 
