@@ -65,7 +65,7 @@ window.googleDocCallback = function () { return true; };
      });
 	 
 	  function loadDatamilr() {
-          var url = "https://docs.google.com/spreadsheets/d/13NuaXN-a4dz9RliO6c0QeYzYgkeq1dDmrDHCkOOuqS8/gviz/tq?tqx=out:csv&sheet=Sheet1";
+          var url = "https://docs.google.com/spreadsheets/d/13NuaXN-a4dz9RliO6c0QeYzYgkeq1dDmrDHCkOOuqS8/gviz/tq?tqx=out:csv&sheet=Sheet2";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
@@ -746,6 +746,35 @@ for(var key in datamilr3) {
 	}
 	} //season 5 end
 	
+	//season 6
+	if(season == "MiLR_6") { 
+	if(hitter_id in milrstats6) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        milrstats6[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	milrstats6[hitter_id][result] = milrstats6[hitter_id][result] + 1;
+	milrstats6[hitter_id]["RBI"] = milrstats6[hitter_id]["RBI"] + parseFloat(rbi);
+	milrstats6[hitter_id]["R"] = milrstats6[hitter_id]["R"] + parseFloat(run);
+	if((milrstats6[hitter_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		milrstats6[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pmilrstats6) {
+	    milr_bruhbruh = milr_bruhbruh + 1;
+    } else {
+        pmilrstats6[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pmilrstats6[pitcher_id][result] = pmilrstats6[pitcher_id][result] + 1;
+	pmilrstats6[pitcher_id]["R"] = pmilrstats6[pitcher_id]["R"] + parseFloat(run);
+	if((pmilrstats6[pitcher_id]['Games']).includes(game)) {
+		milr_bruhbruh2 = milr_bruhbruh2 + 1;
+	} else {
+		pmilrstats6[pitcher_id]['Games'].push(game);
+	}
+	} //season 6 end
+	
 	if(pitcher_id in pmilrstats) {
 	    milr_bruhbruh = milr_bruhbruh + 1;
     } else {
@@ -991,6 +1020,7 @@ statsDoer(stats6,6);
 statsDoer(milrstats3,6);
 statsDoer(milrstats4,7);
 statsDoer(milrstats5,8);
+statsDoer(milrstats6,10);
 statsDoer(milrstats,9);
 
 //console.log(stats1);
@@ -1256,6 +1286,7 @@ pstatsDoer(pstats6,6);
 pstatsDoer(pmilrstats3,6);
 pstatsDoer(pmilrstats4,7);
 pstatsDoer(pmilrstats5,8);
+pstatsDoer(pmilrstats6,10);
 pstatsDoer(pmilrstats,9);
 
 console.log(milrstats);
@@ -1373,6 +1404,7 @@ $('#calc-submit').click(function() {
 	statsPut("m3", milrstats3, staty);
 	statsPut("m4", milrstats4, staty);
 	statsPut("m5", milrstats5, staty);
+	statsPut("m6", milrstats6, staty);
 	statsPut("m0", milrstats, staty);
 	pstatsPut(1, pstats1, staty);
 	pstatsPut(2, pstats2, staty);
@@ -1383,6 +1415,7 @@ $('#calc-submit').click(function() {
 	pstatsPut("m3", pmilrstats3, staty);
 	pstatsPut("m4", pmilrstats4, staty);
 	pstatsPut("m5", pmilrstats5, staty);
+	pstatsPut("m6", pmilrstats6, staty);
 	pstatsPut("m0", pmilrstats, staty);
 	
 	
