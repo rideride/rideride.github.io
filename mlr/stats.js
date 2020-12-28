@@ -88,7 +88,7 @@ window.googleDocCallback = function () { return true; };
        window.setTimeout(getMlr, 100);
     } else {
 	  function loadData() {
-          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet1";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet4";
           xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function () {
 			  console.log(xmlhttp.readyState);
@@ -105,7 +105,7 @@ window.googleDocCallback = function () { return true; };
       }
 	  loadData();
 	  function loadS5Players() {
-          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet2";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet3";
           xmlhttp2 = new XMLHttpRequest();
           xmlhttp2.onreadystatechange = function () {
 			  console.log(xmlhttp2.readyState);
@@ -223,12 +223,14 @@ var stats2 = {};
 var stats3 = {};
 var stats4 = {};
 var stats5 = {};
+var stats6 = {};
 var pstats = {};
 var pstats1 = {};
 var pstats2 = {};
 var pstats3 = {};
 var pstats4 = {};
 var pstats5 = {};
+var pstats6 = {};
 
 var bruhbruh = 0;
 var bruhbruh2 = 0;
@@ -460,6 +462,35 @@ for(var key in databruh3) {
 		pstats5[pitcher_id]['Games'].push(game);
 	}
 	} //season 5 end
+	
+	//season 6
+	if(season == "MLR_6") { 
+	if(hitter_id in stats6) {
+	    bruhbruh = bruhbruh + 1;
+    } else {
+        stats6[hitter_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[],'RBI': 0, 'R': 0};
+    }
+	stats6[hitter_id][result] = stats6[hitter_id][result] + 1;
+	stats6[hitter_id]["RBI"] = stats6[hitter_id]["RBI"] + parseFloat(rbi);
+	stats6[hitter_id]["R"] = stats6[hitter_id]["R"] + parseFloat(run);
+	if((stats6[hitter_id]['Games']).includes(game)) {
+		bruhbruh2 = bruhbruh2 + 1;
+	} else {
+		stats6[hitter_id]['Games'].push(game);
+	}
+	if(pitcher_id in pstats6) {
+	    bruhbruh = bruhbruh + 1;
+    } else {
+        pstats6[pitcher_id] = {'HR': 0, '3B': 0, '2B': 0, '1B': 0, 'BB': 0, 'FO': 0, 'K': 0, 'PO': 0, 'RGO': 0, 'LGO': 0, 'DP': 0, 'Sac': 0, 'SB': 0, 'CS': 0, 'IBB': 0, 'Auto BB': 0, 'Auto K': 0, 'Bunt Sac': 0, 'Bunt K': 0, 'Bunt 1B': 0, 'TP': 0, 'Bunt': 0, 'Bunt GO': 0, 'Games':[], 'R': 0};
+    }
+	pstats6[pitcher_id][result] = pstats6[pitcher_id][result] + 1;
+	pstats6[pitcher_id]["R"] = pstats6[pitcher_id]["R"] + parseFloat(run);
+	if((pstats6[pitcher_id]['Games']).includes(game)) {
+		bruhbruh2 = bruhbruh2 + 1;
+	} else {
+		pstats6[pitcher_id]['Games'].push(game);
+	}
+	} //season 6 end
 	
 	if(pitcher_id in pstats) {
 	    bruhbruh = bruhbruh + 1;
@@ -954,6 +985,7 @@ statsDoer(stats2,2);
 statsDoer(stats3,3);
 statsDoer(stats4,4);
 statsDoer(stats5,5);
+statsDoer(stats6,6);
 
 
 statsDoer(milrstats3,6);
@@ -1218,6 +1250,7 @@ pstatsDoer(pstats2,2);
 pstatsDoer(pstats3,3);
 pstatsDoer(pstats4,4);
 pstatsDoer(pstats5,5);
+pstatsDoer(pstats6,6);
 
 
 pstatsDoer(pmilrstats3,6);
@@ -1336,6 +1369,7 @@ $('#calc-submit').click(function() {
 	statsPut(3, stats3, staty);
 	statsPut(4, stats4, staty);
 	statsPut(5, stats5, staty);
+	statsPut(6, stats6, staty);
 	statsPut("m3", milrstats3, staty);
 	statsPut("m4", milrstats4, staty);
 	statsPut("m5", milrstats5, staty);
@@ -1345,6 +1379,7 @@ $('#calc-submit').click(function() {
 	pstatsPut(3, pstats3, staty);
 	pstatsPut(4, pstats4, staty);
 	pstatsPut(5, pstats5, staty);
+	pstatsPut(6, pstats6, staty);
 	pstatsPut("m3", pmilrstats3, staty);
 	pstatsPut("m4", pmilrstats4, staty);
 	pstatsPut("m5", pmilrstats5, staty);
@@ -1396,9 +1431,9 @@ $('#calc-submit').click(function() {
 //console.log(bruhbruh2);
 
 $("#loading").css('display','none');
-console.log(pmilrstats[1695]);
-console.log(pmilrstats5);
-console.log(databruhmilr);
+//console.log(pmilrstats[1695]);
+//console.log(pmilrstats5);
+//console.log(databruhmilr);
 //document.getElementById("bblol").removeAttribute("style");
 
 //}, 1000); //setTimeout
