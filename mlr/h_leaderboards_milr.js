@@ -33,6 +33,7 @@ var databruh = ''
 var datas1 = '';
 var s5data = '';
 var s5datamilr = '';
+var s5players;
 window.googleDocCallback = function () { return true; };
     $.ajax({
         type: "GET",
@@ -88,7 +89,8 @@ window.googleDocCallback = function () { return true; };
 //$(document).ready(function() {
 window.onload = function everything() {
 	var flag = s5datamilr.length;
-	 if(flag < 200) {
+	var flag2 = s5players.length;
+	 if(!(flag > 200 && flag2 > 200)) {
        window.setTimeout(everything, 100);
     } else {
 
