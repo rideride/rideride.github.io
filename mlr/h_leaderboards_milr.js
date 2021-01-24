@@ -186,10 +186,15 @@ for(var key in datamilr3) {
 	}
 
 	//console.log(run);
-	console.log(line_milr);
-	if(run.length < 1) {
+	
+	try {
+		if(run.length < 1) {
 		run = 0;
 		//console.log("yeet");
+	}
+	}
+	catch(err) {
+		console.log(line_milr);
 	}
 	var rbi = datamilr3[key]["RBI"];
 	if(rbi.length < 1) {
