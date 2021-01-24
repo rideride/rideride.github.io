@@ -178,7 +178,7 @@ for(var key in datamilr3) {
 
 			if(!(hitter in h_list_milr)) {
 						//console.log(hitter);
-		//console.log(line_milr);
+		console.log(line_milr);
 		var r = Math.random().toString(10).substring(7);
 		players[hitter] = r;
 		pids[r] = [hitter];
