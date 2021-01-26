@@ -34,6 +34,7 @@ var databruhmilr = '';
 var datas1 = '';
 var s5data = '';
 var s5datamilr = '';
+var s5players = '';
 window.googleDocCallback = function () { return true; };
     $.ajax({
         type: "GET",
@@ -148,7 +149,7 @@ window.onload = function everything() {
 		s5datamilr[line] = s5datamilr[line] + ',6,';
 	}
 	s5datamilr = s5datamilr.join("\n");
-	databruhmilr = databruhmilr + s5datamilr;
+	databruhmilr = databruhmilr + "\n" + s5datamilr;
 	s5datamilr = '';
 //	console.log(databruh);
 //	console.log(databruhmilr);
