@@ -7,7 +7,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-
+/*
 (function () {
   'use strict';
   var lc = $('.liveupdate-listing');
@@ -630,13 +630,13 @@ if (vc900t != '') {
 
 
 
-/*else if (validtimy == '551') {
-vc700t = magin2p2;
-           validtimestamp = vc700t - vc600t;
-           validtimestamp = validtimestamp / 10000;
-           validtimestamp = ~~validtimestamp;
-           $("#lastcountuser").text(validtimestamp);
-}*/
+//else if (validtimy == '551') {
+//vc700t = magin2p2;
+//           validtimestamp = vc700t - vc600t;
+//           validtimestamp = validtimestamp / 10000;
+//           validtimestamp = ~~validtimestamp;
+//           $("#lastcountuser").text(validtimestamp);
+//}
 //$("#lastcountuser").text(validtimy);
 //validtimestamp = magin2p2;
 //$("#lastcountuser").text(demipunoyletra);
@@ -1371,3 +1371,4 @@ var dateTime3 = dateTime2.substring(11, 23);
 
 
 }) ();
+*/
