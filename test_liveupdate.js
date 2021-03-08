@@ -1656,6 +1656,9 @@ _.extend(r.WebSocket.prototype, Backbone.Events, {
     },
     _onMessage: function(e) {
 	console.log('data received: ' + Date.now());
+	var para = document.createElement("P");                 // Create a <p> element
+para.innerHTML = 'data received: ' + Date.now();                // Insert text
+document.getElementById("hidden-dumpster").appendChild(para);     // Append <p> to <div> with id="myDIV"
         var t = JSON.parse(e.data);
 		console.log('data parsed: ' + Date.now());
 		console.log(e.data);
@@ -1663,6 +1666,9 @@ _.extend(r.WebSocket.prototype, Backbone.Events, {
 		console.log('debugged: ' + Date.now());
         this.trigger("message message:" + t.type, t.payload)
 		console.log('reddit functions finished: ' + Date.now());
+			var para = document.createElement("P");                 // Create a <p> element
+para.innerHTML = 'reddit functions finished?: ' + Date.now();                // Insert text
+document.getElementById("hidden-dumpster").appendChild(para);     // Append <p> to <div> with id="myDIV"
     },
     _onRefresh: function() {
         var e = Math.random() * 300 * 1e3;
@@ -2578,4 +2584,13 @@ r.templates.set([{
     name: "liveupdate/reported",
     template: '<p class="already-reported"><%- thing.text %></p>\n'
 }])
+var dumbass = 1;
+setTimeout(function() {
+//document.getElementById('liveupdate-title').innerHTML = dumbass;
+var para = document.createElement("P");
+para.setAttribute("id", "hidden-dumpster");                 // Create a <p> element
+para.innerHTML = "This is a paragraph.";                // Insert text
+document.getElementById("liveupdate-header").appendChild(para);     // Append <p> to <div> with id="myDIV"
+},2000);
+console.log(dumbass);
 ;
