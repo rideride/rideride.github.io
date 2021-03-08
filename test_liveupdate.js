@@ -1693,7 +1693,7 @@ document.getElementById("hidden-dumpster").appendChild(para);     // Append <p> 
                 error: 1
             }
         })
-    }/*,
+    },
     _verifyLocalStorage: function(e) {
         var t = "__synced_local_storage_%(keyname)s__".format({
             keyname: e
@@ -1745,7 +1745,7 @@ document.getElementById("hidden-dumpster").appendChild(para);     // Append <p> 
     },
     _keepTrackOfHeartbeat: function(e, t, n) {
         store.safeGet(e + "-websocketUrl") === n ? this._writeHeartbeat(e, t, n) : this._watchHeartbeat(e, t, n)
-    }*/
+    }
 }),
 !function(e, t, n, r) {
     "use strict";
