@@ -398,7 +398,7 @@ function statsDoer(statsdict, s) {
 	statsdict[key]['AB_2'] = abs_2;
 	statsdict[key]['H'] = hits;
 	statsdict[key]['G'] = games;
-	statsdict[key]['TB+BB+SB'] = tb_bb_sb;
+	statsdict[key]['TB_BB_SB'] = tb_bb_sb;
 }
 
 } //statsDoer end
