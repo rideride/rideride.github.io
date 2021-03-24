@@ -447,13 +447,7 @@ function statsDoer(statsdict, s) {
 	statsdict[key]['AB_2'] = abs_2;
 	statsdict[key]['H'] = hits;
 	statsdict[key]['G'] = games;
-	try {
-		statsdict[key]['TB+BB+SB'] = tb_bb_sb;
-		if(isNaN(statsdict[key]['TB+BB+SB']) {statsdict[key]['TB+BB+SB'] = 0;}
-	}
-	catch(err) {
-		statsdict[key]['TB+BB+SB'] = 0;
-	}
+	statsdict[key]['TB+BB+SB'] = tb_bb_sb;
 }
 
 } //statsDoer end
