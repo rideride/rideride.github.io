@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah5)');
+console.log('starting test.js (yeah6)');
 
 
 const snoowrap = require('snoowrap');
@@ -21,10 +21,11 @@ var authenticationUrl = snoowrap.getAuthUrl({
   window.location = authenticationUrl;
 }
 
-//if(window.location.href.indexOf("code") == -1) { 
+if(window.location.href.indexOf("code") == -1) { 
     createAuth1();
-//}
+}
 
+setTimeout(function() {
   const code = new URL(window.location.href).searchParams.get('code');
 
   function createInstance(token) {
@@ -51,3 +52,5 @@ r.get_livethread('15jj2286nsulu').stream.on('update', console.log);
 
 
 console.log('ending test.js');
+
+}, 5000);
