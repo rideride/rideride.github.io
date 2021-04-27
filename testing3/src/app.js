@@ -2,13 +2,13 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js');
+console.log('starting test.js (yeah)');
 
 
 const snoowrap = require('snoowrap');
 
 var authenticationUrl = snoowrap.getAuthUrl({
-    clientId: 'QlCEZDzGHWgl4w',
+    clientId: 'LonIowH9Qe2RzA',
     scope: ['identity'],
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html',
     permanent: true,
@@ -16,9 +16,8 @@ var authenticationUrl = snoowrap.getAuthUrl({
   });
 
 const r = new snoowrap({
-    client_id: 'put your client id here',
-    client_secret: 'put your client secret here',
-    refresh_token: 'put your refresh token here'
+    client_id: 'LonIowH9Qe2RzA',
+    client_secret: '',
   });
 
 r.get_livethread('whrdxo8dg9n0').stream.on('update', console.log);
