@@ -45,12 +45,15 @@ snoowrap.fromAuthCode({
     clientId: 'LonIowH9Qe2RzA',
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
   }).then(r => {
-    r.get_livethread('15jj2286nsulu').stream.on('update', console.log);
-    // Now we have a requester that can access reddit through the user's account
-    return r.getHot().then(posts => {
-        console.log(posts);
-      // do something with posts from the front page
-    });
+    var thread = r.get_livethread('15jj2286nsulu');
+    function submitter(post) {
+        thread.addUpdate(post);
+    }
+    submitter('test test Yeah.');
+    thread.stream.on('update', data => {
+        console.log(data.body);
+        console.log(Date.now());
+      });
   })
 
 
