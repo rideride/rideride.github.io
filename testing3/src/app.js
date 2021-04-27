@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah7)');
+console.log('starting test.js (yeah8)');
 
 
 const snoowrap = require('snoowrap');
@@ -38,16 +38,23 @@ setTimeout(function() {
     })
   }
   */
-  function createInstance(token) {
-  return snoowrap.fromAuthCode({
+
+snoowrap.fromAuthCode({
     code: token,
     userAgent: 'testing3',
     clientId: 'LonIowH9Qe2RzA',
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
+  }).then(r => {
+    r.get_livethread('15jj2286nsulu').stream.on('update', console.log);
+    // Now we have a requester that can access reddit through the user's account
+    return r.getHot().then(posts => {
+        console.log(posts);
+      // do something with posts from the front page
+    });
   })
-}
 
-  const r = createInstance(code);
+
+  //const r = createInstance(code);
 //console.log(r.getHot());
 
   //window.location = authenticationUrl;
@@ -58,7 +65,7 @@ const r = new snoowrap({
     client_secret: '',
   });
 */
-r.get_livethread('15jj2286nsulu').stream.on('update', console.log);
+//r.get_livethread('15jj2286nsulu').stream.on('update', console.log);
 
 
 console.log('ending test.js');
