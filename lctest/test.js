@@ -3,7 +3,7 @@ console.log('starting test.js');
 const snoowrap = require('snoowrap');
 
 var authenticationUrl = snoowrap.getAuthUrl({
-    clientId: QlCEZDzGHWgl4w,
+    clientId: 'QlCEZDzGHWgl4w',
     scope: ['identity'],
     redirectUri: 'https://rideride.github.io/lctest/test.html',
     permanent: true,
