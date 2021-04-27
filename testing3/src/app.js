@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah12)');
+console.log('starting test.js (yeah13)');
 
 
 const snoowrap = require('snoowrap');
@@ -43,12 +43,12 @@ var aaa = snoowrap.fromAuthCode({
     clientId: 'LonIowH9Qe2RzA',
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
   }).then(r => {
-    var thread = r.get_livethread('15jj2286nsulu');
-    bbb = function(post) {
-        thread.addUpdate(post);
+    window.thread = r.get_livethread('15jj2286nsulu');
+    window.bbb = function(post) {
+        window.thread.addUpdate(post);
     }
-    bbb('test test Yeah.');
-    thread.stream.on('update', data => {
+    window.bbb('test test Yeah.');
+    window.thread.stream.on('update', data => {
         console.log(data.body);
         console.log(Date.now());
       });
