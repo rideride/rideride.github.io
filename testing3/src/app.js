@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah6)');
+console.log('starting test.js (yeah7)');
 
 
 const snoowrap = require('snoowrap');
@@ -28,6 +28,7 @@ if(window.location.href.indexOf("code") == -1) {
 setTimeout(function() {
   const code = new URL(window.location.href).searchParams.get('code');
 
+  /*
   function createInstance(token) {
     return new snoowrap({
       userAgent:"testing3",
@@ -36,6 +37,15 @@ setTimeout(function() {
       refreshToken:token,
     })
   }
+  */
+  function createInstance(token) {
+  return snoowrap.fromAuthCode({
+    code: token,
+    userAgent: 'testing3',
+    clientId: 'LonIowH9Qe2RzA',
+    redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
+  })
+}
 
   const r = createInstance(code);
 //console.log(r.getHot());
