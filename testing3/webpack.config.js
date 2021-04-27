@@ -14,4 +14,13 @@ module.exports = {
       title: "Webpack Output",
     }),
   ],
+  resolve: {
+    // ... rest of the resolve config
+    fallback: {
+      "path": require.resolve("path-browserify"),
+      "stream": require.resolve("path-browserify"),
+      "url": require.resolve("url/")
+    }
+  },
 };
+
