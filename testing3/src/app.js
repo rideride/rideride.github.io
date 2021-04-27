@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah11)');
+console.log('starting test.js (yeah12)');
 
 
 const snoowrap = require('snoowrap');
@@ -24,8 +24,6 @@ var authenticationUrl = snoowrap.getAuthUrl({
 if(window.location.href.indexOf("code") == -1) { 
     createAuth1();
 }
-
-setTimeout(function() {
   const code = new URL(window.location.href).searchParams.get('code');
 
   /*
@@ -38,15 +36,15 @@ setTimeout(function() {
     })
   }
   */
-
-snoowrap.fromAuthCode({
+var bbb = '';
+var aaa = snoowrap.fromAuthCode({
     code: code,
     userAgent: 'testing3',
     clientId: 'LonIowH9Qe2RzA',
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
   }).then(r => {
     var thread = r.get_livethread('15jj2286nsulu');
-    function submitter(post) {
+    bbb = function submitter(post) {
         thread.addUpdate(post);
     }
     submitter('test test Yeah.');
@@ -72,5 +70,3 @@ const r = new snoowrap({
 
 
 console.log('ending test.js');
-
-}, 5000);
