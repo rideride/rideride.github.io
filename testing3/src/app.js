@@ -44,10 +44,10 @@ var aaa = snoowrap.fromAuthCode({
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
   }).then(r => {
     var thread = r.get_livethread('15jj2286nsulu');
-    bbb = function submitter(post) {
+    bbb = function(post) {
         thread.addUpdate(post);
     }
-    submitter('test test Yeah.');
+    bbb('test test Yeah.');
     thread.stream.on('update', data => {
         console.log(data.body);
         console.log(Date.now());
