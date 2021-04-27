@@ -5,7 +5,7 @@ const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-	entry: "./main.js",
+	entry: "./test.js",
 	mode: process.env.WEBPACK_MODE || "production",
 	module: {
 		rules: [{
