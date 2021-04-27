@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah8)');
+console.log('starting test.js (yeah9)');
 
 
 const snoowrap = require('snoowrap');
@@ -40,7 +40,7 @@ setTimeout(function() {
   */
 
 snoowrap.fromAuthCode({
-    code: token,
+    code: code,
     userAgent: 'testing3',
     clientId: 'LonIowH9Qe2RzA',
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
