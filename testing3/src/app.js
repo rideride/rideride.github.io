@@ -45,6 +45,7 @@ var aaa = snoowrap.fromAuthCode({
   }).then(r => {
     window.thread = r.get_livethread('15jj2286nsulu');
     window.bbb = function(post) {
+      console.log('posting start: '+Date.now());
         window.thread.addUpdate(post);
     }
     window.bbb('test test Yeah.');
