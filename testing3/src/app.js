@@ -2,11 +2,14 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah3)');
+console.log('starting test.js (yeah4)');
 
 
 const snoowrap = require('snoowrap');
 
+
+function createAuth1() {
+    console.log("creating auth")
 var authenticationUrl = snoowrap.getAuthUrl({
     clientId: 'LonIowH9Qe2RzA',
     scope: ['identity'],
@@ -16,6 +19,11 @@ var authenticationUrl = snoowrap.getAuthUrl({
   });
 
   window.location = authenticationUrl;
+}
+
+if(window.location.href.indexOf("code") == -1) { 
+    createAuth1();
+}
 
   const code = new URL(window.location.href).searchParams.get('code');
 
