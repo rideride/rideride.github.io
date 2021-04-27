@@ -49,5 +49,8 @@
 			"browser": true,
 			"jquery": true
 		}
+	},
+	"dependencies": {
+		"snoowrap": "^0.9.2"
 	}
 }
