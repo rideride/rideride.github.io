@@ -58,7 +58,7 @@ var aaa = snoowrap.fromAuthCode({
     window.bbb = function(post) {
       console.log('posting start: '+Date.now());
         window.thread.addUpdate(post);
-        document.querySelector('.md textarea').value = '';
+        document.getElementById("update-textarea").value  = '';
     }
     //window.bbb('test test Yeah.');
     thread.getRecentUpdates().then(myListing => {
