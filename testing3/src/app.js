@@ -1,8 +1,4 @@
-/*import component from './component';
-
-document.body.appendChild(component());*/
-
-console.log('starting test.js (yeah17)');
+console.log('starting test.js (yeah18)');
 
 
 const snoowrap = require('snoowrap');
@@ -26,7 +22,6 @@ if(window.location.href.indexOf("code") == -1) {
 }
   const code = new URL(window.location.href).searchParams.get('code');
 
-var bbb = '';
 var aaa = snoowrap.fromAuthCode({
     code: code,
     userAgent: 'testing3',
@@ -38,11 +33,8 @@ var aaa = snoowrap.fromAuthCode({
       $('.liveupdate-listing').append(`<li class="liveupdate"><a href="//reddit.com/live/15jj2286nsulu/updates/`+data.id+`" target="_blank"><time class="live-timestamp" datetime="2021-04-28T00:46:06.000Z" title="uhh">just now</time></a>
 
       <div class="body">
-        `+data.body_html+`
-      </div>
-        
+        `+data.body_html+`       
         <a href="/user/`+data.author.name+`" class="author" style="color: rgb(178, 34, 34);">/u/`+data.author.name+`</a>
-        
       </div>
       <ul class="buttonrow"><li><span class="strike confirm-button"><button>strike</button></span></li>
       <li><span class="delete confirm-button"><button>delete</button></span></li>
@@ -54,10 +46,7 @@ var aaa = snoowrap.fromAuthCode({
 
       <div class="body">
         `+data.body_html+`
-      </div>
-        
-        <a href="/user/`+data.author.name+`" class="author" style="color: rgb(178, 34, 34);">/u/`+data.author.name+`</a>
-        
+        <a href="/user/`+data.author.name+`" class="author" style="color: rgb(178, 34, 34);">/u/`+data.author.name+`</a>        
       </div>
       <ul class="buttonrow"><li><span class="strike confirm-button"><button>strike</button></span></li>
       <li><span class="delete confirm-button"><button>delete</button></span></li>
@@ -69,6 +58,7 @@ var aaa = snoowrap.fromAuthCode({
     window.bbb = function(post) {
       console.log('posting start: '+Date.now());
         window.thread.addUpdate(post);
+        document.querySelector('.md textarea').value = '';
     }
     //window.bbb('test test Yeah.');
     thread.getRecentUpdates().then(myListing => {
