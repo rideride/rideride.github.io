@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah13)');
+console.log('starting test.js (yeah14)');
 
 
 const snoowrap = require('snoowrap');
@@ -44,12 +44,31 @@ var aaa = snoowrap.fromAuthCode({
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
   }).then(r => {
     window.thread = r.get_livethread('15jj2286nsulu');
+    function add_post(data) {
+      $('.liveupdate-listing').append(`<li class="liveupdate"><a href="//reddit.com/live/15jj2286nsulu/updates/`+data.id+`" target="_blank"><time class="live-timestamp" datetime="2021-04-28T00:46:06.000Z" title="uhh">just now</time></a>
+
+      <div class="body">
+        `+data.body_html+`
+      </div>
+        
+        <a href="/user/rideride" class="author" style="color: rgb(178, 34, 34);">/u/rideride</a>
+        
+      </div>
+      <ul class="buttonrow"><li><span class="strike confirm-button"><button>strike</button></span></li>
+      <li><span class="delete confirm-button"><button>delete</button></span></li>
+      </ul></li>
+      `)
+    }
+
+
     window.bbb = function(post) {
       console.log('posting start: '+Date.now());
         window.thread.addUpdate(post);
     }
-    window.bbb('test test Yeah.');
+    //window.bbb('test test Yeah.');
+    thread.getRecentUpdates().then(add_post)
     window.thread.stream.on('update', data => {
+      add_post(data);
         console.log(data.body);
         console.log(Date.now());
       });
