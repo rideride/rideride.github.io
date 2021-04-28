@@ -10,9 +10,9 @@ module.exports = {
         path: path.resolve(__dirname, 'deploy')
       },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack Output",
-    }),
+    //new HtmlWebpackPlugin({
+    //  title: "Webpack Output",
+    //}),
   ],
   resolve: {
     // ... rest of the resolve config

@@ -2,7 +2,7 @@
 
 document.body.appendChild(component());*/
 
-console.log('starting test.js (yeah14)');
+console.log('starting test.js (yeah15)');
 
 
 const snoowrap = require('snoowrap');
@@ -44,7 +44,7 @@ var aaa = snoowrap.fromAuthCode({
     redirectUri: 'https://rideride.github.io/testing3/deploy/index.html'
   }).then(r => {
     window.thread = r.get_livethread('15jj2286nsulu');
-    function add_post(data) {
+    window.add_post = function(data) {
       $('.liveupdate-listing').append(`<li class="liveupdate"><a href="//reddit.com/live/15jj2286nsulu/updates/`+data.id+`" target="_blank"><time class="live-timestamp" datetime="2021-04-28T00:46:06.000Z" title="uhh">just now</time></a>
 
       <div class="body">
