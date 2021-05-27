@@ -45,7 +45,7 @@ window.googleDocCallback = function () { return true; };
      });
 
 	  function loadS5Players() {
-          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet2";
+          var url = "https://docs.google.com/spreadsheets/d/1les2TcfGeh2C_ZYtrGNc_47DH_XMUCSGLSr0wK_MWdk/gviz/tq?tqx=out:csv&sheet=Sheet3";
           xmlhttp2 = new XMLHttpRequest();
           xmlhttp2.onreadystatechange = function () {
 			  console.log(xmlhttp2.readyState);
